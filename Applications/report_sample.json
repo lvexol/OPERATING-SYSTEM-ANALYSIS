@@ -1,0 +1,2618 @@
+{
+    "received_at": "2026-02-06T03:12:57.131509",
+    "id": 1,
+    "cpu_info": {
+        "model": "Detected via /proc/cpuinfo or similar",
+        "cores": 8,
+        "usage_percent": 36.4
+    },
+    "memory_info": {
+        "total_bytes": 16542248960,
+        "available_bytes": 8231358464,
+        "used_percent": 50.2
+    },
+    "process_info": [
+        {
+            "pid": 1,
+            "name": "systemd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2,
+            "name": "kthreadd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3,
+            "name": "pool_workqueue_release",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4,
+            "name": "kworker/R-rcu_gp",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 5,
+            "name": "kworker/R-sync_wq",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 6,
+            "name": "kworker/R-slub_flushwq",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 7,
+            "name": "kworker/R-netns",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 9,
+            "name": "kworker/0:0H-events_highpri",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 10,
+            "name": "kworker/0:1-i915-unordered",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 11,
+            "name": "kworker/u32:0-events_unbound",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 12,
+            "name": "kworker/R-mm_percpu_wq",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 13,
+            "name": "rcu_tasks_kthread",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 14,
+            "name": "rcu_tasks_rude_kthread",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 15,
+            "name": "rcu_tasks_trace_kthread",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 16,
+            "name": "ksoftirqd/0",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 17,
+            "name": "rcu_preempt",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 18,
+            "name": "rcu_exp_par_gp_kthread_worker/0",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 19,
+            "name": "rcu_exp_gp_kthread_worker",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 20,
+            "name": "migration/0",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 21,
+            "name": "idle_inject/0",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 22,
+            "name": "cpuhp/0",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 23,
+            "name": "cpuhp/1",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 24,
+            "name": "idle_inject/1",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 25,
+            "name": "migration/1",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 26,
+            "name": "ksoftirqd/1",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 28,
+            "name": "kworker/1:0H-events_highpri",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 29,
+            "name": "cpuhp/2",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 30,
+            "name": "idle_inject/2",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 31,
+            "name": "migration/2",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 32,
+            "name": "ksoftirqd/2",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 34,
+            "name": "kworker/2:0H-events_highpri",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 35,
+            "name": "cpuhp/3",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 36,
+            "name": "idle_inject/3",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 37,
+            "name": "migration/3",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 38,
+            "name": "ksoftirqd/3",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 40,
+            "name": "kworker/3:0H-events_highpri",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 41,
+            "name": "cpuhp/4",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 42,
+            "name": "idle_inject/4",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 43,
+            "name": "migration/4",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 44,
+            "name": "ksoftirqd/4",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 45,
+            "name": "kworker/4:0-slub_flushwq",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 46,
+            "name": "kworker/4:0H-events_highpri",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 47,
+            "name": "cpuhp/5",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 48,
+            "name": "idle_inject/5",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 49,
+            "name": "migration/5",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 50,
+            "name": "ksoftirqd/5",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 52,
+            "name": "kworker/5:0H-events_highpri",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 53,
+            "name": "cpuhp/6",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 54,
+            "name": "idle_inject/6",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 55,
+            "name": "migration/6",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 56,
+            "name": "ksoftirqd/6",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 57,
+            "name": "kworker/6:0-i915-unordered",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 58,
+            "name": "kworker/6:0H-events_highpri",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 59,
+            "name": "cpuhp/7",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 60,
+            "name": "idle_inject/7",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 61,
+            "name": "migration/7",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 62,
+            "name": "ksoftirqd/7",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 64,
+            "name": "kworker/7:0H-events_highpri",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 65,
+            "name": "kdevtmpfs",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 66,
+            "name": "kworker/R-inet_frag_wq",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 67,
+            "name": "kauditd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 68,
+            "name": "kworker/u32:1-i915",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 69,
+            "name": "khungtaskd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 70,
+            "name": "oom_reaper",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 71,
+            "name": "kworker/u32:2-events_unbound",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 72,
+            "name": "kworker/R-writeback",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 73,
+            "name": "kcompactd0",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 74,
+            "name": "ksmd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 75,
+            "name": "khugepaged",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 76,
+            "name": "kworker/R-kintegrityd",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 77,
+            "name": "kworker/R-kblockd",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 78,
+            "name": "kworker/R-blkcg_punt_bio",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 79,
+            "name": "kworker/5:1-events",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 80,
+            "name": "irq/9-acpi",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 81,
+            "name": "kworker/4:1-events",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 82,
+            "name": "kworker/R-tpm_dev_wq",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 83,
+            "name": "kworker/R-ata_sff",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 84,
+            "name": "kworker/R-md",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 85,
+            "name": "kworker/R-md_bitmap",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 86,
+            "name": "kworker/R-edac-poller",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 87,
+            "name": "kworker/R-devfreq_wq",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 88,
+            "name": "watchdogd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 90,
+            "name": "kworker/5:1H-events_highpri",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 91,
+            "name": "kswapd0",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 92,
+            "name": "ecryptfs-kthread",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 93,
+            "name": "kworker/R-kthrotld",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 94,
+            "name": "kworker/R-acpi_thermal_pm",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 95,
+            "name": "hwrng",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 96,
+            "name": "kworker/u32:3-events_power_efficient",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 98,
+            "name": "kworker/R-mld",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 99,
+            "name": "kworker/R-ipv6_addrconf",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 101,
+            "name": "kworker/u32:4-events_power_efficient",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 108,
+            "name": "kworker/R-kstrp",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 109,
+            "name": "kworker/1:1-i915-unordered",
+            "username": "root",
+            "status": "running"
+        },
+        {
+            "pid": 110,
+            "name": "kworker/6:2-i915-unordered",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 111,
+            "name": "kworker/3:1-i915-unordered",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 113,
+            "name": "kworker/u33:0-rb_allocator",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 126,
+            "name": "kworker/2:2-i915-unordered",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 128,
+            "name": "kworker/2:4-i915-unordered",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 129,
+            "name": "kworker/R-charger_manager",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 130,
+            "name": "kworker/0:1H-events_highpri",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 154,
+            "name": "kworker/7:1H-events_highpri",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 157,
+            "name": "kworker/7:1-events",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 173,
+            "name": "kworker/4:1H-events_highpri",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 174,
+            "name": "kworker/1:1H-events_highpri",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 193,
+            "name": "kworker/2:1H-events_highpri",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 195,
+            "name": "kworker/6:1H-events_highpri",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 196,
+            "name": "kworker/3:1H-events_highpri",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 203,
+            "name": "kworker/4:2-cgroup_destroy",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 218,
+            "name": "scsi_eh_0",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 220,
+            "name": "kworker/R-scsi_tmf_0",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 254,
+            "name": "irq/158-ELAN06FA:00",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 255,
+            "name": "kworker/R-nvme-wq",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 256,
+            "name": "kworker/R-nvme-reset-wq",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 257,
+            "name": "kworker/R-nvme-delete-wq",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 258,
+            "name": "kworker/R-nvme-auth-wq",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 259,
+            "name": "spi0",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 309,
+            "name": "jbd2/nvme0n1p6-8",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 310,
+            "name": "kworker/R-ext4-rsv-conversion",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 325,
+            "name": "kworker/3:2-i915-unordered",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 363,
+            "name": "systemd-journald",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 392,
+            "name": "kworker/7:2-cgwb_release",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 395,
+            "name": "kworker/7:3-i915-unordered",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 482,
+            "name": "systemd-udevd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 552,
+            "name": "psimon",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 682,
+            "name": "kworker/1:2-i915-unordered",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 722,
+            "name": "irq/169-mei_me",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 726,
+            "name": "kworker/R-cfg80211",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 864,
+            "name": "kworker/R-cryptd",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 870,
+            "name": "kworker/u33:1-i915_flip",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 871,
+            "name": "kworker/u33:2",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 874,
+            "name": "irq/170-iwlwifi:default_queue",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 875,
+            "name": "irq/171-iwlwifi:queue_1",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 876,
+            "name": "irq/172-iwlwifi:queue_2",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 877,
+            "name": "irq/173-iwlwifi:queue_3",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 878,
+            "name": "irq/174-iwlwifi:queue_4",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 879,
+            "name": "irq/175-iwlwifi:queue_5",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 880,
+            "name": "irq/176-iwlwifi:queue_6",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 881,
+            "name": "irq/177-iwlwifi:queue_7",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 882,
+            "name": "irq/178-iwlwifi:queue_8",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 883,
+            "name": "irq/179-iwlwifi:exception",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 893,
+            "name": "kworker/5:2",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 904,
+            "name": "kworker/R-ttm",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 930,
+            "name": "card1-crtc0",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 931,
+            "name": "card1-crtc1",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 932,
+            "name": "card1-crtc2",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 933,
+            "name": "card1-crtc3",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1044,
+            "name": "systemd-oomd",
+            "username": "systemd-oom",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1057,
+            "name": "systemd-resolved",
+            "username": "systemd-resolve",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1058,
+            "name": "systemd-timesyncd",
+            "username": "systemd-timesync",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1061,
+            "name": "irq/181-AudioDSP",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1453,
+            "name": "avahi-daemon",
+            "username": "avahi",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1458,
+            "name": "bluetoothd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1460,
+            "name": "dbus-daemon",
+            "username": "messagebus",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1466,
+            "name": "gnome-remote-desktop-daemon",
+            "username": "gnome-remote-desktop",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1475,
+            "name": "lxcfs",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1488,
+            "name": "polkitd",
+            "username": "polkitd",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1492,
+            "name": "power-profiles-daemon",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1502,
+            "name": "snapd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1505,
+            "name": "accounts-daemon",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1506,
+            "name": "cron",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1507,
+            "name": "switcheroo-control",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1509,
+            "name": "systemd-logind",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1510,
+            "name": "thermald",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1511,
+            "name": "udisksd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1514,
+            "name": "waydroid",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1532,
+            "name": "avahi-daemon",
+            "username": "avahi",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1547,
+            "name": "rsyslogd",
+            "username": "syslog",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1604,
+            "name": "vmware-usbarbitrator",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1616,
+            "name": "NetworkManager",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1618,
+            "name": "wpa_supplicant",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1657,
+            "name": "ModemManager",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 1785,
+            "name": "upowerd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2223,
+            "name": "kworker/R-iprt-VBoxWQueue",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 2228,
+            "name": "iprt-VBoxTscThread",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2232,
+            "name": "psimon",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2265,
+            "name": "cupsd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2270,
+            "name": "lxc-monitord",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2271,
+            "name": "python3",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2276,
+            "name": "unattended-upgr",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2280,
+            "name": "containerd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2288,
+            "name": "anydesk",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2315,
+            "name": "gdm3",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2330,
+            "name": "apache2",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2332,
+            "name": "apache2",
+            "username": "www-data",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2333,
+            "name": "apache2",
+            "username": "www-data",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2334,
+            "name": "apache2",
+            "username": "www-data",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2335,
+            "name": "apache2",
+            "username": "www-data",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2336,
+            "name": "apache2",
+            "username": "www-data",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2348,
+            "name": "mysqld",
+            "username": "mysql",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2480,
+            "name": "rtkit-daemon",
+            "username": "rtkit",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2588,
+            "name": "krfcommd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 2709,
+            "name": "colord",
+            "username": "colord",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3150,
+            "name": "kworker/u32:5-flush-259:0",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 3176,
+            "name": "cups-browsed",
+            "username": "cups-browsed",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3177,
+            "name": "kworker/0:3-cgroup_destroy",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 3178,
+            "name": "dockerd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3181,
+            "name": "ollama",
+            "username": "ollama",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3192,
+            "name": "kerneloops",
+            "username": "kernoops",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3197,
+            "name": "kerneloops",
+            "username": "kernoops",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3249,
+            "name": "slapd",
+            "username": "openldap",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3307,
+            "name": "dnsmasq",
+            "username": "dnsmasq",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3309,
+            "name": "vmnet-bridge",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3322,
+            "name": "gdm-session-worker",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3718,
+            "name": "vmnet-netifup",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3736,
+            "name": "vmnet-dhcpd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3739,
+            "name": "vmnet-natd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3741,
+            "name": "vmnet-netifup",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3751,
+            "name": "vmnet-dhcpd",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3835,
+            "name": "vmware-authdlauncher",
+            "username": "root",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3864,
+            "name": "kworker/5:3-i915-unordered",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 3875,
+            "name": "systemd",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3880,
+            "name": "(sd-pam)",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3901,
+            "name": "pipewire",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3902,
+            "name": "pipewire",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3908,
+            "name": "wireplumber",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3909,
+            "name": "pipewire-pulse",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3912,
+            "name": "gnome-keyring-daemon",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3921,
+            "name": "dbus-daemon",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3972,
+            "name": "xdg-document-portal",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3976,
+            "name": "xdg-permission-store",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 3983,
+            "name": "fusermount3",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4020,
+            "name": "gdm-x-session",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4032,
+            "name": "Xorg",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4151,
+            "name": "i3",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4244,
+            "name": "ibus-daemon",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4254,
+            "name": "gvfsd",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4261,
+            "name": "gvfsd-fuse",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4263,
+            "name": "ibus-memconf",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4265,
+            "name": "ibus-ui-gtk3",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4273,
+            "name": "ibus-extension-gtk3",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4276,
+            "name": "ibus-x11",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4281,
+            "name": "ibus-portal",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4287,
+            "name": "sh",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4289,
+            "name": "sh",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4290,
+            "name": "picom",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4294,
+            "name": "xss-lock",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4305,
+            "name": "i3bar",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4311,
+            "name": "sh",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4313,
+            "name": "zen",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4324,
+            "name": "sh",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4325,
+            "name": "python3",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4326,
+            "name": "anydesk",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4329,
+            "name": "at-spi-bus-launcher",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4330,
+            "name": "blueman-applet",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4331,
+            "name": "agent",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4335,
+            "name": "nm-applet",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4343,
+            "name": "evolution-alarm-notify",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4345,
+            "name": "applet.py",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4346,
+            "name": "dbus-daemon",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4364,
+            "name": "update-notifier",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4383,
+            "name": "xdg-desktop-portal",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4385,
+            "name": "at-spi2-registryd",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4410,
+            "name": "xdg-desktop-portal-gtk",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4500,
+            "name": "ibus-engine-simple",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4516,
+            "name": "evolution-source-registry",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4554,
+            "name": "goa-daemon",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4564,
+            "name": "goa-identity-service",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4577,
+            "name": "obexd",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4579,
+            "name": "blueman-tray",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4581,
+            "name": "evolution-calendar-factory",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4598,
+            "name": "evolution-addressbook-factory",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4627,
+            "name": "GPU Process",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4639,
+            "name": "Socket Process",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4680,
+            "name": "WebExtensions",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4686,
+            "name": "RDD Process",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4724,
+            "name": "Privileged Cont",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4766,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4770,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4776,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4793,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4816,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4844,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4857,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4881,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4900,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4922,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4947,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 4981,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5008,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5029,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5047,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5062,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5160,
+            "name": "snapd-desktop-integration",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5235,
+            "name": "snapd-desktop-integration",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5322,
+            "name": "Utility Process",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5354,
+            "name": "firefox",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5443,
+            "name": "crashhelper",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5541,
+            "name": "forkserver",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5543,
+            "name": "Socket Process",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5562,
+            "name": "Privileged Cont",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5571,
+            "name": "RDD Process",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5620,
+            "name": "snap",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5629,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5762,
+            "name": "WebExtensions",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5909,
+            "name": "Utility Process",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5920,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 5991,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 6269,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 6297,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 6394,
+            "name": "Web Content",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 6455,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 6527,
+            "name": "Isolated Servic",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 6821,
+            "name": "whatsapp-linux-desktop",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 6908,
+            "name": "whatsapp-linux-desktop",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 6909,
+            "name": "whatsapp-linux-desktop",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 6954,
+            "name": "whatsapp-linux-desktop",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 7074,
+            "name": "whatsapp-linux-desktop",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 7166,
+            "name": "whatsapp-linux-desktop",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 7408,
+            "name": "antigravity",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 7411,
+            "name": "antigravity",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 7412,
+            "name": "antigravity",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 7414,
+            "name": "antigravity",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 7435,
+            "name": "chrome_crashpad_handler",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 7446,
+            "name": "antigravity",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 7456,
+            "name": "antigravity",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 7493,
+            "name": "antigravity",
+            "username": "vexo",
+            "status": "running"
+        },
+        {
+            "pid": 7535,
+            "name": "antigravity",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 7759,
+            "name": "antigravity",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 7784,
+            "name": "antigravity",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 7785,
+            "name": "antigravity",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 7895,
+            "name": "antigravity",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 7920,
+            "name": "bash",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 7922,
+            "name": "bash",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 8307,
+            "name": "language_server_linux_x64",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 8540,
+            "name": "antigravity",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 8548,
+            "name": "antigravity",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 8549,
+            "name": "pyrefly",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 8562,
+            "name": "antigravity",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 8705,
+            "name": "Web Content",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 9207,
+            "name": "Isolated Web Co",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 9687,
+            "name": "kworker/4:3-mm_percpu_wq",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 9962,
+            "name": "uvicorn",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 10237,
+            "name": "Web Content",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 10276,
+            "name": "kworker/0:0-i915-unordered",
+            "username": "root",
+            "status": "idle"
+        },
+        {
+            "pid": 10569,
+            "name": "bash",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 10742,
+            "name": "python",
+            "username": "vexo",
+            "status": "running"
+        },
+        {
+            "pid": 10743,
+            "name": "sh",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 10744,
+            "name": "cpuUsage.sh",
+            "username": "vexo",
+            "status": "sleeping"
+        },
+        {
+            "pid": 10747,
+            "name": "sleep",
+            "username": "vexo",
+            "status": "sleeping"
+        }
+    ],
+    "users": [
+        {
+            "name": "root",
+            "uid": 0,
+            "gid": 0,
+            "shell": "/bin/bash"
+        },
+        {
+            "name": "nobody",
+            "uid": 65534,
+            "gid": 65534,
+            "shell": "/usr/sbin/nologin"
+        },
+        {
+            "name": "vexo",
+            "uid": 1000,
+            "gid": 1000,
+            "shell": "/bin/bash"
+        },
+        {
+            "name": "nonrootvexo",
+            "uid": 1001,
+            "gid": 1001,
+            "shell": "/bin/bash"
+        }
+    ],
+    "agent_id": "4bba66d6-5d08-44c2-b270-c87f17bbf97e",
+    "timestamp": 1770347576.8188717,
+    "sys_info": {
+        "hostname": "vexo",
+        "os_name": "Linux",
+        "os_version": "6.13.0-061300-generic",
+        "kernel_version": "#202501302155 SMP PREEMPT_DYNAMIC Sat Feb  8 09:06:55 UTC 2025",
+        "cpu_arch": "x86_64",
+        "uptime_seconds": 410.8188874721527,
+        "boot_time_timestamp": 1770347166.0
+    },
+    "disk_info": [
+        {
+            "device": "/dev/nvme0n1p6",
+            "mountpoint": "/",
+            "total_bytes": 501151817728,
+            "used_bytes": 458979237888,
+            "percent": 96.5
+        },
+        {
+            "device": "/dev/loop0",
+            "mountpoint": "/snap/algokit/46",
+            "total_bytes": 38928384,
+            "used_bytes": 38928384,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop1",
+            "mountpoint": "/snap/algokit/45",
+            "total_bytes": 38928384,
+            "used_bytes": 38928384,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop2",
+            "mountpoint": "/snap/android-studio/205",
+            "total_bytes": 1626341376,
+            "used_bytes": 1626341376,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop3",
+            "mountpoint": "/snap/android-studio/209",
+            "total_bytes": 1563426816,
+            "used_bytes": 1563426816,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop4",
+            "mountpoint": "/snap/autopsy/3",
+            "total_bytes": 1350041600,
+            "used_bytes": 1350041600,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop6",
+            "mountpoint": "/snap/bare/5",
+            "total_bytes": 131072,
+            "used_bytes": 131072,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop5",
+            "mountpoint": "/snap/autopsy/4",
+            "total_bytes": 1447952384,
+            "used_bytes": 1447952384,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop7",
+            "mountpoint": "/snap/core/17247",
+            "total_bytes": 109314048,
+            "used_bytes": 109314048,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop8",
+            "mountpoint": "/snap/core/17272",
+            "total_bytes": 110100480,
+            "used_bytes": 110100480,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop9",
+            "mountpoint": "/snap/core18/2976",
+            "total_bytes": 58195968,
+            "used_bytes": 58195968,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop10",
+            "mountpoint": "/snap/core18/2979",
+            "total_bytes": 58195968,
+            "used_bytes": 58195968,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop11",
+            "mountpoint": "/snap/core20/2682",
+            "total_bytes": 66977792,
+            "used_bytes": 66977792,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop12",
+            "mountpoint": "/snap/core20/2686",
+            "total_bytes": 66977792,
+            "used_bytes": 66977792,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop13",
+            "mountpoint": "/snap/core22/2216",
+            "total_bytes": 77594624,
+            "used_bytes": 77594624,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop14",
+            "mountpoint": "/snap/core22/2292",
+            "total_bytes": 77594624,
+            "used_bytes": 77594624,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop15",
+            "mountpoint": "/snap/core24/1267",
+            "total_bytes": 70123520,
+            "used_bytes": 70123520,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop16",
+            "mountpoint": "/snap/core24/1349",
+            "total_bytes": 70123520,
+            "used_bytes": 70123520,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop17",
+            "mountpoint": "/snap/enum4linux/55",
+            "total_bytes": 50200576,
+            "used_bytes": 50200576,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop18",
+            "mountpoint": "/snap/enum4linux/66",
+            "total_bytes": 53870592,
+            "used_bytes": 53870592,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop19",
+            "mountpoint": "/snap/firefox/7672",
+            "total_bytes": 263979008,
+            "used_bytes": 263979008,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop20",
+            "mountpoint": "/snap/firefox/7720",
+            "total_bytes": 263979008,
+            "used_bytes": 263979008,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop21",
+            "mountpoint": "/snap/firmware-updater/167",
+            "total_bytes": 11796480,
+            "used_bytes": 11796480,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop22",
+            "mountpoint": "/snap/firmware-updater/210",
+            "total_bytes": 19398656,
+            "used_bytes": 19398656,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop23",
+            "mountpoint": "/snap/flutter/145",
+            "total_bytes": 216399872,
+            "used_bytes": 216399872,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop24",
+            "mountpoint": "/snap/flutter/149",
+            "total_bytes": 216924160,
+            "used_bytes": 216924160,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop25",
+            "mountpoint": "/snap/ghidra/33",
+            "total_bytes": 635305984,
+            "used_bytes": 635305984,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop26",
+            "mountpoint": "/snap/ghidra/35",
+            "total_bytes": 687472640,
+            "used_bytes": 687472640,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop27",
+            "mountpoint": "/snap/gnome-3-28-1804/198",
+            "total_bytes": 172883968,
+            "used_bytes": 172883968,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop28",
+            "mountpoint": "/snap/gnome-42-2204/226",
+            "total_bytes": 541327360,
+            "used_bytes": 541327360,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop30",
+            "mountpoint": "/snap/gtk-common-themes/1535",
+            "total_bytes": 96206848,
+            "used_bytes": 96206848,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop29",
+            "mountpoint": "/snap/gnome-42-2204/247",
+            "total_bytes": 557187072,
+            "used_bytes": 557187072,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop31",
+            "mountpoint": "/snap/icon-theme-papirus/160",
+            "total_bytes": 55443456,
+            "used_bytes": 55443456,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop32",
+            "mountpoint": "/snap/icon-theme-papirus/171",
+            "total_bytes": 56885248,
+            "used_bytes": 56885248,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop33",
+            "mountpoint": "/snap/instagraph/86",
+            "total_bytes": 226885632,
+            "used_bytes": 226885632,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop34",
+            "mountpoint": "/snap/linkedin-webapp/1",
+            "total_bytes": 131072,
+            "used_bytes": 131072,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop35",
+            "mountpoint": "/snap/llama/2",
+            "total_bytes": 1835008,
+            "used_bytes": 1835008,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop36",
+            "mountpoint": "/snap/metasploit-framework/2137",
+            "total_bytes": 361627648,
+            "used_bytes": 361627648,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop37",
+            "mountpoint": "/snap/metasploit-framework/2173",
+            "total_bytes": 362545152,
+            "used_bytes": 362545152,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop38",
+            "mountpoint": "/snap/ngrok/335",
+            "total_bytes": 9175040,
+            "used_bytes": 9175040,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop39",
+            "mountpoint": "/snap/ngrok/340",
+            "total_bytes": 9175040,
+            "used_bytes": 9175040,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop40",
+            "mountpoint": "/snap/notion-snap-reborn/53",
+            "total_bytes": 98041856,
+            "used_bytes": 98041856,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop41",
+            "mountpoint": "/snap/notion-snap-reborn/54",
+            "total_bytes": 98041856,
+            "used_bytes": 98041856,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop42",
+            "mountpoint": "/snap/rustscan/208",
+            "total_bytes": 10092544,
+            "used_bytes": 10092544,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop43",
+            "mountpoint": "/snap/rustscan/436",
+            "total_bytes": 9306112,
+            "used_bytes": 9306112,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop44",
+            "mountpoint": "/snap/searchsploit/511",
+            "total_bytes": 77856768,
+            "used_bytes": 77856768,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop45",
+            "mountpoint": "/snap/searchsploit/542",
+            "total_bytes": 77987840,
+            "used_bytes": 77987840,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop46",
+            "mountpoint": "/snap/seclists/1078",
+            "total_bytes": 610795520,
+            "used_bytes": 610795520,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop47",
+            "mountpoint": "/snap/seclists/1214",
+            "total_bytes": 603455488,
+            "used_bytes": 603455488,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop48",
+            "mountpoint": "/snap/snap-store/1270",
+            "total_bytes": 11403264,
+            "used_bytes": 11403264,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop49",
+            "mountpoint": "/snap/snap-store/1300",
+            "total_bytes": 18481152,
+            "used_bytes": 18481152,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop50",
+            "mountpoint": "/snap/snapd/25577",
+            "total_bytes": 53477376,
+            "used_bytes": 53477376,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop51",
+            "mountpoint": "/snap/snapd/25935",
+            "total_bytes": 50462720,
+            "used_bytes": 50462720,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop52",
+            "mountpoint": "/snap/snapd-desktop-integration/315",
+            "total_bytes": 655360,
+            "used_bytes": 655360,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop53",
+            "mountpoint": "/snap/snapd-desktop-integration/343",
+            "total_bytes": 655360,
+            "used_bytes": 655360,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop54",
+            "mountpoint": "/snap/sublime-text/209",
+            "total_bytes": 67895296,
+            "used_bytes": 67895296,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop55",
+            "mountpoint": "/snap/sublime-text/217",
+            "total_bytes": 67895296,
+            "used_bytes": 67895296,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop56",
+            "mountpoint": "/snap/whatsapp-linux-desktop/3",
+            "total_bytes": 93454336,
+            "used_bytes": 93454336,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop57",
+            "mountpoint": "/snap/wine-platform-3-stable/14",
+            "total_bytes": 104333312,
+            "used_bytes": 104333312,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop58",
+            "mountpoint": "/snap/wine-platform-runtime/408",
+            "total_bytes": 363855872,
+            "used_bytes": 363855872,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop59",
+            "mountpoint": "/snap/wine-platform-runtime/409",
+            "total_bytes": 363593728,
+            "used_bytes": 363593728,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/loop60",
+            "mountpoint": "/snap/youtube-music-desktop-app/6",
+            "total_bytes": 76414976,
+            "used_bytes": 76414976,
+            "percent": 100.0
+        },
+        {
+            "device": "/dev/nvme0n1p1",
+            "mountpoint": "/boot/efi",
+            "total_bytes": 268435456,
+            "used_bytes": 36425728,
+            "percent": 13.6
+        }
+    ],
+    "network_interfaces": [
+        {
+            "name": "lo",
+            "ip_address": "127.0.0.1",
+            "mac_address": "00:00:00:00:00:00",
+            "is_up": true
+        },
+        {
+            "name": "wlp0s20f3",
+            "ip_address": "192.168.150.105",
+            "mac_address": "70:cd:0d:31:78:9c",
+            "is_up": true
+        },
+        {
+            "name": "lxcbr0",
+            "ip_address": "10.0.3.1",
+            "mac_address": "00:16:3e:00:00:00",
+            "is_up": false
+        },
+        {
+            "name": "br-2ad2f5f09917",
+            "ip_address": "192.168.49.1",
+            "mac_address": "b2:3b:ff:a0:41:cd",
+            "is_up": false
+        },
+        {
+            "name": "br-3fb31957602b",
+            "ip_address": "172.18.0.1",
+            "mac_address": "e2:26:68:37:69:2d",
+            "is_up": false
+        },
+        {
+            "name": "br-5668789c1fa5",
+            "ip_address": "172.21.0.1",
+            "mac_address": "fe:ee:4a:d3:e8:3c",
+            "is_up": false
+        },
+        {
+            "name": "br-d09e0abfc20a",
+            "ip_address": "172.19.0.1",
+            "mac_address": "46:90:38:44:8b:00",
+            "is_up": false
+        },
+        {
+            "name": "docker0",
+            "ip_address": "172.17.0.1",
+            "mac_address": "0a:fc:53:7c:92:d1",
+            "is_up": false
+        },
+        {
+            "name": "vmnet1",
+            "ip_address": "192.168.60.1",
+            "mac_address": "00:50:56:c0:00:01",
+            "is_up": true
+        },
+        {
+            "name": "vmnet8",
+            "ip_address": "172.16.219.1",
+            "mac_address": "00:50:56:c0:00:08",
+            "is_up": true
+        }
+    ],
+    "security_info": {
+        "open_ports": [
+            8001,
+            36035,
+            33060,
+            389,
+            902,
+            33029,
+            42551,
+            3306,
+            11434,
+            35639,
+            80,
+            53,
+            631,
+            7070,
+            46783
+        ],
+        "firewall_active": false
+    }
+}
