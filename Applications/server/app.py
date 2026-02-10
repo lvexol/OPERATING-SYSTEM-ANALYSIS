@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException, status
+import uvicorn
 from sqlalchemy.orm import Session
 from datetime import datetime
 import models
@@ -55,3 +56,6 @@ def get_latest_report(agent_id: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="No data found for this agent")
         
     return record
+
+if __name__ == "__main__":
+    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
