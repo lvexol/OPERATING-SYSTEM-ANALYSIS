@@ -24,6 +24,27 @@ get_agent_id() {
     fi
 }
 
+# 0. Distro Info
+get_distro_info() {
+    local distro_name="Unknown"
+    local distro_version="Unknown"
+    
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        distro_name="${NAME:-Unknown}"
+        distro_version="${VERSION_ID:-Unknown}"
+    elif command -v lsb_release >/dev/null 2>&1; then
+        distro_name=$(lsb_release -si)
+        distro_version=$(lsb_release -sr)
+    fi
+    
+    # Sanitize quotes
+    distro_name=${distro_name//\"/\\\"}
+    distro_version=${distro_version//\"/\\\"}
+     
+    echo "\"os_name\": \"$distro_name\", \"os_version\": \"$distro_version\""
+}
+
 # 1. System Info
 get_system_info() {
     local hostname=$(hostname)
@@ -258,6 +279,7 @@ while true; do
     # If jq is allowed, it's safer. Assuming manual for lowest common denominator.
     
     json_payload="{"
+    json_payload+="$(get_distro_info),"
     json_payload+="\"agent_id\": \"$AGENT_ID\","
     json_payload+="\"timestamp\": $timestamp,"
     json_payload+="$(get_system_info),"
