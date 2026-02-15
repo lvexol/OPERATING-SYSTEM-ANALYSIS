@@ -1,5 +1,5 @@
-fastapi
-uvicorn
-sqlalchemy
-pydantic
-python-multipart
+Django>=5.0,<6.0
+psycopg2-binary>=2.9
+udatetime
+tzdata
+dj-database-url

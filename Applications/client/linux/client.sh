@@ -307,7 +307,7 @@ while true; do
 
     echo "Sending data..."
     # Send via Curl
-    response=$(curl -s -o /dev/null -w "%{http_code}" -X POST "$SERVER_URL/api/v1/telemetry" \
+    response=$(curl -s -o /dev/null -w "%{http_code}" -X POST "$SERVER_URL/api/v1/telemetry/" \
         -H "Content-Type: application/json" \
         -d "$json_payload")
         

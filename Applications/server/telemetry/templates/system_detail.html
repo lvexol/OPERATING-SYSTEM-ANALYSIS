@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h2>System Detail: {{ hostname }}</h2>
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">Telemetry History</div>
+    <div class="card-body p-0">
+        <table class="table table-hover table-sm">
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>IP</th>
+                    <th>Risk</th>
+                    <th>Process Count</th>
+                    <th>CPU %</th>
+                    <th>Mem %</th>
+                    <th>Analysis</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in logs %}
+                <tr>
+                    <td>{{ log.timestamp|date:"Y-m-d H:i:s" }}</td>
+                    <td>{{ log.ip_address }}</td>
+                    <td>{{ log.risk_score }}</td>
+                    <td>{{ log.parsed_data.process_info|length }}</td>
+                    <td>{{ log.parsed_data.cpu_info.usage_percent }}%</td>
+                    <td>{{ log.parsed_data.memory_info.used_percent|floatformat:1 }}%</td>
+                    <td>
+                        <small>{{ log.parsed_data.analysis_report|join:", " }}</small>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

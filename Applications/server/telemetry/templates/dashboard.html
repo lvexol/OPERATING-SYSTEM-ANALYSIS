@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <!-- Stats Cards -->
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title text-muted">Total Systems</h5>
+                <h2 class="display-4">{{ total_systems }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title text-muted">High Risk</h5>
+                <h2 class="display-4 text-danger">{{ high_risk_count }}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Telemetry Table -->
+<div class="card">
+    <div class="card-header">
+        Recent Telemetry
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+            <thead>
+                <tr>
+                    <th>Hostname</th>
+                    <th>IP</th>
+                    <th>Risk</th>
+                    <th>Analyzed At</th>
+                    <th>Key Findings</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in latest_logs %}
+                <tr>
+                    <td>{{ log.hostname }}</td>
+                    <td>{{ log.ip_address }}</td>
+                    <td>
+                        <span
+                            class="badge {% if log.risk_score > 70 %}badge-risk-high{% elif log.risk_score > 40 %}badge-risk-med{% else %}badge-risk-low{% endif %}">
+                            {{ log.risk_score }}
+                        </span>
+                    </td>
+                    <td>{{ log.analyzed_at|date:"Y-m-d H:i:s" }}</td>
+                    <td>
+                        {% for finding in log.parsed_data.analysis_report|slice:":2" %}
+                        <small class="d-block text-warning">{{ finding }}</small>
+                        {% endfor %}
+                    </td>
+                    <td>
+                        <a href="{% url 'system_detail' log.hostname %}" class="btn btn-sm btn-outline-info">Details</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6" class="text-center py-4">No telemetry received yet.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
