@@ -1,260 +1,369 @@
 /* ============================================================
-   DARK THEME OVERRIDE
-   Clean black theme with sharp lines
+   DARK THEME — Flat / Modern / Zero rounded corners
    ============================================================ */
 
-/* ---- Variables via root ---- */
 :root {
-  --bg-base:      #0e0e0e;
-  --bg-panel:     #161616;
-  --bg-raised:    #1f1f1f;
-  --bg-hover:     #252525;
-  --bg-selected:  #0f2d4a;
-  --accent:       #00aaff;
-  --accent-dim:   #0077bb;
-  --text:         #d4d4d4;
-  --text-dim:     #777777;
-  --text-bright:  #f0f0f0;
-  --border:       #2a2a2a;
-  --border-light: #333333;
-  --success:      #22c55e;
-  --warning:      #f59e0b;
-  --danger:       #ef4444;
-  --header-h:     28px;
-  --font:         12px/1.4 "Inter", "Segoe UI", tahoma, arial, sans-serif;
+  --bg-0:        #0a0a0a;   /* page background */
+  --bg-1:        #111111;   /* panels, headers */
+  --bg-2:        #181818;   /* panel bodies */
+  --bg-3:        #202020;   /* raised surfaces */
+  --bg-4:        #282828;   /* hover state */
+  --bg-sel:      #0d2d47;   /* selected row/node */
+  --accent:      #00aaff;
+  --accent-hi:   #33bbff;
+  --text:        #ffffff;   /* primary — pure white */
+  --text-sub:    #bbbbbb;   /* secondary — clearly visible */
+  --text-muted:  #777777;   /* muted — timestamps, meta */
+  --border:      #242424;
+  --border-hi:   #303030;
+  --success:     #22c55e;
+  --warning:     #f59e0b;
+  --danger:      #ef4444;
+  --font:        12px/1.5 "Segoe UI", tahoma, arial, sans-serif;
+  --font-mono:   12px/1.5 "Consolas", "Courier New", monospace;
 }
 
-/* ---- Reset & Base ---- */
-*, *::before, *::after { box-sizing: border-box; }
+/* ================================================================
+   RESET
+   ================================================================ */
+*, *::before, *::after { box-sizing: border-box !important; }
 
 html, body {
-  background: var(--bg-base) !important;
+  background: var(--bg-0) !important;
   color: var(--text) !important;
   font: var(--font) !important;
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* ---- Header bar ---- */
+/* Kill ALL rounded corners from ExtJS */
+*,
+.x-panel, .x-panel-body, .x-panel-header,
+.x-window, .x-window-body, .x-window-header,
+.x-btn, .x-btn-left, .x-btn-right, .x-btn-center,
+.x-menu, .x-menu-list,
+.x-combo-list,
+.x-form-field, .x-form-text, .x-form-textarea,
+.x-tab-strip li, .x-tab-left, .x-tab-right,
+.x-tip, .x-tip-body,
+.x-mask-loading div,
+input, textarea, select {
+  border-radius: 0 !important;
+}
+
+/* ================================================================
+   HEADER BAR
+   ================================================================ */
 #header {
-  background: #111111 !important;
-  border-bottom: 1px solid var(--border-light) !important;
-  height: var(--header-h) !important;
-  line-height: var(--header-h) !important;
-  padding: 0 12px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
+  background: #0d0d0d !important;
+  border-bottom: 1px solid var(--border-hi) !important;
+  height: 30px !important;
+  line-height: 30px !important;
+  padding: 0 14px !important;
+  overflow: hidden !important;
 }
 
 #header .right-menu {
-  color: var(--text-dim) !important;
-  font: 11px "Inter", tahoma, arial, sans-serif !important;
-  float: none !important;
+  float: right !important;
   width: auto !important;
-  word-spacing: normal !important;
-  letter-spacing: 0.3px;
-}
-
-#header .left-menu {
-  color: var(--accent) !important;
-  font: 11px "Inter", tahoma, arial, sans-serif !important;
-  font-weight: 600 !important;
-  float: none !important;
-  width: auto !important;
+  color: var(--text-sub) !important;
+  font: 11px "Segoe UI", tahoma, arial, sans-serif !important;
+  font-weight: 400 !important;
   word-spacing: normal !important;
   margin: 0 !important;
 }
 
-#header a, #header a:link, #header a:visited {
+#header .left-menu {
+  float: left !important;
+  width: auto !important;
+  color: var(--accent) !important;
+  font: 11px "Segoe UI", tahoma, arial, sans-serif !important;
+  font-weight: 700 !important;
+  word-spacing: normal !important;
+  margin: 0 !important;
+}
+
+#header a,
+#header a:link,
+#header a:visited {
   color: var(--accent) !important;
   text-decoration: none !important;
-  transition: color 0.15s;
 }
-#header a:hover { color: var(--text-bright) !important; }
+#header a:hover { color: var(--text) !important; }
 
-/* ---- Viewport / Body ---- */
-.x-body, .x-viewport { background: var(--bg-base) !important; }
+/* ================================================================
+   VIEWPORT & BODY PANELS
+   ================================================================ */
+.x-viewport,
+.x-body {
+  background: var(--bg-0) !important;
+}
 
-/* ---- Panels ---- */
 .x-panel,
 .x-plain {
-  background: var(--bg-panel) !important;
+  background: var(--bg-2) !important;
   border-color: var(--border) !important;
 }
 
 .x-panel-body,
 .x-plain-body {
-  background: var(--bg-panel) !important;
+  background: var(--bg-2) !important;
   color: var(--text) !important;
   border-color: var(--border) !important;
 }
 
-.x-panel-header,
-.x-panel-tbar,
-.x-panel-bbar {
-  background: #111111 !important;
-  border-color: var(--border-light) !important;
-  color: var(--text-bright) !important;
+/* Kill gradient images on panel corners/edges */
+.x-panel-tl, .x-panel-tr, .x-panel-bl, .x-panel-br,
+.x-panel-tc, .x-panel-bc, .x-panel-ml, .x-panel-mr,
+.x-panel-mc {
+  background-color: var(--bg-2) !important;
+  background-image: none !important;
+}
+
+/* Panel header — left accent bar */
+.x-panel-header {
+  background: var(--bg-1) !important;
+  background-image: none !important;
+  border-color: var(--border-hi) !important;
+  border-left: 2px solid var(--accent) !important;
+  padding: 5px 8px 5px 10px !important;
 }
 
 .x-panel-header-text {
-  color: var(--text-bright) !important;
-  font-weight: 600 !important;
+  color: var(--text) !important;
   font-size: 11px !important;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
 }
 
-.x-panel-mc { background: var(--bg-panel) !important; }
-.x-panel-tl, .x-panel-tr, .x-panel-bl, .x-panel-br,
-.x-panel-tc, .x-panel-bc, .x-panel-ml, .x-panel-mr {
-  background-color: var(--bg-panel) !important;
+.x-panel-tbar,
+.x-panel-bbar {
+  background: var(--bg-1) !important;
+  background-image: none !important;
+  border-color: var(--border-hi) !important;
 }
 
-/* ---- Splitter / Borders ---- */
+/* ================================================================
+   LAYOUT SPLITS
+   ================================================================ */
 .x-layout-split,
-.x-layout-mini,
+.x-layout-mini { background: var(--border-hi) !important; }
+
 .x-layout-collapsed-el {
-  background: var(--border-light) !important;
+  background: var(--bg-1) !important;
+  border-color: var(--border-hi) !important;
 }
 
-/* ---- Tab Panels ---- */
+/* ================================================================
+   TABS
+   ================================================================ */
 .x-tab-panel-header,
 .x-tab-panel-footer {
-  background: #111111 !important;
-  border-color: var(--border-light) !important;
+  background: var(--bg-1) !important;
+  background-image: none !important;
+  border-color: var(--border-hi) !important;
 }
 
 .x-tab-strip-wrap,
 .x-tab-strip {
-  background: #111111 !important;
-  border-bottom: 1px solid var(--border-light) !important;
+  background: var(--bg-1) !important;
+  background-image: none !important;
+  border-bottom: 1px solid var(--border-hi) !important;
 }
 
-.x-tab-strip-spacer { background: #111111 !important; }
+.x-tab-strip-spacer { background: var(--bg-1) !important; }
 
-.x-tab-strip li,
-.x-tab-strip .x-tab-strip-text {
-  color: var(--text-dim) !important;
+/* All tabs — inactive */
+.x-tab-strip li {
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+}
+
+.x-tab-strip .x-tab-left,
+.x-tab-strip .x-tab-right,
+.x-tab-strip .x-tab-strip-inner {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+.x-tab-strip .x-tab-strip-text,
+.x-tab-strip a {
+  color: var(--text-muted) !important;
   font-size: 11px !important;
   font-weight: 500 !important;
-  background: transparent !important;
 }
 
-.x-tab-strip .x-tab-right,
-.x-tab-strip .x-tab-left,
-.x-tab-strip .x-tab-strip-inner { background: transparent !important; }
+.x-tab-strip li:hover .x-tab-strip-text,
+.x-tab-strip li:hover a {
+  color: var(--text-sub) !important;
+}
 
+/* Active tab — bright white + accent underline */
 .x-tab-strip .x-tab-strip-active .x-tab-strip-text,
 .x-tab-strip .x-tab-strip-active a {
-  color: var(--accent) !important;
-  font-weight: 600 !important;
+  color: var(--text) !important;
+  font-weight: 700 !important;
+}
+
+.x-tab-strip .x-tab-strip-active {
+  background: transparent !important;
+  background-image: none !important;
+  border-bottom: 2px solid var(--accent) !important;
 }
 
 .x-tab-strip .x-tab-strip-active .x-tab-right {
-  border-bottom: 2px solid var(--accent) !important;
-  background: var(--bg-panel) !important;
+  background: transparent !important;
+  background-image: none !important;
 }
 
-.x-tab-strip li:hover .x-tab-strip-text { color: var(--text-bright) !important; }
+.x-tab-panel-body { background: var(--bg-2) !important; }
 
-.x-tab-panel-body { background: var(--bg-panel) !important; }
-
-/* ---- Zombie tree tabs ---- */
+/* Zombie tree tab panel */
 #zombie-tree-tabs-panel .x-tab-panel-header {
-  font: 11px tahoma, arial, helvetica, sans-serif !important;
+  background: var(--bg-1) !important;
+  background-image: none !important;
+  border-bottom: 1px solid var(--border-hi) !important;
   padding: 0 !important;
-  border-bottom: 1px solid var(--border-light) !important;
-  background: #111111 !important;
-  text-align: center;
+  text-align: center !important;
 }
 
-/* ---- Toolbar ---- */
+/* ================================================================
+   TOOLBAR
+   ================================================================ */
 .x-toolbar,
-.x-toolbar-ct,
-.x-tbar-page-number {
-  background: #141414 !important;
+.x-toolbar-ct {
+  background: var(--bg-1) !important;
+  background-image: none !important;
   border-color: var(--border) !important;
 }
 
-.x-toolbar .xtb-text,
-.x-toolbar .x-toolbar-cell {
-  color: var(--text) !important;
+.x-toolbar .xtb-text { color: var(--text) !important; }
+.x-toolbar .x-toolbar-cell { color: var(--text) !important; }
+.x-tbar-page-number { background: var(--bg-3) !important; color: var(--text) !important; }
+
+/* ================================================================
+   BUTTONS — flat, sharp
+   ================================================================ */
+.x-btn { border: 1px solid var(--border-hi) !important; }
+
+.x-btn-left,
+.x-btn-right,
+.x-btn-center {
+  background: var(--bg-3) !important;
+  background-image: none !important;
 }
 
-/* ---- Buttons ---- */
 .x-btn button,
 .x-btn-text,
 .x-btn-small .x-btn-text {
   color: var(--text) !important;
   font-size: 11px !important;
+  font-weight: 500 !important;
 }
-
-.x-btn-over button { color: var(--text-bright) !important; }
 
 .x-btn-over .x-btn-left,
 .x-btn-over .x-btn-right,
-.x-btn-over .x-btn-center { background-color: var(--bg-hover) !important; }
+.x-btn-over .x-btn-center {
+  background: var(--bg-4) !important;
+  background-image: none !important;
+}
+.x-btn-over button { color: var(--text) !important; }
 
 .x-btn-click .x-btn-left,
 .x-btn-click .x-btn-right,
-.x-btn-click .x-btn-center { background-color: var(--bg-selected) !important; }
+.x-btn-click .x-btn-center {
+  background: var(--bg-sel) !important;
+  background-image: none !important;
+}
 
-/* ---- Grids ---- */
-.x-grid3 { background: var(--bg-panel) !important; color: var(--text) !important; }
+/* ================================================================
+   GRIDS — flat, high-contrast
+   ================================================================ */
+.x-grid3 {
+  background: var(--bg-2) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
 
+/* Column headers */
 .x-grid3-header,
 .x-grid3-header-inner,
 .x-grid3-hd-inner,
 .x-list-header,
 .x-list-header-inner {
-  background: #111111 !important;
-  border-color: var(--border-light) !important;
-  color: var(--text-dim) !important;
+  background: var(--bg-1) !important;
+  background-image: none !important;
+  border-color: var(--border-hi) !important;
+  color: var(--text) !important;
   font-size: 11px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
+  font-weight: 700 !important;
+  letter-spacing: 0.4px !important;
+  text-transform: uppercase !important;
 }
 
-.x-grid3-col-resizer { background: var(--border-light) !important; }
+.x-grid3-hd { background: var(--bg-1) !important; background-image: none !important; }
+.x-grid3-hd-btn { background: var(--border-hi) !important; }
 
+/* Rows */
 .x-grid3-row {
-  background: var(--bg-panel) !important;
+  background: var(--bg-2) !important;
   border-bottom: 1px solid var(--border) !important;
   color: var(--text) !important;
 }
 
-.x-grid3-row-alt { background: var(--bg-raised) !important; }
+.x-grid3-row-alt {
+  background: #161616 !important;
+}
 
 .x-grid3-row-over,
 .x-list-over {
-  background: var(--bg-hover) !important;
-  color: var(--text-bright) !important;
+  background: var(--bg-4) !important;
+  color: var(--text) !important;
 }
 
 .x-grid3-row-selected,
 .x-list-selected {
-  background: var(--bg-selected) !important;
-  color: var(--text-bright) !important;
-  border-color: var(--accent-dim) !important;
+  background: var(--bg-sel) !important;
+  color: var(--text) !important;
+  border-color: #1a4a6a !important;
 }
 
 .x-grid3-cell-inner,
-.x-grid3-td-expander { color: var(--text) !important; }
+.x-grid3-td-expander {
+  color: var(--text) !important;
+  font-size: 11px !important;
+}
 
-.x-grid-empty { color: var(--text-dim) !important; }
+.x-grid3-col-resizer { background: var(--border-hi) !important; }
 
-/* ---- Tree Panel ---- */
-.x-tree-node a span { color: var(--text) !important; font-size: 11px !important; }
+.x-grid-empty {
+  color: var(--text-sub) !important;
+  font-style: italic;
+  padding: 12px !important;
+}
+
+/* ================================================================
+   TREE VIEW
+   ================================================================ */
+.x-tree-node a span {
+  color: var(--text) !important;
+  font-size: 11px !important;
+}
+
+.x-tree-node-over a span { color: var(--text) !important; }
 .x-tree-selected a span { color: var(--accent) !important; }
-.x-tree-node-over a span { color: var(--text-bright) !important; }
-
 .x-tree-node-el { background: transparent !important; }
-.x-tree-selected { background: var(--bg-selected) !important; }
 
-/* ---- Forms ---- */
+.x-tree-selected {
+  background: var(--bg-sel) !important;
+  border-color: var(--border-hi) !important;
+}
+
+/* ================================================================
+   FORMS — flat inputs
+   ================================================================ */
 .x-form-field,
 .x-form-text,
 .x-form-textarea,
@@ -262,14 +371,13 @@ input[type=text],
 input[type=password],
 textarea,
 select {
-  background: #1a1a1a !important;
+  background: var(--bg-3) !important;
   color: var(--text) !important;
-  border: 1px solid var(--border-light) !important;
-  border-radius: 3px !important;
-  font: 12px "Inter", tahoma, arial, sans-serif !important;
-  padding: 4px 7px !important;
+  border: 1px solid var(--border-hi) !important;
+  font: 12px "Segoe UI", tahoma, arial, sans-serif !important;
+  padding: 5px 8px !important;
   outline: none !important;
-  transition: border-color 0.15s !important;
+  transition: border-color 0.1s !important;
 }
 
 .x-form-field:focus,
@@ -277,104 +385,208 @@ input[type=text]:focus,
 input[type=password]:focus,
 textarea:focus {
   border-color: var(--accent) !important;
-  background: #1f1f1f !important;
+  background: var(--bg-4) !important;
 }
 
+/* Labels — visible white */
 .x-form-item-label,
 .x-form-element,
+.x-form-cb-label,
 label {
-  color: var(--text-dim) !important;
-  font: 11px "Inter", tahoma, arial, sans-serif !important;
+  color: var(--text-sub) !important;
+  font: 11px "Segoe UI", tahoma, arial, sans-serif !important;
 }
 
-.x-form-cb-label { color: var(--text) !important; }
+/* Trigger buttons (combo arrow, date picker) */
+.x-form-trigger {
+  background: var(--bg-4) !important;
+  background-image: none !important;
+  border-left: 1px solid var(--border-hi) !important;
+  filter: invert(0.7) brightness(1.3) !important;
+}
 
-/* ---- Combo / Dropdown ---- */
+/* ================================================================
+   COMBO / DROPDOWN
+   ================================================================ */
 .x-combo-list,
 .x-combo-list-inner {
-  background: #1a1a1a !important;
-  border: 1px solid var(--border-light) !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.6) !important;
+  background: var(--bg-3) !important;
+  border: 1px solid var(--border-hi) !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.8) !important;
 }
 
-.x-combo-list-item { color: var(--text) !important; padding: 4px 8px !important; }
-.x-combo-selected { background: var(--bg-selected) !important; color: var(--text-bright) !important; }
+.x-combo-list-item {
+  color: var(--text) !important;
+  padding: 5px 10px !important;
+  border-bottom: 1px solid var(--border) !important;
+}
 
-/* ---- Context Menus ---- */
+.x-combo-selected {
+  background: var(--bg-sel) !important;
+  color: var(--text) !important;
+}
+
+/* ================================================================
+   CONTEXT MENUS
+   ================================================================ */
 .x-menu,
 .x-menu-list {
-  background: #1a1a1a !important;
-  border: 1px solid var(--border-light) !important;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.7) !important;
-  border-radius: 4px !important;
-  padding: 4px 0 !important;
+  background: var(--bg-3) !important;
+  border: 1px solid var(--border-hi) !important;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.9) !important;
+  padding: 2px 0 !important;
 }
 
-.x-menu-item,
+.x-menu-item { background: transparent !important; }
+
+.x-menu-item a,
 .x-menu-item-text {
   color: var(--text) !important;
   font-size: 11px !important;
-  background: transparent !important;
+  padding: 5px 12px 5px 28px !important;
 }
 
-.x-menu-item-active,
-.x-menu-item:hover {
-  background: var(--bg-hover) !important;
-  color: var(--text-bright) !important;
+.x-menu-item-active {
+  background: var(--bg-4) !important;
+}
+.x-menu-item-active a,
+.x-menu-item-active .x-menu-item-text {
+  color: var(--text) !important;
 }
 
-.x-menu-sep { border-color: var(--border-light) !important; }
+.x-menu-sep {
+  border-top: 1px solid var(--border-hi) !important;
+  margin: 3px 0 !important;
+}
 
-/* ---- Windows / Dialogs ---- */
+/* ================================================================
+   WINDOWS / DIALOGS — flat, sharp
+   ================================================================ */
 .x-window {
-  background: var(--bg-raised) !important;
-  border: 1px solid var(--border-light) !important;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.8) !important;
-  border-radius: 4px !important;
+  background: var(--bg-3) !important;
+  background-image: none !important;
+  border: 1px solid var(--border-hi) !important;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.9) !important;
+}
+
+.x-window-tl, .x-window-tr, .x-window-tc,
+.x-window-bl, .x-window-br, .x-window-bc,
+.x-window-ml, .x-window-mr, .x-window-mc {
+  background-color: var(--bg-3) !important;
+  background-image: none !important;
 }
 
 .x-window-header,
 .x-window-tl,
-.x-window-tr,
-.x-window-tc {
-  background: #111111 !important;
-  border-color: var(--border-light) !important;
-  color: var(--text-bright) !important;
+.x-window-tc,
+.x-window-tr {
+  background: var(--bg-1) !important;
+  background-image: none !important;
+  border-color: var(--border-hi) !important;
 }
 
 .x-window-header-text {
-  color: var(--text-bright) !important;
-  font-weight: 600 !important;
+  color: var(--text) !important;
+  font-weight: 700 !important;
   font-size: 11px !important;
+  letter-spacing: 0.4px !important;
+  text-transform: uppercase !important;
 }
 
-.x-window-body { background: var(--bg-raised) !important; }
-.x-window-bl, .x-window-br, .x-window-bc { background: var(--bg-raised) !important; }
-.x-window-mc { background: var(--bg-raised) !important; }
+.x-window-body {
+  background: var(--bg-3) !important;
+  color: var(--text) !important;
+}
 
-/* ---- Status Bar ---- */
+/* Dialog tool buttons (close, minimize, etc.) */
+.x-tool {
+  background-image: none !important;
+  opacity: 0.6;
+  filter: invert(1) brightness(1.2) !important;
+}
+.x-tool:hover { opacity: 1; }
+
+/* ================================================================
+   STATUS BAR
+   ================================================================ */
 .x-statusbar {
-  background: #111111 !important;
-  border-top: 1px solid var(--border) !important;
-  color: var(--text-dim) !important;
+  background: #0d0d0d !important;
+  background-image: none !important;
+  border-top: 1px solid var(--border-hi) !important;
+  color: var(--text-sub) !important;
   font-size: 11px !important;
 }
 
-.x-statusbar .x-status-text { color: var(--text-dim) !important; }
+.x-statusbar .x-status-text { color: var(--text-sub) !important; }
+.x-statusbar .x-status-busy { color: var(--text-sub) !important; }
 .x-statusbar .x-status-error { color: var(--danger) !important; }
 .x-statusbar .x-status-valid { color: var(--success) !important; }
 
-/* ---- Scrollbars ---- */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(--bg-base); }
-::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+/* ================================================================
+   SCROLLBARS — thin, flat
+   ================================================================ */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-1); }
+::-webkit-scrollbar-thumb { background: #333; }
 ::-webkit-scrollbar-thumb:hover { background: #444; }
+::-webkit-scrollbar-corner { background: var(--bg-1); }
 
-/* ---- Notifications (Ext.server.msg) ---- */
+/* ================================================================
+   TOOLTIPS
+   ================================================================ */
+.x-tip,
+.x-tip-body {
+  background: var(--bg-3) !important;
+  background-image: none !important;
+  border: 1px solid var(--border-hi) !important;
+  color: var(--text) !important;
+  font-size: 11px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.8) !important;
+}
+
+.x-tip-tl, .x-tip-tr, .x-tip-bl, .x-tip-br,
+.x-tip-tc, .x-tip-bc, .x-tip-ml, .x-tip-mr,
+.x-tip-mc {
+  background-color: var(--bg-3) !important;
+  background-image: none !important;
+}
+
+/* ================================================================
+   LOAD MASK
+   ================================================================ */
+.x-mask { background: rgba(0,0,0,0.65) !important; }
+
+.x-mask-loading div {
+  background: var(--bg-3) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border-hi) !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.8) !important;
+  font-weight: 500 !important;
+}
+
+/* ================================================================
+   PROGRESS BAR
+   ================================================================ */
+.x-progress-wrap {
+  background: var(--bg-1) !important;
+  border: 1px solid var(--border-hi) !important;
+}
+.x-progress-inner { background: var(--bg-1) !important; }
+.x-progress-bar  { background: var(--accent) !important; }
+.x-progress-text { color: var(--text) !important; font-weight: 600 !important; }
+
+/* ================================================================
+   MISC OVERRIDES
+   ================================================================ */
+.x-editor .x-form-field { border-color: var(--accent) !important; }
+.x-resizable-handle { background: var(--border-hi) !important; }
+.x-form-check-wrap input { accent-color: var(--accent); }
+
+/* Notification messages */
 .msg .x-box-mc {
   font-size: 12px !important;
-  color: var(--text-bright) !important;
-  background: var(--bg-raised) !important;
+  color: var(--text) !important;
+  background: var(--bg-3) !important;
 }
 
 #msg-div {
@@ -385,119 +597,147 @@ label {
   z-index: 20000;
 }
 
-/* ---- Module command panel ---- */
+/* Module description */
 .command-module-panel-description {
+  color: var(--text-sub) !important;
+  font-size: 11px !important;
   margin-bottom: 10px;
   padding-top: 4px;
-  color: var(--text-dim) !important;
-  font-size: 11px !important;
 }
 
-/* ---- Misc Ext.JS overrides ---- */
-.x-mask { background: rgba(0,0,0,0.6) !important; }
-.x-mask-loading div {
-  background: var(--bg-raised) !important;
-  color: var(--text) !important;
-  border: 1px solid var(--border-light) !important;
-  border-radius: 4px !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.7) !important;
-}
+/* Feed icon */
+.feed-icon { display: none; }
 
-.x-editor .x-form-field { border-color: var(--accent) !important; }
-
-.x-resizable-handle { background: var(--border-light) !important; }
-
-/* Progress bar */
-.x-progress-wrap { background: var(--bg-raised) !important; border-color: var(--border) !important; }
-.x-progress-inner { background: var(--bg-raised) !important; }
-.x-progress-bar { background: var(--accent-dim) !important; }
-.x-progress-text { color: var(--text) !important; }
+/* Grid cell white-space */
+.x-grid3-cell-inner { white-space: normal; }
+.x-grid-empty { text-align: left; }
 
 /* Paging toolbar */
-.x-tbar-loading { opacity: 0.6; filter: invert(1) hue-rotate(200deg); }
+.x-tbar-loading { filter: invert(0.8) !important; }
 
-/* Checkbox / radio */
-.x-form-check-wrap input { accent-color: var(--accent); }
-
-/* Collapse tool */
+/* Collapse toggle */
 .x-tool-toggle,
 .x-tool-close,
 .x-tool-maximize,
 .x-tool-restore,
-.x-tool-minimize { filter: invert(0.8) brightness(1.2); }
+.x-tool-minimize {
+  filter: invert(0.9) brightness(1.2) !important;
+}
 
-/* ---- Login Page ---- */
-body.login-page {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-height: 100vh !important;
-  background: var(--bg-base) !important;
+/* Panel split bar */
+.x-split-bar { border-color: var(--border-hi) !important; }
+
+/* ================================================================
+   LOGIN PAGE
+   ================================================================ */
+body {
+  background: var(--bg-0) !important;
 }
 
 #centered {
-  width: 360px !important;
-  height: auto !important;
-  position: static !important;
-  margin: 0 auto !important;
-  top: auto !important;
-  left: auto !important;
+  width: 380px !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
 }
 
-/* Login form panel */
-#centered .x-panel,
-#centered .x-form-ct {
-  background: var(--bg-raised) !important;
-  border: 1px solid var(--border-light) !important;
-  border-radius: 6px !important;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.7) !important;
+/* Login panel card */
+#centered .x-panel {
+  background: var(--bg-2) !important;
+  border: 1px solid var(--border-hi) !important;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.8) !important;
 }
 
-#centered .x-panel-body { background: var(--bg-raised) !important; }
+#centered .x-panel-body {
+  background: var(--bg-2) !important;
+  padding: 20px 16px !important;
+}
+
+#centered .x-panel-tl, #centered .x-panel-tr,
+#centered .x-panel-bl, #centered .x-panel-br,
+#centered .x-panel-tc, #centered .x-panel-bc,
+#centered .x-panel-ml, #centered .x-panel-mr,
+#centered .x-panel-mc {
+  background-color: var(--bg-2) !important;
+  background-image: none !important;
+}
 
 #centered .x-panel-header {
-  background: #111111 !important;
-  border-bottom: 1px solid var(--border-light) !important;
-  border-radius: 6px 6px 0 0 !important;
-  padding: 10px 14px !important;
+  background: var(--bg-1) !important;
+  border-bottom: 1px solid var(--border-hi) !important;
+  border-left: 3px solid var(--accent) !important;
+  padding: 12px 16px !important;
 }
 
 #centered .x-panel-header-text {
-  color: var(--text-bright) !important;
+  color: var(--text) !important;
   font-size: 13px !important;
-  font-weight: 600 !important;
-  text-transform: none !important;
-  letter-spacing: 0.3px;
-}
-
-/* Login button */
-#centered .x-btn button {
-  background: var(--accent) !important;
-  color: #000 !important;
   font-weight: 700 !important;
-  border-radius: 3px !important;
-  padding: 5px 18px !important;
-  border: none !important;
-  cursor: pointer !important;
-  transition: background 0.15s !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
 }
 
-#centered .x-btn:hover button { background: #33bbff !important; }
+/* Form labels in login */
+#centered .x-form-item-label,
+#centered label {
+  color: var(--text-sub) !important;
+  font-weight: 600 !important;
+}
 
-/* Error message */
+/* Inputs */
+#centered .x-form-field,
+#centered input[type=text],
+#centered input[type=password] {
+  background: var(--bg-3) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border-hi) !important;
+  padding: 6px 10px !important;
+  font-size: 12px !important;
+}
+
+#centered input:focus {
+  border-color: var(--accent) !important;
+}
+
+/* Login button — full accent */
+#centered .x-btn .x-btn-left,
+#centered .x-btn .x-btn-right,
+#centered .x-btn .x-btn-center {
+  background: var(--accent) !important;
+  background-image: none !important;
+  border: none !important;
+}
+
+#centered .x-btn button,
+#centered .x-btn-text {
+  color: #000000 !important;
+  font-weight: 800 !important;
+  font-size: 12px !important;
+  letter-spacing: 0.5px !important;
+}
+
+#centered .x-btn:hover .x-btn-left,
+#centered .x-btn:hover .x-btn-right,
+#centered .x-btn:hover .x-btn-center {
+  background: var(--accent-hi) !important;
+  background-image: none !important;
+}
+
+/* Error */
 #loginError {
   color: var(--danger) !important;
   font-size: 11px !important;
-  padding: 6px 4px 0 !important;
+  font-weight: 600 !important;
+  padding: 8px 4px 0 !important;
 }
 
-/* ---- Icons — apply a subtle filter so they're visible on dark bg ---- */
+/* ================================================================
+   ICONS — keep saturation on dark bg
+   ================================================================ */
 .zombie-tree-icon,
 .x-tree-node-icon img,
 img[src*="/icons/"] {
-  filter: brightness(0.9) saturate(0.85);
+  filter: brightness(1.0) saturate(1.0);
 }
-
-/* ---- Thin horizontal rule between panels ---- */
-.x-panel + .x-panel,
-.x-split-bar { border-color: var(--border) !important; }

@@ -82,7 +82,7 @@ ZombieTab_Network = function(zombie) {
 		nodes.push({id: 1000, label: '', image: DIR + '../server.png', shape: 'image'});
 
 		var HB_ID = 1001;
-		nodes.push({id: HB_ID, label: 'Hooked Browser', image: DIR + 'Apps-internet-web-browser-icon.png', shape: 'image'});
+		nodes.push({id: HB_ID, label: 'Hooked Browser', image: DIR + 'skull.svg', shape: 'image'});
 		edges.push({from: 1000, to: HB_ID, length: EDGE_LENGTH_SUB});
 
 		// add subnet nodes
