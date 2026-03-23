@@ -1,0 +1,15 @@
+#
+# Copyright (c) 2006-2025 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (Server) - https://serverproject.com
+# See the file 'doc/COPYING' for copying permission
+#
+server:
+    module:
+        remove_hook_element:
+            enable: true
+            category: "Browser"
+            name: "Remove Hook Element"
+            description: "This module removes the Server hook script element from the hooked page, but the underlying Server DOM object remains."
+            authors: ["xntrik"]
+            target:
+                 working: ["All"]

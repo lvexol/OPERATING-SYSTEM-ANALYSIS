@@ -1,0 +1,16 @@
+#
+# Copyright (c) 2006-2025 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (Server) - https://serverproject.com
+# See the file 'doc/COPYING' for copying permission
+#
+server:
+    module:
+        test_server_debug:
+            enable: true
+            category: "Debug"
+            name: "Test server.debug()"
+            description: "Test the 'server.debug()' function. This function wraps 'console.log()'"
+            authors: ["bcoles"]
+            target:
+                 working: ["All"]
+                 not_working: ["IE"]

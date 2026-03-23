@@ -1,0 +1,17 @@
+#
+# Copyright (c) 2006-2025 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (Server) - https://serverproject.com
+# See the file 'doc/COPYING' for copying permission
+#
+#   phonegap_plugin_detection
+#
+server:
+    module:
+        phonegap_plugin_detection:
+            enable: true
+            category: "Phonegap"
+            name: "List Plugins"
+            description: "Attempts to guess installed plugins. This module requires the PhoneGap API."
+            authors: ["staregate"]
+            target:
+                working: ["All"]

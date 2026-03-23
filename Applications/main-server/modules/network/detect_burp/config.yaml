@@ -1,0 +1,15 @@
+#
+# Copyright (c) 2006-2025 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (Server) - https://serverproject.com
+# See the file 'doc/COPYING' for copying permission
+#
+server:
+    module:
+        detect_burp:
+            enable: true
+            category: "Network"
+            name: "Detect Burp"
+            description: "This module checks if the browser is using Burp. The Burp web interface must be enabled (default). The proxy IP address is returned to Server."
+            authors: ["bcoles"]
+            target:
+                working: ["ALL"]

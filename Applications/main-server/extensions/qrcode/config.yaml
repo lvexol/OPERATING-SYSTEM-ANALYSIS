@@ -1,0 +1,14 @@
+#
+# Copyright (c) 2006-2025 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (Server) - https://serverproject.com
+# See the file 'doc/COPYING' for copying permission
+#
+server:
+    extension:
+        qrcode:
+            name: 'QR Code Generator'
+            enable: false
+            authors: ["xntrik", "bcoles"]
+            targets: ["/demos/basic.html", "https://serverproject.com/"]
+            qrsize: 3
+            qrborder: 1

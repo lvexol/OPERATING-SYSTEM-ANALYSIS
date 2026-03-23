@@ -1,0 +1,282 @@
+#!/usr/bin/env ruby
+
+#
+# Copyright (c) 2006-2025 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (Server) - https://serverproject.com
+# See the file 'doc/COPYING' for copying permission
+#
+
+#
+# @note stop Fixnum deprecation warning from being displayed
+#
+$VERBOSE = nil
+
+#
+# @note Version check to ensure Server is running Ruby 3.0+
+#
+min_ruby_version = '3.0'
+if RUBY_VERSION < min_ruby_version
+  puts
+  puts "Ruby version #{RUBY_VERSION} is no longer supported. Please upgrade to Ruby version #{min_ruby_version} or later."
+  puts
+  exit 1
+end
+
+#
+# @note Platform check to ensure Server is not running on Windows
+#
+if RUBY_PLATFORM.downcase.include?('mswin') || RUBY_PLATFORM.downcase.include?('mingw')
+  puts
+  puts "Ruby platform #{RUBY_PLATFORM} is not supported."
+  puts
+  exit 1
+end
+
+#
+# @note set load path, application root directory and user preferences directory
+#
+$root_dir = File.join(File.expand_path(File.dirname(File.realpath(__FILE__))), '.')
+$:.unshift($root_dir)
+$home_dir = File.expand_path("#{Dir.home}/.server/", __FILE__).freeze
+
+#
+# @note Require core loader
+#
+require 'core/loader'
+require 'timeout'
+
+#
+# @note Ask user if they would like to update server
+#
+if File.exist?("#{$root_dir}git") && Server::Core::Console::CommandLine.parse[:update_disabled] == false
+  if Server::Core::Console::CommandLine.parse[:update_auto] == true
+    print 'Checking latest Server repository and updating'
+    `git pull && bundle`
+  elsif `git rev-parse master` != `git rev-parse origin/master`
+    begin
+      Timeout.timeout(5) do
+        puts '-- Server Update Available --'
+        print 'Would you like to update to lastest version? y/n: '
+        response = gets
+        `git pull && bundle` if response&.strip == 'y'
+      end
+    rescue Timeout::Error
+      puts "\nUpdate Skipped with input timeout"
+    end
+  end
+end
+
+#
+# @note Create ~/.server/
+#
+begin
+  FileUtils.mkdir_p($home_dir) unless File.directory?($home_dir)
+rescue => e
+  print_error "Could not create '#{$home_dir}': #{e.message}"
+  exit 1
+end
+
+#
+# @note Initialize the Configuration object. Loads a different config.yaml if -c flag was passed.
+#
+if Server::Core::Console::CommandLine.parse[:ext_config].empty?
+  config = Server::Core::Configuration.new("#{$root_dir}/config.yaml")
+else
+  config = Server::Core::Configuration.new("#{Server::Core::Console::CommandLine.parse[:ext_config]}")
+end
+
+#
+# @note set log level
+#
+Server.logger.level = config.get('server.debug') ? Logger::DEBUG : Logger::WARN
+
+#
+# @note Check the system language settings for UTF-8 compatibility
+#
+env_lang = ENV['LANG']
+if env_lang !~ /(utf8|utf-8)/i
+  print_warning "Warning: System language $LANG '#{env_lang}' does not appear to be UTF-8 compatible."
+  if env_lang =~ /\A([a-z]+_[a-z]+)\./i
+    country = $1
+    print_more "Try: export LANG=#{country}.utf8"
+  end
+end
+
+#
+# @note Check if port and WebSocket port need to be updated from command line parameters
+#
+unless Server::Core::Console::CommandLine.parse[:port].empty?
+  config.set('server.http.port', Server::Core::Console::CommandLine.parse[:port])
+end
+
+unless Server::Core::Console::CommandLine.parse[:ws_port].empty?
+  config.set('server.http.websocket.port', Server::Core::Console::CommandLine.parse[:ws_port])
+end
+
+#
+# @note Validate configuration file
+#
+unless Server::Core::Configuration.instance.validate
+  exit 1
+end
+
+#
+# @note Exit on default credentials
+#
+if config.get("server.credentials.user").eql?('server') && config.get("server.credentials.passwd").eql?('server')
+  print_error "ERROR: Default username and password in use!"
+  print_more "Change the server.credentials.passwd in config.yaml"
+  exit 1
+end
+
+#
+# @note Validate server.http.public and server.http.public_port
+#
+unless config.get('server.http.public.host').to_s.eql?('') || Server::Filters.is_valid_hostname?(config.get('server.http.public.host'))
+  print_error "ERROR: Invalid public hostname: #{config.get('server.http.public.host')}"
+  exit 1
+end
+
+unless config.get('server.http.public.port').to_s.eql?('') || Server::Filters.is_valid_port?(config.get('server.http.public.port'))
+  print_error "ERROR: Invalid public port: #{config.get('server.http.public.port')}"
+  exit 1
+end
+
+#
+# @note After the Server core is loaded, bootstrap the rest of the framework internals
+#
+require 'core/bootstrap'
+
+#
+# @note Prints the Server ascii art if the -a flag was passed
+#
+if Server::Core::Console::CommandLine.parse[:ascii_art] == true
+  Server::Core::Console::Banners.print_ascii_art
+end
+
+#
+# @note Prints Server welcome message
+#
+Server::Core::Console::Banners.print_welcome_msg
+
+#
+# @note Loads enabled extensions
+#
+Server::Extensions.load
+
+#
+# @note Loads enabled modules
+#
+Server::Modules.load
+
+#
+# @note Disable reverse DNS
+#
+Socket.do_not_reverse_lookup = true
+
+#
+# @note Database setup
+#
+#
+# @note Load the database
+#
+db_file = config.get('server.database.file')
+# @note Resets the database if the -x flag was passed
+if Server::Core::Console::CommandLine.parse[:resetdb]
+  print_info 'Resetting the database for Server.'
+  begin
+    File.delete(db_file) if File.exist?(db_file)
+  rescue => e
+    print_error("Could not remove '#{db_file}' database file: #{e.message}")
+    exit(1)
+  end
+end
+
+# Connect to DB
+ActiveRecord::Base.logger = nil
+OTR::ActiveRecord.configure_from_hash!(adapter:'sqlite3', database:db_file)
+# otr-activerecord require you to manually establish the connection with the following line
+#Also a check to confirm that the correct Gem version is installed to require it, likely easier for old systems.
+if Gem.loaded_specs['otr-activerecord'].version > Gem::Version.create('1.4.2')
+  OTR::ActiveRecord.establish_connection!
+end
+
+# Migrate (if required)
+ActiveRecord::Migration.verbose = false # silence activerecord migration stdout messages
+ActiveRecord::Migrator.migrations_paths = [File.join('core', 'main', 'ar-migrations')]
+context = ActiveRecord::MigrationContext.new(ActiveRecord::Migrator.migrations_paths)
+if context.needs_migration?
+  ActiveRecord::Migrator.new(:up, context.migrations, context.schema_migration, context.internal_metadata).migrate
+end
+
+#
+# @note Extensions may take a moment to load, thus we print out a please wait message
+#
+print_info 'Server is loading. Wait a few seconds...'
+
+#
+# @note Execute migration procedure, checks for new modules
+#
+begin
+  Server::Core::Migration.instance.update_db!
+rescue => e
+  print_error("Could not update '#{db_file}' database file: #{e.message}")
+  exit(1)
+end
+
+#
+# @note Create HTTP Server and prepare it to run
+#
+http_hook_server = Server::Core::HttpServer.instance
+http_hook_server.prepare
+
+begin
+  Server::Core::Logger.instance.register('System', 'Server server started')
+rescue => e
+  print_error("Database connection failed: #{e.message}")
+  exit(1)
+end
+
+#
+# @note Prints information back to the user before running the server
+#
+Server::Core::Console::Banners.print_loaded_extensions
+Server::Core::Console::Banners.print_loaded_modules
+Server::Core::Console::Banners.print_network_interfaces_count
+Server::Core::Console::Banners.print_network_interfaces_routes
+Server::Core::Console::Banners.print_http_proxy
+Server::Core::Console::Banners.print_dns
+
+#
+# @note Prints the API key needed to use the RESTful API
+#
+print_info "RESTful API key: #{Server::Core::Crypto::api_token}"
+
+#
+# @note Load the GeoIP database
+#
+Server::Core::GeoIp.instance
+
+#
+# @note Call the API method 'pre_http_start'
+#
+Server::API::Registrar.instance.fire(Server::API::HttpServer, 'pre_http_start', http_hook_server)
+
+#
+# @note Load any ARE (Autorun Rule Engine) rules scanning the <server_root>/arerules/enabled directory
+#
+Server::Core::AutorunEngine::RuleLoader.instance.load_directory
+
+#
+# @note Start the WebSocket server
+#
+if config.get("server.http.websocket.enable")
+  Server::Core::Websocket::Websocket.instance
+  Server::Core::Console::Banners.print_websocket_servers
+end
+
+#
+# @note Start HTTP server
+#
+print_info 'Server server started (press control+c to stop)'
+http_hook_server.start

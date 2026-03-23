@@ -1,0 +1,15 @@
+#
+# Copyright (c) 2006-2025 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (Server) - https://serverproject.com
+# See the file 'doc/COPYING' for copying permission
+#
+server:
+    module:
+        test_get_variable:
+            enable: true
+            category: "Debug"
+            name: "Test JS variable passing"
+            description: "Test for JS variable passing from another Server's script via Window object"
+            authors: ["dnkolegov"]
+            target:
+                 working: ["All"]

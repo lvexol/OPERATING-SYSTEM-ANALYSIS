@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ ! -f /tmp/server.pid ]; then
+  echo "Not running (no PID file)"
+  exit 1
+fi
+
+PID=$(cat /tmp/server.pid)
+
+if kill -0 $PID 2>/dev/null; then
+  kill $PID
+  rm /tmp/server.pid
+  echo "Stopped (PID $PID)"
+else
+  echo "Not running (stale PID file)"
+  rm /tmp/server.pid
+fi

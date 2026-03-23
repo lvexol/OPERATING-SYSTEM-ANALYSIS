@@ -1,0 +1,17 @@
+#
+# Copyright (c) 2006-2025 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (Server) - https://serverproject.com
+# See the file 'doc/COPYING' for copying permission
+#
+#   phonegap
+#
+server:
+    module:
+        phonegap_detect:
+            enable: true
+            category: "Phonegap"
+            name: "Detect PhoneGap"
+            description: "Detects if the PhoneGap API is present."
+            authors: ["mh"]
+            target:
+                working: ["All"]

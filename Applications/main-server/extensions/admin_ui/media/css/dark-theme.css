@@ -1,0 +1,503 @@
+/* ============================================================
+   DARK THEME OVERRIDE
+   Clean black theme with sharp lines
+   ============================================================ */
+
+/* ---- Variables via root ---- */
+:root {
+  --bg-base:      #0e0e0e;
+  --bg-panel:     #161616;
+  --bg-raised:    #1f1f1f;
+  --bg-hover:     #252525;
+  --bg-selected:  #0f2d4a;
+  --accent:       #00aaff;
+  --accent-dim:   #0077bb;
+  --text:         #d4d4d4;
+  --text-dim:     #777777;
+  --text-bright:  #f0f0f0;
+  --border:       #2a2a2a;
+  --border-light: #333333;
+  --success:      #22c55e;
+  --warning:      #f59e0b;
+  --danger:       #ef4444;
+  --header-h:     28px;
+  --font:         12px/1.4 "Inter", "Segoe UI", tahoma, arial, sans-serif;
+}
+
+/* ---- Reset & Base ---- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  background: var(--bg-base) !important;
+  color: var(--text) !important;
+  font: var(--font) !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- Header bar ---- */
+#header {
+  background: #111111 !important;
+  border-bottom: 1px solid var(--border-light) !important;
+  height: var(--header-h) !important;
+  line-height: var(--header-h) !important;
+  padding: 0 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+#header .right-menu {
+  color: var(--text-dim) !important;
+  font: 11px "Inter", tahoma, arial, sans-serif !important;
+  float: none !important;
+  width: auto !important;
+  word-spacing: normal !important;
+  letter-spacing: 0.3px;
+}
+
+#header .left-menu {
+  color: var(--accent) !important;
+  font: 11px "Inter", tahoma, arial, sans-serif !important;
+  font-weight: 600 !important;
+  float: none !important;
+  width: auto !important;
+  word-spacing: normal !important;
+  margin: 0 !important;
+}
+
+#header a, #header a:link, #header a:visited {
+  color: var(--accent) !important;
+  text-decoration: none !important;
+  transition: color 0.15s;
+}
+#header a:hover { color: var(--text-bright) !important; }
+
+/* ---- Viewport / Body ---- */
+.x-body, .x-viewport { background: var(--bg-base) !important; }
+
+/* ---- Panels ---- */
+.x-panel,
+.x-plain {
+  background: var(--bg-panel) !important;
+  border-color: var(--border) !important;
+}
+
+.x-panel-body,
+.x-plain-body {
+  background: var(--bg-panel) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+
+.x-panel-header,
+.x-panel-tbar,
+.x-panel-bbar {
+  background: #111111 !important;
+  border-color: var(--border-light) !important;
+  color: var(--text-bright) !important;
+}
+
+.x-panel-header-text {
+  color: var(--text-bright) !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.x-panel-mc { background: var(--bg-panel) !important; }
+.x-panel-tl, .x-panel-tr, .x-panel-bl, .x-panel-br,
+.x-panel-tc, .x-panel-bc, .x-panel-ml, .x-panel-mr {
+  background-color: var(--bg-panel) !important;
+}
+
+/* ---- Splitter / Borders ---- */
+.x-layout-split,
+.x-layout-mini,
+.x-layout-collapsed-el {
+  background: var(--border-light) !important;
+}
+
+/* ---- Tab Panels ---- */
+.x-tab-panel-header,
+.x-tab-panel-footer {
+  background: #111111 !important;
+  border-color: var(--border-light) !important;
+}
+
+.x-tab-strip-wrap,
+.x-tab-strip {
+  background: #111111 !important;
+  border-bottom: 1px solid var(--border-light) !important;
+}
+
+.x-tab-strip-spacer { background: #111111 !important; }
+
+.x-tab-strip li,
+.x-tab-strip .x-tab-strip-text {
+  color: var(--text-dim) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  background: transparent !important;
+}
+
+.x-tab-strip .x-tab-right,
+.x-tab-strip .x-tab-left,
+.x-tab-strip .x-tab-strip-inner { background: transparent !important; }
+
+.x-tab-strip .x-tab-strip-active .x-tab-strip-text,
+.x-tab-strip .x-tab-strip-active a {
+  color: var(--accent) !important;
+  font-weight: 600 !important;
+}
+
+.x-tab-strip .x-tab-strip-active .x-tab-right {
+  border-bottom: 2px solid var(--accent) !important;
+  background: var(--bg-panel) !important;
+}
+
+.x-tab-strip li:hover .x-tab-strip-text { color: var(--text-bright) !important; }
+
+.x-tab-panel-body { background: var(--bg-panel) !important; }
+
+/* ---- Zombie tree tabs ---- */
+#zombie-tree-tabs-panel .x-tab-panel-header {
+  font: 11px tahoma, arial, helvetica, sans-serif !important;
+  padding: 0 !important;
+  border-bottom: 1px solid var(--border-light) !important;
+  background: #111111 !important;
+  text-align: center;
+}
+
+/* ---- Toolbar ---- */
+.x-toolbar,
+.x-toolbar-ct,
+.x-tbar-page-number {
+  background: #141414 !important;
+  border-color: var(--border) !important;
+}
+
+.x-toolbar .xtb-text,
+.x-toolbar .x-toolbar-cell {
+  color: var(--text) !important;
+}
+
+/* ---- Buttons ---- */
+.x-btn button,
+.x-btn-text,
+.x-btn-small .x-btn-text {
+  color: var(--text) !important;
+  font-size: 11px !important;
+}
+
+.x-btn-over button { color: var(--text-bright) !important; }
+
+.x-btn-over .x-btn-left,
+.x-btn-over .x-btn-right,
+.x-btn-over .x-btn-center { background-color: var(--bg-hover) !important; }
+
+.x-btn-click .x-btn-left,
+.x-btn-click .x-btn-right,
+.x-btn-click .x-btn-center { background-color: var(--bg-selected) !important; }
+
+/* ---- Grids ---- */
+.x-grid3 { background: var(--bg-panel) !important; color: var(--text) !important; }
+
+.x-grid3-header,
+.x-grid3-header-inner,
+.x-grid3-hd-inner,
+.x-list-header,
+.x-list-header-inner {
+  background: #111111 !important;
+  border-color: var(--border-light) !important;
+  color: var(--text-dim) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.x-grid3-col-resizer { background: var(--border-light) !important; }
+
+.x-grid3-row {
+  background: var(--bg-panel) !important;
+  border-bottom: 1px solid var(--border) !important;
+  color: var(--text) !important;
+}
+
+.x-grid3-row-alt { background: var(--bg-raised) !important; }
+
+.x-grid3-row-over,
+.x-list-over {
+  background: var(--bg-hover) !important;
+  color: var(--text-bright) !important;
+}
+
+.x-grid3-row-selected,
+.x-list-selected {
+  background: var(--bg-selected) !important;
+  color: var(--text-bright) !important;
+  border-color: var(--accent-dim) !important;
+}
+
+.x-grid3-cell-inner,
+.x-grid3-td-expander { color: var(--text) !important; }
+
+.x-grid-empty { color: var(--text-dim) !important; }
+
+/* ---- Tree Panel ---- */
+.x-tree-node a span { color: var(--text) !important; font-size: 11px !important; }
+.x-tree-selected a span { color: var(--accent) !important; }
+.x-tree-node-over a span { color: var(--text-bright) !important; }
+
+.x-tree-node-el { background: transparent !important; }
+.x-tree-selected { background: var(--bg-selected) !important; }
+
+/* ---- Forms ---- */
+.x-form-field,
+.x-form-text,
+.x-form-textarea,
+input[type=text],
+input[type=password],
+textarea,
+select {
+  background: #1a1a1a !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 3px !important;
+  font: 12px "Inter", tahoma, arial, sans-serif !important;
+  padding: 4px 7px !important;
+  outline: none !important;
+  transition: border-color 0.15s !important;
+}
+
+.x-form-field:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+textarea:focus {
+  border-color: var(--accent) !important;
+  background: #1f1f1f !important;
+}
+
+.x-form-item-label,
+.x-form-element,
+label {
+  color: var(--text-dim) !important;
+  font: 11px "Inter", tahoma, arial, sans-serif !important;
+}
+
+.x-form-cb-label { color: var(--text) !important; }
+
+/* ---- Combo / Dropdown ---- */
+.x-combo-list,
+.x-combo-list-inner {
+  background: #1a1a1a !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.6) !important;
+}
+
+.x-combo-list-item { color: var(--text) !important; padding: 4px 8px !important; }
+.x-combo-selected { background: var(--bg-selected) !important; color: var(--text-bright) !important; }
+
+/* ---- Context Menus ---- */
+.x-menu,
+.x-menu-list {
+  background: #1a1a1a !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.7) !important;
+  border-radius: 4px !important;
+  padding: 4px 0 !important;
+}
+
+.x-menu-item,
+.x-menu-item-text {
+  color: var(--text) !important;
+  font-size: 11px !important;
+  background: transparent !important;
+}
+
+.x-menu-item-active,
+.x-menu-item:hover {
+  background: var(--bg-hover) !important;
+  color: var(--text-bright) !important;
+}
+
+.x-menu-sep { border-color: var(--border-light) !important; }
+
+/* ---- Windows / Dialogs ---- */
+.x-window {
+  background: var(--bg-raised) !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.8) !important;
+  border-radius: 4px !important;
+}
+
+.x-window-header,
+.x-window-tl,
+.x-window-tr,
+.x-window-tc {
+  background: #111111 !important;
+  border-color: var(--border-light) !important;
+  color: var(--text-bright) !important;
+}
+
+.x-window-header-text {
+  color: var(--text-bright) !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+}
+
+.x-window-body { background: var(--bg-raised) !important; }
+.x-window-bl, .x-window-br, .x-window-bc { background: var(--bg-raised) !important; }
+.x-window-mc { background: var(--bg-raised) !important; }
+
+/* ---- Status Bar ---- */
+.x-statusbar {
+  background: #111111 !important;
+  border-top: 1px solid var(--border) !important;
+  color: var(--text-dim) !important;
+  font-size: 11px !important;
+}
+
+.x-statusbar .x-status-text { color: var(--text-dim) !important; }
+.x-statusbar .x-status-error { color: var(--danger) !important; }
+.x-statusbar .x-status-valid { color: var(--success) !important; }
+
+/* ---- Scrollbars ---- */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #444; }
+
+/* ---- Notifications (Ext.server.msg) ---- */
+.msg .x-box-mc {
+  font-size: 12px !important;
+  color: var(--text-bright) !important;
+  background: var(--bg-raised) !important;
+}
+
+#msg-div {
+  position: absolute;
+  left: 35%;
+  top: 20px;
+  width: 260px;
+  z-index: 20000;
+}
+
+/* ---- Module command panel ---- */
+.command-module-panel-description {
+  margin-bottom: 10px;
+  padding-top: 4px;
+  color: var(--text-dim) !important;
+  font-size: 11px !important;
+}
+
+/* ---- Misc Ext.JS overrides ---- */
+.x-mask { background: rgba(0,0,0,0.6) !important; }
+.x-mask-loading div {
+  background: var(--bg-raised) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.7) !important;
+}
+
+.x-editor .x-form-field { border-color: var(--accent) !important; }
+
+.x-resizable-handle { background: var(--border-light) !important; }
+
+/* Progress bar */
+.x-progress-wrap { background: var(--bg-raised) !important; border-color: var(--border) !important; }
+.x-progress-inner { background: var(--bg-raised) !important; }
+.x-progress-bar { background: var(--accent-dim) !important; }
+.x-progress-text { color: var(--text) !important; }
+
+/* Paging toolbar */
+.x-tbar-loading { opacity: 0.6; filter: invert(1) hue-rotate(200deg); }
+
+/* Checkbox / radio */
+.x-form-check-wrap input { accent-color: var(--accent); }
+
+/* Collapse tool */
+.x-tool-toggle,
+.x-tool-close,
+.x-tool-maximize,
+.x-tool-restore,
+.x-tool-minimize { filter: invert(0.8) brightness(1.2); }
+
+/* ---- Login Page ---- */
+body.login-page {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 100vh !important;
+  background: var(--bg-base) !important;
+}
+
+#centered {
+  width: 360px !important;
+  height: auto !important;
+  position: static !important;
+  margin: 0 auto !important;
+  top: auto !important;
+  left: auto !important;
+}
+
+/* Login form panel */
+#centered .x-panel,
+#centered .x-form-ct {
+  background: var(--bg-raised) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.7) !important;
+}
+
+#centered .x-panel-body { background: var(--bg-raised) !important; }
+
+#centered .x-panel-header {
+  background: #111111 !important;
+  border-bottom: 1px solid var(--border-light) !important;
+  border-radius: 6px 6px 0 0 !important;
+  padding: 10px 14px !important;
+}
+
+#centered .x-panel-header-text {
+  color: var(--text-bright) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  letter-spacing: 0.3px;
+}
+
+/* Login button */
+#centered .x-btn button {
+  background: var(--accent) !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+  border-radius: 3px !important;
+  padding: 5px 18px !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background 0.15s !important;
+}
+
+#centered .x-btn:hover button { background: #33bbff !important; }
+
+/* Error message */
+#loginError {
+  color: var(--danger) !important;
+  font-size: 11px !important;
+  padding: 6px 4px 0 !important;
+}
+
+/* ---- Icons — apply a subtle filter so they're visible on dark bg ---- */
+.zombie-tree-icon,
+.x-tree-node-icon img,
+img[src*="/icons/"] {
+  filter: brightness(0.9) saturate(0.85);
+}
+
+/* ---- Thin horizontal rule between panels ---- */
+.x-panel + .x-panel,
+.x-split-bar { border-color: var(--border) !important; }

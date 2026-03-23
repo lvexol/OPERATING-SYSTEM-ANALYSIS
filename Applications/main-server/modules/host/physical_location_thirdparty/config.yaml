@@ -1,0 +1,15 @@
+#
+# Copyright (c) 2006-2025 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (Server) - https://serverproject.com
+# See the file 'doc/COPYING' for copying permission
+#
+server:
+    module:
+        physical_location_thirdparty:
+            enable: true
+            category: "Host"
+            name: "Get Geolocation (Third-Party)"
+            description: "This module retrieves the physical location of the hooked browser using third-party hosted geolocation APIs."
+            authors: ["bcoles"]
+            target:
+                working: "ALL"

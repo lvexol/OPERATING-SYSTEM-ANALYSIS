@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ -f /tmp/server.pid ] && kill -0 $(cat /tmp/server.pid) 2>/dev/null; then
+  echo "Already running (PID $(cat /tmp/server.pid))"
+  exit 1
+fi
+
+cd "$(dirname "$0")"
+/home/vexo/.local/share/gem/ruby/3.2.0/bin/bundle exec ruby server > /tmp/server.log 2>&1 &
+echo $! > /tmp/server.pid
+echo "Started (PID $!)"
+echo "Logs: tail -f /tmp/server.log"

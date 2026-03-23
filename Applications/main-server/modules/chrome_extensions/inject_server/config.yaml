@@ -1,0 +1,16 @@
+#
+# Copyright (c) 2006-2025 Wade Alcorn - wade@bindshell.net
+# Browser Exploitation Framework (Server) - https://serverproject.com
+# See the file 'doc/COPYING' for copying permission
+#
+server:
+    module:
+        inject_server:
+            enable: true
+            category: "Chrome Extensions"
+            name: "Inject Server"
+            description: "Attempt to inject the Server hook on all the available tabs."
+            authors: ["Kos", "antisnatchor"]
+            target:
+                working: ["C"]
+                not_working: ["All"]
