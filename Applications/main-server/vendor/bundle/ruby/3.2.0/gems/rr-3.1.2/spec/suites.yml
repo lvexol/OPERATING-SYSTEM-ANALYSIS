@@ -1,0 +1,10 @@
+19:
+  rvm_versions:
+    - name: 1.9.3
+    - name: 2.0.0
+    - name: jruby-19mode
+  suites:
+    - name: rspec_2
+      desc: 'RSpec 2'
+  env:
+    SPEC_OPTS: '--require $PWD/spec/custom_formatter_for_rspec_2 --format CustomFormatterForRSpec2 --backtrace'

@@ -1,0 +1,11 @@
+require:
+  - rubocop-performance
+
+inherit_from:
+  - ./.rubocop-common.yml
+  - ./.rubocop-performance.yml
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+Metrics/PerceivedComplexity:
+  Max: 10

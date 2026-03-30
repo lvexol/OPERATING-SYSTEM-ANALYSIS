@@ -1,71 +1,116 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row">
-    <!-- Stats Cards -->
-    <div class="col-md-3">
-        <div class="card text-center">
-            <div class="card-body">
-                <h5 class="card-title text-muted">Total Systems</h5>
-                <h2 class="display-4">{{ total_systems }}</h2>
-            </div>
-        </div>
+<!-- Stats Row -->
+<div class="row g-3 mb-4">
+  <div class="col-6 col-md-3">
+    <div class="card text-center h-100">
+      <div class="card-body">
+        <p class="card-title text-muted mb-1 small text-uppercase">Total Systems</p>
+        <h2 class="display-5 mb-0">{{ total_systems }}</h2>
+      </div>
     </div>
-    <div class="col-md-3">
-        <div class="card text-center">
-            <div class="card-body">
-                <h5 class="card-title text-muted">High Risk</h5>
-                <h2 class="display-4 text-danger">{{ high_risk_count }}</h2>
-            </div>
-        </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="card text-center h-100">
+      <div class="card-body">
+        <p class="card-title text-muted mb-1 small text-uppercase">High Risk</p>
+        <h2 class="display-5 mb-0 text-danger">{{ high_risk_count }}</h2>
+      </div>
     </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="card text-center h-100">
+      <div class="card-body">
+        <p class="card-title text-muted mb-1 small text-uppercase">Total Logs</p>
+        <h2 class="display-5 mb-0 text-info">{{ total_logs }}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="card text-center h-100">
+      <div class="card-body">
+        <p class="card-title text-muted mb-1 small text-uppercase">Avg Risk Score</p>
+        <h2 class="display-5 mb-0 {% if avg_risk > 50 %}text-warning{% else %}text-success{% endif %}">
+          {{ avg_risk }}
+        </h2>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- Recent Telemetry Table -->
+<!-- Systems Table (latest snapshot per host) -->
 <div class="card">
-    <div class="card-header">
-        Recent Telemetry
-    </div>
-    <div class="card-body p-0">
-        <table class="table table-hover mb-0">
-            <thead>
-                <tr>
-                    <th>Hostname</th>
-                    <th>IP</th>
-                    <th>Risk</th>
-                    <th>Analyzed At</th>
-                    <th>Key Findings</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for log in latest_logs %}
-                <tr>
-                    <td>{{ log.hostname }}</td>
-                    <td>{{ log.ip_address }}</td>
-                    <td>
-                        <span
-                            class="badge {% if log.risk_score > 70 %}badge-risk-high{% elif log.risk_score > 40 %}badge-risk-med{% else %}badge-risk-low{% endif %}">
-                            {{ log.risk_score }}
-                        </span>
-                    </td>
-                    <td>{{ log.analyzed_at|date:"Y-m-d H:i:s" }}</td>
-                    <td>
-                        {% for finding in log.parsed_data.analysis_report|slice:":2" %}
-                        <small class="d-block text-warning">{{ finding }}</small>
-                        {% endfor %}
-                    </td>
-                    <td>
-                        <a href="{% url 'system_detail' log.hostname %}" class="btn btn-sm btn-outline-info">Details</a>
-                    </td>
-                </tr>
-                {% empty %}
-                <tr>
-                    <td colspan="6" class="text-center py-4">No telemetry received yet.</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <span>Systems &mdash; Latest Snapshot</span>
+    <small class="text-muted">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</small>
+  </div>
+  <div class="card-body p-0">
+    <table class="table table-hover mb-0">
+      <thead>
+        <tr>
+          <th>Hostname</th>
+          <th>IP</th>
+          <th>Risk</th>
+          <th>Last Seen</th>
+          <th>Key Findings</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for log in latest_logs %}
+        <tr>
+          <td class="fw-bold">{{ log.hostname }}</td>
+          <td>{{ log.ip_address|default:"—" }}</td>
+          <td>
+            <span class="badge
+              {% if log.risk_score > 70 %}badge-risk-high
+              {% elif log.risk_score > 40 %}badge-risk-med
+              {% else %}badge-risk-low{% endif %}">
+              {{ log.risk_score }}
+            </span>
+          </td>
+          <td>{{ log.timestamp|date:"Y-m-d H:i" }}</td>
+          <td>
+            {% for finding in log.parsed_data.analysis_report|slice:":2" %}
+              <small class="d-block text-warning">{{ finding }}</small>
+            {% empty %}
+              <small class="text-muted">Clean</small>
+            {% endfor %}
+          </td>
+          <td>
+            <a href="{% url 'system_detail' log.hostname %}" class="btn btn-sm btn-outline-info">Details</a>
+          </td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="6" class="text-center py-4 text-muted">No telemetry received yet.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  {% if page_obj.paginator.num_pages > 1 %}
+  <div class="card-footer">
+    <nav>
+      <ul class="pagination pagination-sm mb-0 justify-content-center">
+        {% if page_obj.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Prev</a>
+        </li>
+        {% endif %}
+        <li class="page-item disabled">
+          <span class="page-link">{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+        </li>
+        {% if page_obj.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+  {% endif %}
 </div>
 {% endblock %}

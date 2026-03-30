@@ -2,43 +2,128 @@
 
 {% block content %}
 <div class="row mb-4">
-    <div class="col">
-        <h2>System Detail: {{ hostname }}</h2>
-        <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
-    </div>
+  <div class="col">
+    <h4>System Detail: <span class="text-info">{{ hostname }}</span></h4>
+    <a href="{% url 'dashboard' %}" class="btn btn-sm btn-secondary">← Dashboard</a>
+  </div>
 </div>
 
-<div class="card">
-    <div class="card-header">Telemetry History</div>
-    <div class="card-body p-0">
-        <table class="table table-hover table-sm">
-            <thead>
-                <tr>
-                    <th>Timestamp</th>
-                    <th>IP</th>
-                    <th>Risk</th>
-                    <th>Process Count</th>
-                    <th>CPU %</th>
-                    <th>Mem %</th>
-                    <th>Analysis</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for log in logs %}
-                <tr>
-                    <td>{{ log.timestamp|date:"Y-m-d H:i:s" }}</td>
-                    <td>{{ log.ip_address }}</td>
-                    <td>{{ log.risk_score }}</td>
-                    <td>{{ log.parsed_data.process_info|length }}</td>
-                    <td>{{ log.parsed_data.cpu_info.usage_percent }}%</td>
-                    <td>{{ log.parsed_data.memory_info.used_percent|floatformat:1 }}%</td>
-                    <td>
-                        <small>{{ log.parsed_data.analysis_report|join:", " }}</small>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+{% with first=logs.0 %}
+{% if first %}
+<div class="row g-3 mb-4">
+  <div class="col-md-4">
+    <div class="card h-100">
+      <div class="card-header">Last Snapshot</div>
+      <div class="card-body small">
+        <p class="mb-1"><strong>OS:</strong>
+          {{ first.parsed_data.system_info.os_name|default:"—" }}
+          {{ first.parsed_data.system_info.os_version|default:"" }}
+        </p>
+        <p class="mb-1"><strong>Kernel:</strong> {{ first.parsed_data.system_info.kernel_version|default:"—" }}</p>
+        <p class="mb-1"><strong>Arch:</strong> {{ first.parsed_data.system_info.cpu_arch|default:"—" }}</p>
+        <p class="mb-1"><strong>CPU:</strong> {{ first.parsed_data.cpu_info.model|default:"—" }}</p>
+        <p class="mb-0"><strong>IP:</strong> {{ first.ip_address|default:"—" }}</p>
+      </div>
     </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100">
+      <div class="card-header">Current Risk</div>
+      <div class="card-body text-center">
+        <h1 class="display-3
+          {% if first.risk_score > 70 %}text-danger
+          {% elif first.risk_score > 40 %}text-warning
+          {% else %}text-success{% endif %}">
+          {{ first.risk_score }}
+        </h1>
+        {% for finding in first.parsed_data.analysis_report %}
+          <small class="d-block text-warning">{{ finding }}</small>
+        {% empty %}
+          <small class="text-muted">No issues detected</small>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100">
+      <div class="card-header">Resources</div>
+      <div class="card-body small">
+        <p class="mb-1"><strong>CPU:</strong> {{ first.parsed_data.cpu_info.usage_percent|default:"—" }}%</p>
+        <p class="mb-1"><strong>Memory:</strong> {{ first.parsed_data.memory_info.used_percent|floatformat:1|default:"—" }}%</p>
+        <p class="mb-1"><strong>Processes:</strong> {{ first.parsed_data.process_info|length }}</p>
+        <p class="mb-0"><strong>Network ifaces:</strong> {{ first.parsed_data.network_info|length }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endwith %}
+
+<div class="card">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <span>Telemetry History</span>
+    {% if page_obj %}
+    <small class="text-muted">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</small>
+    {% endif %}
+  </div>
+  <div class="card-body p-0">
+    <table class="table table-hover table-sm mb-0">
+      <thead>
+        <tr>
+          <th>Timestamp</th>
+          <th>IP</th>
+          <th>Risk</th>
+          <th>Procs</th>
+          <th>CPU %</th>
+          <th>Mem %</th>
+          <th>Findings</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for log in logs %}
+        <tr>
+          <td>{{ log.timestamp|date:"Y-m-d H:i:s" }}</td>
+          <td>{{ log.ip_address|default:"—" }}</td>
+          <td>
+            <span class="badge
+              {% if log.risk_score > 70 %}badge-risk-high
+              {% elif log.risk_score > 40 %}badge-risk-med
+              {% else %}badge-risk-low{% endif %}">
+              {{ log.risk_score }}
+            </span>
+          </td>
+          <td>{{ log.parsed_data.process_info|length }}</td>
+          <td>{{ log.parsed_data.cpu_info.usage_percent|default:"—" }}</td>
+          <td>{{ log.parsed_data.memory_info.used_percent|floatformat:1|default:"—" }}</td>
+          <td><small>{{ log.parsed_data.analysis_report|join:" · " }}</small></td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="7" class="text-center text-muted py-3">No logs found.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  {% if page_obj and page_obj.paginator.num_pages > 1 %}
+  <div class="card-footer">
+    <nav>
+      <ul class="pagination pagination-sm mb-0 justify-content-center">
+        {% if page_obj.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Prev</a>
+        </li>
+        {% endif %}
+        <li class="page-item disabled">
+          <span class="page-link">{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+        </li>
+        {% if page_obj.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+  {% endif %}
 </div>
 {% endblock %}

@@ -1,0 +1,960 @@
+current directory: /home/vexo/project/OPERATING-SYSTEM-ANALYSIS/Applications/main-server/vendor/bundle/ruby/3.2.0/gems/curb-1.2.2/ext
+/usr/bin/ruby3.2 -I/usr/lib/ruby/vendor_ruby extconf.rb
+checking for curl-config... yes
+checking for curl_multi_timeout()... yes
+checking for curl_multi_fdset()... yes
+checking for curl_multi_perform()... yes
+checking for curl_easy_escape... yes
+checking for rb_thread_blocking_region()... no
+checking for ruby/thread.h... yes
+checking for rb_thread_call_without_gvl() in ruby/thread.h... yes
+checking for ruby/io.h... yes
+checking for rb_thread_fd_select() in ruby/io.h... yes
+checking for rb_wait_for_single_fd() in ruby/io.h... yes
+checking for ruby/fiber/scheduler.h... yes
+checking for rb_fiber_scheduler_current() in ruby/fiber/scheduler.h... yes
+checking for rb_fiber_scheduler_io_wait() in ruby/fiber/scheduler.h... yes
+checking for rb_io_stdio_file()... yes
+checking for curl_multi_wait()... yes
+checking for curl_multi_socket_action()... yes
+checking for curl_multi_assign()... yes
+checking for curl_multi_wakeup()... yes
+checking for curl_multi_poll()... yes
+checking for curl_multi_socket()... yes
+checking for curl_multi_timer_callback()... no
+checking for curl_easy_duphandle()... yes
+checking for curlinfo_appconnect_time... yes
+checking for curlopt_tcp_keepidle... yes
+checking for curlopt_tcp_keepalive... yes
+checking for curlopt_tcp_keepintvl... yes
+checking for curlinfo_redirect_time... yes
+checking for curlinfo_response_code... yes
+checking for curlinfo_filetime... yes
+checking for curlinfo_redirect_count... yes
+checking for curlinfo_os_errno... yes
+checking for curlinfo_num_connects... yes
+checking for curlinfo_cookielist... yes
+checking for curlinfo_ftp_entry_path... yes
+checking for curl_version_ssl... yes
+checking for curl_version_libz... yes
+checking for curl_version_ntlm... yes
+checking for curl_version_gssnegotiate... yes
+checking for curl_version_debug... yes
+checking for curl_version_asynchdns... yes
+checking for curl_version_spnego... yes
+checking for curl_version_largefile... yes
+checking for curl_version_idn... yes
+checking for curl_version_sspi... yes
+checking for curl_version_conv... yes
+checking for curl_version_http2... yes
+checking for curlproxy_http... yes
+checking for curlproxy_socks4... yes
+checking for curlproxy_socks4a... yes
+checking for curlproxy_socks5... yes
+checking for curlproxy_socks5_hostname... yes
+checking for curlauth_basic... yes
+checking for curlauth_digest... yes
+checking for curlauth_gssnegotiate... yes
+checking for curlauth_ntlm... yes
+checking for curlauth_anysafe... yes
+checking for curlauth_any... yes
+checking for curle_tftp_notfound... yes
+checking for curle_tftp_diskfull... yes
+checking for curle_tftp_perm... yes
+checking for curle_tftp_illegal... yes
+checking for curle_tftp_unknownid... yes
+checking for curle_tftp_exists... yes
+checking for curle_tftp_nosuchuser... yes
+checking for curle_send_fail_rewind... yes
+checking for curle_ssl_engine_initfailed... yes
+checking for curle_login_denied... yes
+checking for curlopt_nosignal... yes
+checking for curlmopt_pipelining... yes
+checking for curlmopt_maxconnects... yes
+checking for curlopt_seekdata... yes
+checking for curlopt_seekfunction... yes
+checking for curlopt_sockoptdata... yes
+checking for curlopt_sockoptfunction... yes
+checking for curlopt_opensocketfunction... yes
+checking for curlopt_opensocketdata... yes
+checking for curle_conv_failed... yes
+checking for curle_conv_reqd... yes
+checking for curle_ssl_cacert_badfile... yes
+checking for curle_remote_file_not_found... yes
+checking for curle_ssh... yes
+checking for curle_ssl_shutdown_failed... yes
+checking for curle_ssl_crl_badfile... yes
+checking for curle_again... yes
+checking for curle_ssl_issuer_error... yes
+checking for curlinfo_redirect_url... yes
+checking for curlopt_username... yes
+checking for curlopt_password... yes
+checking for curlinfo_primary_ip... yes
+checking for curlauth_digest_ie... yes
+checking for curlftpmethod_multicwd... yes
+checking for curlftpmethod_nocwd... yes
+checking for curlftpmethod_singlecwd... yes
+checking for curlm_bad_socket... yes
+checking for curlm_unknown_option... yes
+checking for curlopt_haproxyprotocol... yes
+checking for curlopt_interleavefunction... yes
+checking for curlopt_interleavedata... yes
+checking for curlopt_chunk_bgn_function... yes
+checking for curlopt_chunk_end_function... yes
+checking for curlopt_chunk_data... yes
+checking for curlopt_fnmatch_function... yes
+checking for curlopt_fnmatch_data... yes
+checking for curlopt_errorbuffer... yes
+checking for curlopt_stderr... yes
+checking for curlopt_failonerror... yes
+checking for curlopt_url... yes
+checking for curlopt_protocols... yes
+checking for curlopt_redir_protocols... yes
+checking for curlopt_proxy... yes
+checking for curlopt_proxyport... yes
+checking for curlopt_proxytype... yes
+checking for curlopt_noproxy... yes
+checking for curlopt_httpproxytunnel... yes
+checking for curlopt_socks5_gssapi_service... yes
+checking for curlopt_socks5_gssapi_nec... yes
+checking for curlopt_interface... yes
+checking for curlopt_localport... yes
+checking for curlopt_dns_cache_timeout... yes
+checking for curlopt_dns_use_global_cache... yes
+checking for curlopt_buffersize... yes
+checking for curlopt_port... yes
+checking for curlopt_tcp_nodelay... yes
+checking for curlopt_address_scope... yes
+checking for curlopt_netrc... yes
+checking for curl_netrc_optional... yes
+checking for curl_netrc_ignored... yes
+checking for curl_netrc_required... yes
+checking for curlopt_netrc_file... yes
+checking for curlopt_userpwd... yes
+checking for curlopt_proxyuserpwd... yes
+checking for curlopt_httpauth... yes
+checking for curlauth_only... yes
+checking for curlopt_tlsauth_type... yes
+checking for curlopt_tlsauth_srp... no
+checking for curlopt_tlsauth_username... yes
+checking for curlopt_tlsauth_password... yes
+checking for curlopt_proxyauth... yes
+checking for curlopt_autoreferer... yes
+checking for curlopt_encoding... yes
+checking for curlopt_followlocation... yes
+checking for curlopt_unrestricted_auth... yes
+checking for curlopt_maxredirs... yes
+checking for curlopt_postredir... yes
+checking for curlopt_put... yes
+checking for curlopt_post... yes
+checking for curlopt_postfields... yes
+checking for curlopt_postfieldsize... yes
+checking for curlopt_postfieldsize_large... yes
+checking for curlopt_copypostfields... yes
+checking for curlopt_httppost... yes
+checking for curlopt_referer... yes
+checking for curlopt_useragent... yes
+checking for curlopt_proxyheader... yes
+checking for curlopt_httpheader... yes
+checking for curlopt_http200aliases... yes
+checking for curlopt_cookie... yes
+checking for curlopt_cookiefile... yes
+checking for curlopt_cookiejar... yes
+checking for curlopt_cookiesession... yes
+checking for curlopt_cookielist... yes
+checking for curlopt_httpget... yes
+checking for curlopt_http_version... yes
+checking for curl_http_version_none... yes
+checking for curl_http_version_1_0... yes
+checking for curl_http_version_1_1... yes
+checking for curlopt_ignore_content_length... yes
+checking for curlopt_http_content_decoding... yes
+checking for curlopt_http_transfer_decoding... yes
+checking for curlopt_mail_from... yes
+checking for curlopt_mail_rcpt... yes
+checking for curlopt_tftp_blksize... yes
+checking for curlopt_ftpport... yes
+checking for curlopt_quote... yes
+checking for curlopt_postquote... yes
+checking for curlopt_prequote... yes
+checking for curlopt_dirlistonly... yes
+checking for curlopt_ftp_use_eprt... yes
+checking for curlopt_ftp_use_epsv... yes
+checking for curlopt_append... yes
+checking for curlopt_ftp_use_pret... yes
+checking for curlopt_ftp_create_missing_dirs... yes
+checking for curlopt_ftp_alternative_to_user... yes
+checking for curlopt_ftp_response_timeout... yes
+checking for curlopt_ftp_skip_pasv_ip... yes
+checking for curlftpauth_default... yes
+checking for curlftpauth_ssl... yes
+checking for curlopt_ftpsslauth... yes
+checking for curlftpauth_tls... yes
+checking for curlftpssl_ccc_none... yes
+checking for curlopt_ftp_ssl_ccc... yes
+checking for curlftpssl_ccc_passive... yes
+checking for curlftpssl_ccc_active... yes
+checking for curlopt_ftp_account... yes
+checking for curlopt_ftp_filemethod... yes
+checking for curlopt_rtsp_request... yes
+checking for curl_rtspreq_options... yes
+checking for curl_rtspreq_setup... yes
+checking for curl_rtspreq_describe... yes
+checking for curl_rtspreq_announce... yes
+checking for curl_rtspreq_play... yes
+checking for curl_rtspreq_pause... yes
+checking for curl_rtspreq_teardown... yes
+checking for curl_rtspreq_get_parameter... yes
+checking for curl_rtspreq_set_parameter... yes
+checking for curl_rtspreq_record... yes
+checking for curl_rtspreq_receive... yes
+checking for curlopt_rtsp_session_id... yes
+checking for curlopt_rtsp_stream_uri... yes
+checking for curlopt_rtsp_transport... yes
+checking for curlopt_rtsp_server_cseq... yes
+checking for curlopt_rtsp_client_cseq... yes
+checking for curlopt_rtsp_header... no
+checking for curlopt_transfertext... yes
+checking for curlopt_crlf... yes
+checking for curlopt_proxy_transfer_mode... yes
+checking for curlopt_range... yes
+checking for curlopt_resume_from... yes
+checking for curlopt_resume_from_large... yes
+checking for curlopt_customrequest... yes
+checking for curlopt_filetime... yes
+checking for curlopt_nobody... yes
+checking for curlopt_infilesize... yes
+checking for curlopt_infilesize_large... yes
+checking for curlopt_upload... yes
+checking for curlopt_maxfilesize... yes
+checking for curlopt_timecondition... yes
+checking for curlopt_maxfilesize_large... yes
+checking for curlopt_timevalue... yes
+checking for curlopt_timeout... yes
+checking for curlopt_low_speed_limit... yes
+checking for curlopt_timeout_ms... yes
+checking for curlopt_low_speed_time... yes
+checking for curlopt_max_send_speed_large... yes
+checking for curlopt_max_recv_speed_large... yes
+checking for curlopt_maxconnects... yes
+checking for curlopt_closepolicy... yes
+checking for curlopt_fresh_connect... yes
+checking for curlopt_forbid_reuse... yes
+checking for curlopt_connecttimeout... yes
+checking for curlopt_connecttimeout_ms... yes
+checking for curlopt_ipresolve... yes
+checking for curl_ipresolve_whatever... yes
+checking for curl_ipresolve_v4... yes
+checking for curl_ipresolve_v6... yes
+checking for curlopt_connect_only... yes
+checking for curlopt_use_ssl... yes
+checking for curlusessl_none... yes
+checking for curlusessl_try... yes
+checking for curlusessl_control... yes
+checking for curlusessl_all... yes
+checking for curlopt_resolve... yes
+checking for curlopt_request_target... yes
+checking for curlopt_sslcert... yes
+checking for curlopt_sslcerttype... yes
+checking for curlopt_sslkey... yes
+checking for curlopt_sslkeytype... yes
+checking for curlopt_keypasswd... yes
+checking for curlopt_sslengine... yes
+checking for curl_sslversion_default... yes
+checking for curlopt_sslversion... yes
+checking for curlopt_sslengine_default... yes
+checking for CURL_SSLVERSION_TLSv1... yes
+checking for CURL_SSLVERSION_SSLv2... yes
+checking for CURL_SSLVERSION_SSLv3... yes
+checking for curlmopt_max_host_connections... yes
+checking for CURL_SSLVERSION_TLSv1_0... yes
+checking for CURL_SSLVERSION_TLSv1_1... yes
+checking for CURL_SSLVERSION_TLSv1_2... yes
+checking for CURL_SSLVERSION_TLSv1_3... yes
+checking for curlopt_ssl_verifypeer... yes
+checking for curlopt_cainfo... yes
+checking for curlopt_issuercert... yes
+checking for curlopt_capath... yes
+checking for curlopt_crlfile... yes
+checking for curlopt_ssl_verifyhost... yes
+checking for curlopt_random_file... yes
+checking for curlopt_certinfo... yes
+checking for curlopt_egdsocket... yes
+checking for curlopt_ssl_cipher_list... yes
+checking for curlopt_ssl_sessionid_cache... yes
+checking for curlopt_ssh_auth_types... yes
+checking for curlopt_krblevel... yes
+checking for curlopt_ssh_host_public_key_md5... yes
+checking for curlopt_ssh_public_keyfile... yes
+checking for curlopt_ssh_private_keyfile... yes
+checking for curlopt_ssh_knownhosts... yes
+checking for curlopt_ssh_keyfunction... yes
+checking for curlkhstat_fine_add_to_file... yes
+checking for curlkhstat_fine... yes
+checking for curlkhstat_reject... yes
+checking for curlkhstat_defer... yes
+checking for curlopt_ssh_keydata... yes
+checking for curlopt_new_file_perms... yes
+checking for curlopt_private... yes
+checking for curlopt_share... yes
+checking for curlopt_new_directory_perms... yes
+checking for curlopt_telnetoptions... yes
+checking for curle_not_built_in... yes
+checking for curle_obsolete... yes
+checking for curle_ftp_pret_failed... yes
+checking for curle_rtsp_cseq_error... yes
+checking for curle_rtsp_session_error... yes
+checking for curle_ftp_bad_file_list... yes
+checking for curle_chunk_failed... yes
+checking for curle_ssl_pinnedpubkeynotmatch... yes
+checking for curle_ssl_invalidcertstatus... yes
+checking for curle_no_connection_available... yes
+checking for curlopt_gssapi_delegation... yes
+checking for curle_http2_stream... yes
+checking for curlgssapi_delegation_policy_flag... yes
+checking for curlgssapi_delegation_flag... yes
+checking for CURLM_ADDED_ALREADY... yes
+checking for curlopt_path_as_is... yes
+checking for curlopt_unix_socket_path... yes
+checking for curlopt_pipewait... yes
+checking for curlopt_proxy_ssl_verifyhost... yes
+checking for curlproto_all... yes
+checking for curlproto_dict... yes
+checking for curlproto_file... yes
+checking for curlproto_ftp... yes
+checking for curlproto_ftps... yes
+checking for curlproto_gopher... yes
+checking for curlproto_http... yes
+checking for curlproto_https... yes
+checking for curlproto_imap... yes
+checking for curlproto_imaps... yes
+checking for curlproto_ldap... yes
+checking for curlproto_ldaps... yes
+checking for curlproto_pop3... yes
+checking for curlproto_pop3s... yes
+checking for curlproto_rtmp... yes
+checking for curlproto_rtmpe... yes
+checking for curlproto_rtmps... yes
+checking for curlproto_rtmpt... yes
+checking for curlproto_rtmpte... yes
+checking for curlproto_rtmpts... yes
+checking for curlproto_rtsp... yes
+checking for curlproto_scp... yes
+checking for curlproto_sftp... yes
+checking for curlproto_smbs... yes
+checking for curlproto_smb... yes
+checking for curlproto_smtp... yes
+checking for curlproto_smtps... yes
+checking for curlproto_telnet... yes
+checking for curlproto_tftp... yes
+checking for curlmopt_socketfunction... yes
+checking for curlmopt_timerfunction... yes
+creating curb_config.h
+creating Makefile
+
+current directory: /home/vexo/project/OPERATING-SYSTEM-ANALYSIS/Applications/main-server/vendor/bundle/ruby/3.2.0/gems/curb-1.2.2/ext
+make DESTDIR\= sitearchdir\=./.gem.20260330-21552-82bb4d sitelibdir\=./.gem.20260330-21552-82bb4d clean
+
+current directory: /home/vexo/project/OPERATING-SYSTEM-ANALYSIS/Applications/main-server/vendor/bundle/ruby/3.2.0/gems/curb-1.2.2/ext
+make DESTDIR\= sitearchdir\=./.gem.20260330-21552-82bb4d sitelibdir\=./.gem.20260330-21552-82bb4d
+compiling curb.c
+curb.c: In function ‘Init_curb_core’:
+curb.c:436:3: warning: ‘CURLOPT_IOCTLFUNCTION’ is deprecated: since 7.18.0. Use CURLOPT_SEEKFUNCTION [-Wdeprecated-declarations]
+  436 |   CURB_DEFINE(CURLOPT_IOCTLFUNCTION);
+      |   ^~~~~~~~~~~
+In file included from curb.h:19,
+                 from curb.c:8:
+/usr/include/x86_64-linux-gnu/curl/curl.h:1575:3: note: declared here
+ 1575 |   CURLOPTDEPRECATED(CURLOPT_IOCTLFUNCTION, CURLOPTTYPE_FUNCTIONPOINT, 130,
+      |   ^~~~~~~~~~~~~~~~~
+curb.c:437:3: warning: ‘CURLOPT_IOCTLDATA’ is deprecated: since 7.18.0. Use CURLOPT_SEEKDATA [-Wdeprecated-declarations]
+  437 |   CURB_DEFINE(CURLOPT_IOCTLDATA);
+      |   ^~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1577:3: note: declared here
+ 1577 |   CURLOPTDEPRECATED(CURLOPT_IOCTLDATA, CURLOPTTYPE_CBPOINT, 131,
+      |   ^~~~~~~~~~~~~~~~~
+curb.c:456:3: warning: ‘CURLOPT_PROGRESSFUNCTION’ is deprecated: since 7.32.0. Use CURLOPT_XFERINFOFUNCTION [-Wdeprecated-declarations]
+  456 |   CURB_DEFINE(CURLOPT_PROGRESSFUNCTION);
+      |   ^~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1290:3: note: declared here
+ 1290 |   CURLOPTDEPRECATED(CURLOPT_PROGRESSFUNCTION, CURLOPTTYPE_FUNCTIONPOINT, 56,
+      |   ^~~~~~~~~~~~~~~~~
+curb.c:464:3: warning: ‘CURLOPT_CONV_TO_NETWORK_FUNCTION’ is deprecated: since 7.82.0. Serves no purpose anymore [-Wdeprecated-declarations]
+  464 |   CURB_DEFINE(CURLOPT_CONV_TO_NETWORK_FUNCTION);
+      |   ^~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1623:3: note: declared here
+ 1623 |   CURLOPTDEPRECATED(CURLOPT_CONV_TO_NETWORK_FUNCTION,
+      |   ^~~~~~~~~~~~~~~~~
+curb.c:465:3: warning: ‘CURLOPT_CONV_FROM_NETWORK_FUNCTION’ is deprecated: since 7.82.0. Serves no purpose anymore [-Wdeprecated-declarations]
+  465 |   CURB_DEFINE(CURLOPT_CONV_FROM_NETWORK_FUNCTION);
+      |   ^~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1617:3: note: declared here
+ 1617 |   CURLOPTDEPRECATED(CURLOPT_CONV_FROM_NETWORK_FUNCTION,
+      |   ^~~~~~~~~~~~~~~~~
+curb.c:466:3: warning: ‘CURLOPT_CONV_FROM_UTF8_FUNCTION’ is deprecated: since 7.82.0. Serves no purpose anymore [-Wdeprecated-declarations]
+  466 |   CURB_DEFINE(CURLOPT_CONV_FROM_UTF8_FUNCTION);
+      |   ^~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1630:3: note: declared here
+ 1630 |   CURLOPTDEPRECATED(CURLOPT_CONV_FROM_UTF8_FUNCTION,
+      |   ^~~~~~~~~~~~~~~~~
+curb.c:500:3: warning: ‘CURLOPT_PROTOCOLS’ is deprecated: since 7.85.0. Use CURLOPT_PROTOCOLS_STR [-Wdeprecated-declarations]
+  500 |   CURB_DEFINE(CURLOPT_PROTOCOLS);
+      |   ^~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1744:3: note: declared here
+ 1744 |   CURLOPTDEPRECATED(CURLOPT_PROTOCOLS, CURLOPTTYPE_LONG, 181,
+      |   ^~~~~~~~~~~~~~~~~
+curb.c:503:3: warning: ‘CURLOPT_REDIR_PROTOCOLS’ is deprecated: since 7.85.0. Use CURLOPT_REDIR_PROTOCOLS_STR [-Wdeprecated-declarations]
+  503 |   CURB_DEFINE(CURLOPT_REDIR_PROTOCOLS);
+      |   ^~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1750:3: note: declared here
+ 1750 |   CURLOPTDEPRECATED(CURLOPT_REDIR_PROTOCOLS, CURLOPTTYPE_LONG, 182,
+      |   ^~~~~~~~~~~~~~~~~
+curb.c:515:3: warning: ‘CURLOPT_SOCKS5_GSSAPI_SERVICE’ is deprecated: since 7.49.0. Use CURLOPT_PROXY_SERVICE_NAME [-Wdeprecated-declarations]
+  515 |   CURB_DEFINE(CURLOPT_SOCKS5_GSSAPI_SERVICE);
+      |   ^~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1733:3: note: declared here
+ 1733 |   CURLOPTDEPRECATED(CURLOPT_SOCKS5_GSSAPI_SERVICE,
+      |   ^~~~~~~~~~~~~~~~~
+curb.c:525:3: warning: ‘CURLOPT_DNS_USE_GLOBAL_CACHE’ is deprecated: since 7.11.1. Use CURLOPT_SHARE [-Wdeprecated-declarations]
+  525 |   CURB_DEFINE(CURLOPT_DNS_USE_GLOBAL_CACHE);
+      |   ^~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1419:3: note: declared here
+ 1419 |   CURLOPTDEPRECATED(CURLOPT_DNS_USE_GLOBAL_CACHE, CURLOPTTYPE_LONG, 91,
+      |   ^~~~~~~~~~~~~~~~~
+curb.c:597:3: warning: ‘CURLOPT_PUT’ is deprecated: since 7.12.1. Use CURLOPT_UPLOAD [-Wdeprecated-declarations]
+  597 |   CURB_DEFINE(CURLOPT_PUT);
+      |   ^~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1281:3: note: declared here
+ 1281 |   CURLOPTDEPRECATED(CURLOPT_PUT, CURLOPTTYPE_LONG, 54,
+      |   ^~~~~~~~~~~~~~~~~
+curb.c:611:3: warning: ‘CURLOPT_HTTPPOST’ is deprecated: since 7.56.0. Use CURLOPT_MIMEPOST [-Wdeprecated-declarations]
+  611 |   CURB_DEFINE(CURLOPT_HTTPPOST);
+      |   ^~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1190:3: note: declared here
+ 1190 |   CURLOPTDEPRECATED(CURLOPT_HTTPPOST, CURLOPTTYPE_OBJECTPOINT, 24,
+      |   ^~~~~~~~~~~~~~~~~
+curb.c:990:3: warning: ‘CURLOPT_RANDOM_FILE’ is deprecated: since 7.84.0. Serves no purpose anymore [-Wdeprecated-declarations]
+  990 |   CURB_DEFINE(CURLOPT_RANDOM_FILE);
+      |   ^~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1359:3: note: declared here
+ 1359 |   CURLOPTDEPRECATED(CURLOPT_RANDOM_FILE, CURLOPTTYPE_STRINGPOINT, 76,
+      |   ^~~~~~~~~~~~~~~~~
+curb.c:993:3: warning: ‘CURLOPT_EGDSOCKET’ is deprecated: since 7.84.0. Serves no purpose anymore [-Wdeprecated-declarations]
+  993 |   CURB_DEFINE(CURLOPT_EGDSOCKET);
+      |   ^~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1363:3: note: declared here
+ 1363 |   CURLOPTDEPRECATED(CURLOPT_EGDSOCKET, CURLOPTTYPE_STRINGPOINT, 77,
+      |   ^~~~~~~~~~~~~~~~~
+compiling curb_easy.c
+curb_easy.c: In function ‘ruby_curl_easy_free’:
+curb_easy.c:308:5: warning: ‘CURLOPT_PROGRESSFUNCTION’ is deprecated: since 7.32.0. Use CURLOPT_XFERINFOFUNCTION [-Wdeprecated-declarations]
+  308 |     curl_easy_setopt(rbce->curl, CURLOPT_PROGRESSFUNCTION, NULL);
+      |     ^~~~~~~~~~~~~~~~
+In file included from curb.h:19,
+                 from curb_easy.h:10,
+                 from curb_easy.c:7:
+/usr/include/x86_64-linux-gnu/curl/curl.h:1290:3: note: declared here
+ 1290 |   CURLOPTDEPRECATED(CURLOPT_PROGRESSFUNCTION, CURLOPTTYPE_FUNCTIONPOINT, 56,
+      |   ^~~~~~~~~~~~~~~~~
+curb_easy.c: In function ‘ruby_curl_easy_setup’:
+curb_easy.c:2462:5: warning: ‘CURLOPT_PROGRESSFUNCTION’ is deprecated: since 7.32.0. Use CURLOPT_XFERINFOFUNCTION [-Wdeprecated-declarations]
+ 2462 |     curl_easy_setopt(curl, CURLOPT_PROGRESSFUNCTION, (curl_progress_callback)&proc_progress_handler);
+      |     ^~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1290:3: note: declared here
+ 1290 |   CURLOPTDEPRECATED(CURLOPT_PROGRESSFUNCTION, CURLOPTTYPE_FUNCTIONPOINT, 56,
+      |   ^~~~~~~~~~~~~~~~~
+curb_easy.c:2660:7: warning: ‘rb_iterate’ is deprecated: by: rb_block_call since 1.9 [-Wdeprecated-declarations]
+ 2660 |       rb_iterate(rb_each, rb_easy_get("headers"), cb_each_http_header, wrap);
+      |       ^~~~~~~~~~
+In file included from /usr/include/ruby-3.2.0/ruby/ruby.h:41,
+                 from /usr/include/ruby-3.2.0/ruby.h:38,
+                 from curb.h:11:
+/usr/include/ruby-3.2.0/ruby/internal/iterator.h:283:7: note: declared here
+  283 | VALUE rb_iterate(VALUE (*func1)(VALUE), VALUE data1, rb_block_call_func_t proc, VALUE data2);
+      |       ^~~~~~~~~~
+curb_easy.c:2682:7: warning: ‘rb_iterate’ is deprecated: by: rb_block_call since 1.9 [-Wdeprecated-declarations]
+ 2682 |       rb_iterate(rb_each, rb_easy_get("proxy_headers"), cb_each_http_proxy_header, wrap);
+      |       ^~~~~~~~~~
+/usr/include/ruby-3.2.0/ruby/internal/iterator.h:283:7: note: declared here
+  283 | VALUE rb_iterate(VALUE (*func1)(VALUE), VALUE data1, rb_block_call_func_t proc, VALUE data2);
+      |       ^~~~~~~~~~
+curb_easy.c:2702:7: warning: ‘rb_iterate’ is deprecated: by: rb_block_call since 1.9 [-Wdeprecated-declarations]
+ 2702 |       rb_iterate(rb_each, rb_easy_get("ftp_commands"), cb_each_ftp_command, wrap);
+      |       ^~~~~~~~~~
+/usr/include/ruby-3.2.0/ruby/internal/iterator.h:283:7: note: declared here
+  283 | VALUE rb_iterate(VALUE (*func1)(VALUE), VALUE data1, rb_block_call_func_t proc, VALUE data2);
+      |       ^~~~~~~~~~
+curb_easy.c:2715:7: warning: ‘rb_iterate’ is deprecated: by: rb_block_call since 1.9 [-Wdeprecated-declarations]
+ 2715 |       rb_iterate(rb_each, rb_easy_get("resolve"), cb_each_resolve, wrap);
+      |       ^~~~~~~~~~
+/usr/include/ruby-3.2.0/ruby/internal/iterator.h:283:7: note: declared here
+  283 | VALUE rb_iterate(VALUE (*func1)(VALUE), VALUE data1, rb_block_call_func_t proc, VALUE data2);
+      |       ^~~~~~~~~~
+curb_easy.c: In function ‘ruby_curl_easy_perform_post’:
+curb_easy.c:2905:5: warning: ‘CURLOPT_HTTPPOST’ is deprecated: since 7.56.0. Use CURLOPT_MIMEPOST [-Wdeprecated-declarations]
+ 2905 |     curl_easy_setopt(curl, CURLOPT_HTTPPOST, first);
+      |     ^~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1190:3: note: declared here
+ 1190 |   CURLOPTDEPRECATED(CURLOPT_HTTPPOST, CURLOPTTYPE_OBJECTPOINT, 24,
+      |   ^~~~~~~~~~~~~~~~~
+curb_easy.c:2907:5: warning: ‘curl_formfree’ is deprecated: since 7.56.0. Use curl_mime_free() [-Wdeprecated-declarations]
+ 2907 |     curl_formfree(first);
+      |     ^~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2612:1: note: declared here
+ 2612 | curl_formfree(struct curl_httppost *form);
+      | ^~~~~~~~~~~~~
+curb_easy.c: In function ‘ruby_curl_easy_perform_patch’:
+curb_easy.c:2992:5: warning: ‘CURLOPT_HTTPPOST’ is deprecated: since 7.56.0. Use CURLOPT_MIMEPOST [-Wdeprecated-declarations]
+ 2992 |     curl_easy_setopt(curl, CURLOPT_HTTPPOST, first);
+      |     ^~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1190:3: note: declared here
+ 1190 |   CURLOPTDEPRECATED(CURLOPT_HTTPPOST, CURLOPTTYPE_OBJECTPOINT, 24,
+      |   ^~~~~~~~~~~~~~~~~
+curb_easy.c:2994:5: warning: ‘curl_formfree’ is deprecated: since 7.56.0. Use curl_mime_free() [-Wdeprecated-declarations]
+ 2994 |     curl_formfree(first);
+      |     ^~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2612:1: note: declared here
+ 2612 | curl_formfree(struct curl_httppost *form);
+      | ^~~~~~~~~~~~~
+curb_easy.c: In function ‘ruby_curl_easy_perform_put’:
+curb_easy.c:3072:5: warning: ‘CURLOPT_HTTPPOST’ is deprecated: since 7.56.0. Use CURLOPT_MIMEPOST [-Wdeprecated-declarations]
+ 3072 |     curl_easy_setopt(curl, CURLOPT_HTTPPOST, first);
+      |     ^~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1190:3: note: declared here
+ 1190 |   CURLOPTDEPRECATED(CURLOPT_HTTPPOST, CURLOPTTYPE_OBJECTPOINT, 24,
+      |   ^~~~~~~~~~~~~~~~~
+curb_easy.c:3076:5: warning: ‘curl_formfree’ is deprecated: since 7.56.0. Use curl_mime_free() [-Wdeprecated-declarations]
+ 3076 |     curl_formfree(first);
+      |     ^~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2612:1: note: declared here
+ 2612 | curl_formfree(struct curl_httppost *form);
+      | ^~~~~~~~~~~~~
+curb_easy.c: In function ‘ruby_curl_easy_uploaded_bytes_get’:
+curb_easy.c:3445:3: warning: ‘CURLINFO_SIZE_UPLOAD’ is deprecated: since 7.55.0. Use CURLINFO_SIZE_UPLOAD_T [-Wdeprecated-declarations]
+ 3445 |   curl_easy_getinfo(rbce->curl, CURLINFO_SIZE_UPLOAD, &bytes);
+      |   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2854:3: note: declared here
+ 2854 |   CURLINFO_SIZE_UPLOAD CURL_DEPRECATED(7.55.0, "Use CURLINFO_SIZE_UPLOAD_T")
+      |   ^~~~~~~~~~~~~~~~~~~~
+curb_easy.c: In function ‘ruby_curl_easy_downloaded_bytes_get’:
+curb_easy.c:3462:3: warning: ‘CURLINFO_SIZE_DOWNLOAD’ is deprecated: since 7.55.0. Use CURLINFO_SIZE_DOWNLOAD_T [-Wdeprecated-declarations]
+ 3462 |   curl_easy_getinfo(rbce->curl, CURLINFO_SIZE_DOWNLOAD, &bytes);
+      |   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2857:3: note: declared here
+ 2857 |   CURLINFO_SIZE_DOWNLOAD
+      |   ^~~~~~~~~~~~~~~~~~~~~~
+curb_easy.c: In function ‘ruby_curl_easy_upload_speed_get’:
+curb_easy.c:3479:3: warning: ‘CURLINFO_SPEED_UPLOAD’ is deprecated: since 7.55.0. Use CURLINFO_SPEED_UPLOAD_T [-Wdeprecated-declarations]
+ 3479 |   curl_easy_getinfo(rbce->curl, CURLINFO_SPEED_UPLOAD, &bytes);
+      |   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2865:3: note: declared here
+ 2865 |   CURLINFO_SPEED_UPLOAD
+      |   ^~~~~~~~~~~~~~~~~~~~~
+curb_easy.c: In function ‘ruby_curl_easy_download_speed_get’:
+curb_easy.c:3496:3: warning: ‘CURLINFO_SPEED_DOWNLOAD’ is deprecated: since 7.55.0. Use CURLINFO_SPEED_DOWNLOAD_T [-Wdeprecated-declarations]
+ 3496 |   curl_easy_getinfo(rbce->curl, CURLINFO_SPEED_DOWNLOAD, &bytes);
+      |   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2861:3: note: declared here
+ 2861 |   CURLINFO_SPEED_DOWNLOAD
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+curb_easy.c: In function ‘ruby_curl_easy_downloaded_content_length_get’:
+curb_easy.c:3573:3: warning: ‘CURLINFO_CONTENT_LENGTH_DOWNLOAD’ is deprecated: since 7.55.0. Use CURLINFO_CONTENT_LENGTH_DOWNLOAD_T [-Wdeprecated-declarations]
+ 3573 |   curl_easy_getinfo(rbce->curl, CURLINFO_CONTENT_LENGTH_DOWNLOAD, &bytes);
+      |   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2874:3: note: declared here
+ 2874 |   CURLINFO_CONTENT_LENGTH_DOWNLOAD
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+curb_easy.c: In function ‘ruby_curl_easy_uploaded_content_length_get’:
+curb_easy.c:3589:3: warning: ‘CURLINFO_CONTENT_LENGTH_UPLOAD’ is deprecated: since 7.55.0. Use CURLINFO_CONTENT_LENGTH_UPLOAD_T [-Wdeprecated-declarations]
+ 3589 |   curl_easy_getinfo(rbce->curl, CURLINFO_CONTENT_LENGTH_UPLOAD, &bytes);
+      |   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2879:3: note: declared here
+ 2879 |   CURLINFO_CONTENT_LENGTH_UPLOAD
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+curb_easy.c: In function ‘ruby_curl_easy_set_opt’:
+curb_easy.c:4056:3: warning: ‘CURLOPT_PROTOCOLS’ is deprecated: since 7.85.0. Use CURLOPT_PROTOCOLS_STR [-Wdeprecated-declarations]
+ 4056 |   case CURLOPT_PROTOCOLS:
+      |   ^~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1744:3: note: declared here
+ 1744 |   CURLOPTDEPRECATED(CURLOPT_PROTOCOLS, CURLOPTTYPE_LONG, 181,
+      |   ^~~~~~~~~~~~~~~~~
+curb_easy.c:4057:3: warning: ‘CURLOPT_REDIR_PROTOCOLS’ is deprecated: since 7.85.0. Use CURLOPT_REDIR_PROTOCOLS_STR [-Wdeprecated-declarations]
+ 4057 |   case CURLOPT_REDIR_PROTOCOLS:
+      |   ^~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:1750:3: note: declared here
+ 1750 |   CURLOPTDEPRECATED(CURLOPT_REDIR_PROTOCOLS, CURLOPTTYPE_LONG, 182,
+      |   ^~~~~~~~~~~~~~~~~
+compiling curb_errors.c
+compiling curb_multi.c
+curb_multi.c: In function ‘multi_socket_cb’:
+curb_multi.c:709:12: warning: unused variable ‘b’ [-Wunused-variable]
+  709 |       char b[16];
+      |            ^
+curb_multi.c:716:12: warning: unused variable ‘b’ [-Wunused-variable]
+  716 |       char b[16];
+      |            ^
+curb_multi.c: In function ‘rb_curl_multi_socket_drive’:
+curb_multi.c:942:14: warning: unused variable ‘b’ [-Wunused-variable]
+  942 |         char b[32];
+      |              ^
+curb_multi.c: In function ‘ruby_curl_multi_perform’:
+curb_multi.c:1080:22: warning: variable ‘fdset_args’ set but not used [-Wunused-but-set-variable]
+ 1080 |   struct _select_set fdset_args;
+      |                      ^~~~~~~~~~
+curb_multi.c: At top level:
+curb_multi.c:1045:14: warning: ‘curb_select’ defined but not used [-Wunused-function]
+ 1045 | static VALUE curb_select(void *args) {
+      |              ^~~~~~~~~~~
+curb_multi.c:742:13: warning: ‘rb_fdset_from_sockmap’ defined but not used [-Wunused-function]
+  742 | static void rb_fdset_from_sockmap(st_table *map, rb_fdset_t *rfds, rb_fdset_t *wfds, rb_fdset_t *efds, int *maxfd_out) {
+      |             ^~~~~~~~~~~~~~~~~~~~~
+compiling curb_postfield.c
+curb_postfield.c: In function ‘append_to_form’:
+curb_postfield.c:50:13: warning: ‘curl_formadd’ is deprecated: since 7.56.0. Use curl_mime_init() [-Wdeprecated-declarations]
+   50 |             result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |             ^~~~~~
+In file included from curb.h:19,
+                 from curb_postfield.h:10,
+                 from curb_postfield.c:7:
+/usr/include/x86_64-linux-gnu/curl/curl.h:2576:1: note: declared here
+ 2576 | curl_formadd(struct curl_httppost **httppost,
+      | ^~~~~~~~~~~~
+curb_postfield.c:50:13: warning: ‘CURLFORM_PTRNAME’ is deprecated: since 7.56.0. Use curl_mime_name() [-Wdeprecated-declarations]
+   50 |             result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |             ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2502:3: note: declared here
+ 2502 |   CURLFORM_PTRNAME         CURL_DEPRECATED(7.56.0, "Use curl_mime_name()"),
+      |   ^~~~~~~~~~~~~~~~
+curb_postfield.c:51:48: warning: ‘CURLFORM_BUFFER’ is deprecated: since 7.56.0. Use curl_mime_filename() [-Wdeprecated-declarations]
+   51 |                                                CURLFORM_BUFFER, StringValuePtr(rbcpf->remote_file),
+      |                                                ^~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2512:3: note: declared here
+ 2512 |   CURLFORM_BUFFER          CURL_DEPRECATED(7.56.0, "Use curl_mime_filename()"),
+      |   ^~~~~~~~~~~~~~~
+curb_postfield.c:52:48: warning: ‘CURLFORM_BUFFERPTR’ is deprecated: since 7.56.0. Use curl_mime_data() [-Wdeprecated-declarations]
+   52 |                                                CURLFORM_BUFFERPTR, StringValuePtr(rbcpf->buffer_str),
+      |                                                ^~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2513:3: note: declared here
+ 2513 |   CURLFORM_BUFFERPTR       CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
+      |   ^~~~~~~~~~~~~~~~~~
+curb_postfield.c:53:48: warning: ‘CURLFORM_BUFFERLENGTH’ is deprecated: since 7.56.0. Use curl_mime_data() [-Wdeprecated-declarations]
+   53 |                                                CURLFORM_BUFFERLENGTH, RSTRING_LEN(rbcpf->buffer_str),
+      |                                                ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2514:3: note: declared here
+ 2514 |   CURLFORM_BUFFERLENGTH    CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
+      |   ^~~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:56:13: warning: ‘curl_formadd’ is deprecated: since 7.56.0. Use curl_mime_init() [-Wdeprecated-declarations]
+   56 |             result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |             ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2576:1: note: declared here
+ 2576 | curl_formadd(struct curl_httppost **httppost,
+      | ^~~~~~~~~~~~
+curb_postfield.c:56:13: warning: ‘CURLFORM_PTRNAME’ is deprecated: since 7.56.0. Use curl_mime_name() [-Wdeprecated-declarations]
+   56 |             result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |             ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2502:3: note: declared here
+ 2502 |   CURLFORM_PTRNAME         CURL_DEPRECATED(7.56.0, "Use curl_mime_name()"),
+      |   ^~~~~~~~~~~~~~~~
+curb_postfield.c:57:48: warning: ‘CURLFORM_BUFFER’ is deprecated: since 7.56.0. Use curl_mime_filename() [-Wdeprecated-declarations]
+   57 |                                                CURLFORM_BUFFER, StringValuePtr(rbcpf->remote_file),
+      |                                                ^~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2512:3: note: declared here
+ 2512 |   CURLFORM_BUFFER          CURL_DEPRECATED(7.56.0, "Use curl_mime_filename()"),
+      |   ^~~~~~~~~~~~~~~
+curb_postfield.c:58:48: warning: ‘CURLFORM_BUFFERPTR’ is deprecated: since 7.56.0. Use curl_mime_data() [-Wdeprecated-declarations]
+   58 |                                                CURLFORM_BUFFERPTR, StringValuePtr(rbcpf->buffer_str),
+      |                                                ^~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2513:3: note: declared here
+ 2513 |   CURLFORM_BUFFERPTR       CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
+      |   ^~~~~~~~~~~~~~~~~~
+curb_postfield.c:59:48: warning: ‘CURLFORM_BUFFERLENGTH’ is deprecated: since 7.56.0. Use curl_mime_data() [-Wdeprecated-declarations]
+   59 |                                                CURLFORM_BUFFERLENGTH, RSTRING_LEN(rbcpf->buffer_str),
+      |                                                ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2514:3: note: declared here
+ 2514 |   CURLFORM_BUFFERLENGTH    CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
+      |   ^~~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:60:48: warning: ‘CURLFORM_CONTENTTYPE’ is deprecated: since 7.56.0. Use curl_mime_type() [-Wdeprecated-declarations]
+   60 |                                                CURLFORM_CONTENTTYPE, StringValuePtr(rbcpf->content_type),
+      |                                                ^~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2516:3: note: declared here
+ 2516 |   CURLFORM_CONTENTTYPE     CURL_DEPRECATED(7.56.0, "Use curl_mime_type()"),
+      |   ^~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:70:13: warning: ‘curl_formadd’ is deprecated: since 7.56.0. Use curl_mime_init() [-Wdeprecated-declarations]
+   70 |             result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |             ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2576:1: note: declared here
+ 2576 | curl_formadd(struct curl_httppost **httppost,
+      | ^~~~~~~~~~~~
+curb_postfield.c:70:13: warning: ‘CURLFORM_PTRNAME’ is deprecated: since 7.56.0. Use curl_mime_name() [-Wdeprecated-declarations]
+   70 |             result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |             ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2502:3: note: declared here
+ 2502 |   CURLFORM_PTRNAME         CURL_DEPRECATED(7.56.0, "Use curl_mime_name()"),
+      |   ^~~~~~~~~~~~~~~~
+curb_postfield.c:71:48: warning: ‘CURLFORM_BUFFER’ is deprecated: since 7.56.0. Use curl_mime_filename() [-Wdeprecated-declarations]
+   71 |                                                CURLFORM_BUFFER, StringValuePtr(rbcpf->remote_file),
+      |                                                ^~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2512:3: note: declared here
+ 2512 |   CURLFORM_BUFFER          CURL_DEPRECATED(7.56.0, "Use curl_mime_filename()"),
+      |   ^~~~~~~~~~~~~~~
+curb_postfield.c:72:48: warning: ‘CURLFORM_BUFFERPTR’ is deprecated: since 7.56.0. Use curl_mime_data() [-Wdeprecated-declarations]
+   72 |                                                CURLFORM_BUFFERPTR, StringValuePtr(rbcpf->content),
+      |                                                ^~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2513:3: note: declared here
+ 2513 |   CURLFORM_BUFFERPTR       CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
+      |   ^~~~~~~~~~~~~~~~~~
+curb_postfield.c:73:48: warning: ‘CURLFORM_BUFFERLENGTH’ is deprecated: since 7.56.0. Use curl_mime_data() [-Wdeprecated-declarations]
+   73 |                                                CURLFORM_BUFFERLENGTH, RSTRING_LEN(rbcpf->content),
+      |                                                ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2514:3: note: declared here
+ 2514 |   CURLFORM_BUFFERLENGTH    CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
+      |   ^~~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:76:13: warning: ‘curl_formadd’ is deprecated: since 7.56.0. Use curl_mime_init() [-Wdeprecated-declarations]
+   76 |             result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |             ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2576:1: note: declared here
+ 2576 | curl_formadd(struct curl_httppost **httppost,
+      | ^~~~~~~~~~~~
+curb_postfield.c:76:13: warning: ‘CURLFORM_PTRNAME’ is deprecated: since 7.56.0. Use curl_mime_name() [-Wdeprecated-declarations]
+   76 |             result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |             ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2502:3: note: declared here
+ 2502 |   CURLFORM_PTRNAME         CURL_DEPRECATED(7.56.0, "Use curl_mime_name()"),
+      |   ^~~~~~~~~~~~~~~~
+curb_postfield.c:77:48: warning: ‘CURLFORM_BUFFER’ is deprecated: since 7.56.0. Use curl_mime_filename() [-Wdeprecated-declarations]
+   77 |                                                CURLFORM_BUFFER, StringValuePtr(rbcpf->remote_file),
+      |                                                ^~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2512:3: note: declared here
+ 2512 |   CURLFORM_BUFFER          CURL_DEPRECATED(7.56.0, "Use curl_mime_filename()"),
+      |   ^~~~~~~~~~~~~~~
+curb_postfield.c:78:48: warning: ‘CURLFORM_BUFFERPTR’ is deprecated: since 7.56.0. Use curl_mime_data() [-Wdeprecated-declarations]
+   78 |                                                CURLFORM_BUFFERPTR, StringValuePtr(rbcpf->content),
+      |                                                ^~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2513:3: note: declared here
+ 2513 |   CURLFORM_BUFFERPTR       CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
+      |   ^~~~~~~~~~~~~~~~~~
+curb_postfield.c:79:48: warning: ‘CURLFORM_BUFFERLENGTH’ is deprecated: since 7.56.0. Use curl_mime_data() [-Wdeprecated-declarations]
+   79 |                                                CURLFORM_BUFFERLENGTH, RSTRING_LEN(rbcpf->content),
+      |                                                ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2514:3: note: declared here
+ 2514 |   CURLFORM_BUFFERLENGTH    CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
+      |   ^~~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:80:48: warning: ‘CURLFORM_CONTENTTYPE’ is deprecated: since 7.56.0. Use curl_mime_type() [-Wdeprecated-declarations]
+   80 |                                                CURLFORM_CONTENTTYPE, StringValuePtr(rbcpf->content_type),
+      |                                                ^~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2516:3: note: declared here
+ 2516 |   CURLFORM_CONTENTTYPE     CURL_DEPRECATED(7.56.0, "Use curl_mime_type()"),
+      |   ^~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:94:13: warning: ‘curl_formadd’ is deprecated: since 7.56.0. Use curl_mime_init() [-Wdeprecated-declarations]
+   94 |             result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |             ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2576:1: note: declared here
+ 2576 | curl_formadd(struct curl_httppost **httppost,
+      | ^~~~~~~~~~~~
+curb_postfield.c:94:13: warning: ‘CURLFORM_PTRNAME’ is deprecated: since 7.56.0. Use curl_mime_name() [-Wdeprecated-declarations]
+   94 |             result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |             ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2502:3: note: declared here
+ 2502 |   CURLFORM_PTRNAME         CURL_DEPRECATED(7.56.0, "Use curl_mime_name()"),
+      |   ^~~~~~~~~~~~~~~~
+curb_postfield.c:95:48: warning: ‘CURLFORM_FILE’ is deprecated: since 7.56.0. Use curl_mime_filedata() [-Wdeprecated-declarations]
+   95 |                                                CURLFORM_FILE, StringValuePtr(rbcpf->local_file),
+      |                                                ^~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2510:3: note: declared here
+ 2510 |   CURLFORM_FILE            CURL_DEPRECATED(7.56.0, "Use curl_mime_filedata()"),
+      |   ^~~~~~~~~~~~~
+curb_postfield.c:96:48: warning: ‘CURLFORM_FILENAME’ is deprecated: since 7.56.0. Use curl_mime_filename() [-Wdeprecated-declarations]
+   96 |                                                CURLFORM_FILENAME, StringValuePtr(rbcpf->remote_file),
+      |                                                ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2518:3: note: declared here
+ 2518 |   CURLFORM_FILENAME        CURL_DEPRECATED(7.56.0, "Use curl_mime_filename()"),
+      |   ^~~~~~~~~~~~~~~~~
+curb_postfield.c:99:13: warning: ‘curl_formadd’ is deprecated: since 7.56.0. Use curl_mime_init() [-Wdeprecated-declarations]
+   99 |             result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |             ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2576:1: note: declared here
+ 2576 | curl_formadd(struct curl_httppost **httppost,
+      | ^~~~~~~~~~~~
+curb_postfield.c:99:13: warning: ‘CURLFORM_PTRNAME’ is deprecated: since 7.56.0. Use curl_mime_name() [-Wdeprecated-declarations]
+   99 |             result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |             ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2502:3: note: declared here
+ 2502 |   CURLFORM_PTRNAME         CURL_DEPRECATED(7.56.0, "Use curl_mime_name()"),
+      |   ^~~~~~~~~~~~~~~~
+curb_postfield.c:100:48: warning: ‘CURLFORM_FILE’ is deprecated: since 7.56.0. Use curl_mime_filedata() [-Wdeprecated-declarations]
+  100 |                                                CURLFORM_FILE, StringValuePtr(rbcpf->local_file),
+      |                                                ^~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2510:3: note: declared here
+ 2510 |   CURLFORM_FILE            CURL_DEPRECATED(7.56.0, "Use curl_mime_filedata()"),
+      |   ^~~~~~~~~~~~~
+curb_postfield.c:101:48: warning: ‘CURLFORM_FILENAME’ is deprecated: since 7.56.0. Use curl_mime_filename() [-Wdeprecated-declarations]
+  101 |                                                CURLFORM_FILENAME, StringValuePtr(rbcpf->remote_file),
+      |                                                ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2518:3: note: declared here
+ 2518 |   CURLFORM_FILENAME        CURL_DEPRECATED(7.56.0, "Use curl_mime_filename()"),
+      |   ^~~~~~~~~~~~~~~~~
+curb_postfield.c:102:48: warning: ‘CURLFORM_CONTENTTYPE’ is deprecated: since 7.56.0. Use curl_mime_type() [-Wdeprecated-declarations]
+  102 |                                                CURLFORM_CONTENTTYPE, StringValuePtr(rbcpf->content_type),
+      |                                                ^~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2516:3: note: declared here
+ 2516 |   CURLFORM_CONTENTTYPE     CURL_DEPRECATED(7.56.0, "Use curl_mime_type()"),
+      |   ^~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:115:11: warning: ‘curl_formadd’ is deprecated: since 7.56.0. Use curl_mime_init() [-Wdeprecated-declarations]
+  115 |           result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |           ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2576:1: note: declared here
+ 2576 | curl_formadd(struct curl_httppost **httppost,
+      | ^~~~~~~~~~~~
+curb_postfield.c:115:11: warning: ‘CURLFORM_PTRNAME’ is deprecated: since 7.56.0. Use curl_mime_name() [-Wdeprecated-declarations]
+  115 |           result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |           ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2502:3: note: declared here
+ 2502 |   CURLFORM_PTRNAME         CURL_DEPRECATED(7.56.0, "Use curl_mime_name()"),
+      |   ^~~~~~~~~~~~~~~~
+curb_postfield.c:116:46: warning: ‘CURLFORM_PTRCONTENTS’ is deprecated: since 7.56.0. Use curl_mime_data() [-Wdeprecated-declarations]
+  116 |                                              CURLFORM_PTRCONTENTS, StringValuePtr(rbcpf->buffer_str),
+      |                                              ^~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2505:3: note: declared here
+ 2505 |   CURLFORM_PTRCONTENTS     CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
+      |   ^~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:117:46: warning: ‘CURLFORM_CONTENTSLENGTH’ is deprecated: since 7.56.0. Use curl_mime_data() [-Wdeprecated-declarations]
+  117 |                                              CURLFORM_CONTENTSLENGTH, RSTRING_LEN(rbcpf->buffer_str),
+      |                                              ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2506:3: note: declared here
+ 2506 |   CURLFORM_CONTENTSLENGTH  CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:120:11: warning: ‘curl_formadd’ is deprecated: since 7.56.0. Use curl_mime_init() [-Wdeprecated-declarations]
+  120 |           result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |           ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2576:1: note: declared here
+ 2576 | curl_formadd(struct curl_httppost **httppost,
+      | ^~~~~~~~~~~~
+curb_postfield.c:120:11: warning: ‘CURLFORM_PTRNAME’ is deprecated: since 7.56.0. Use curl_mime_name() [-Wdeprecated-declarations]
+  120 |           result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |           ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2502:3: note: declared here
+ 2502 |   CURLFORM_PTRNAME         CURL_DEPRECATED(7.56.0, "Use curl_mime_name()"),
+      |   ^~~~~~~~~~~~~~~~
+curb_postfield.c:121:46: warning: ‘CURLFORM_PTRCONTENTS’ is deprecated: since 7.56.0. Use curl_mime_data() [-Wdeprecated-declarations]
+  121 |                                              CURLFORM_PTRCONTENTS, StringValuePtr(rbcpf->buffer_str),
+      |                                              ^~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2505:3: note: declared here
+ 2505 |   CURLFORM_PTRCONTENTS     CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
+      |   ^~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:122:46: warning: ‘CURLFORM_CONTENTSLENGTH’ is deprecated: since 7.56.0. Use curl_mime_data() [-Wdeprecated-declarations]
+  122 |                                              CURLFORM_CONTENTSLENGTH, RSTRING_LEN(rbcpf->buffer_str),
+      |                                              ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2506:3: note: declared here
+ 2506 |   CURLFORM_CONTENTSLENGTH  CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:123:46: warning: ‘CURLFORM_CONTENTTYPE’ is deprecated: since 7.56.0. Use curl_mime_type() [-Wdeprecated-declarations]
+  123 |                                              CURLFORM_CONTENTTYPE, StringValuePtr(rbcpf->content_type),
+      |                                              ^~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2516:3: note: declared here
+ 2516 |   CURLFORM_CONTENTTYPE     CURL_DEPRECATED(7.56.0, "Use curl_mime_type()"),
+      |   ^~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:128:11: warning: ‘curl_formadd’ is deprecated: since 7.56.0. Use curl_mime_init() [-Wdeprecated-declarations]
+  128 |           result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |           ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2576:1: note: declared here
+ 2576 | curl_formadd(struct curl_httppost **httppost,
+      | ^~~~~~~~~~~~
+curb_postfield.c:128:11: warning: ‘CURLFORM_PTRNAME’ is deprecated: since 7.56.0. Use curl_mime_name() [-Wdeprecated-declarations]
+  128 |           result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |           ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2502:3: note: declared here
+ 2502 |   CURLFORM_PTRNAME         CURL_DEPRECATED(7.56.0, "Use curl_mime_name()"),
+      |   ^~~~~~~~~~~~~~~~
+curb_postfield.c:129:46: warning: ‘CURLFORM_PTRCONTENTS’ is deprecated: since 7.56.0. Use curl_mime_data() [-Wdeprecated-declarations]
+  129 |                                              CURLFORM_PTRCONTENTS, StringValuePtr(rbcpf->content),
+      |                                              ^~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2505:3: note: declared here
+ 2505 |   CURLFORM_PTRCONTENTS     CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
+      |   ^~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:130:46: warning: ‘CURLFORM_CONTENTSLENGTH’ is deprecated: since 7.56.0. Use curl_mime_data() [-Wdeprecated-declarations]
+  130 |                                              CURLFORM_CONTENTSLENGTH, RSTRING_LEN(rbcpf->content),
+      |                                              ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2506:3: note: declared here
+ 2506 |   CURLFORM_CONTENTSLENGTH  CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:133:11: warning: ‘curl_formadd’ is deprecated: since 7.56.0. Use curl_mime_init() [-Wdeprecated-declarations]
+  133 |           result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |           ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2576:1: note: declared here
+ 2576 | curl_formadd(struct curl_httppost **httppost,
+      | ^~~~~~~~~~~~
+curb_postfield.c:133:11: warning: ‘CURLFORM_PTRNAME’ is deprecated: since 7.56.0. Use curl_mime_name() [-Wdeprecated-declarations]
+  133 |           result = curl_formadd(first, last, CURLFORM_PTRNAME, StringValuePtr(rbcpf->name),
+      |           ^~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2502:3: note: declared here
+ 2502 |   CURLFORM_PTRNAME         CURL_DEPRECATED(7.56.0, "Use curl_mime_name()"),
+      |   ^~~~~~~~~~~~~~~~
+curb_postfield.c:134:46: warning: ‘CURLFORM_PTRCONTENTS’ is deprecated: since 7.56.0. Use curl_mime_data() [-Wdeprecated-declarations]
+  134 |                                              CURLFORM_PTRCONTENTS, StringValuePtr(rbcpf->content),
+      |                                              ^~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2505:3: note: declared here
+ 2505 |   CURLFORM_PTRCONTENTS     CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
+      |   ^~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:135:46: warning: ‘CURLFORM_CONTENTSLENGTH’ is deprecated: since 7.56.0. Use curl_mime_data() [-Wdeprecated-declarations]
+  135 |                                              CURLFORM_CONTENTSLENGTH, RSTRING_LEN(rbcpf->content),
+      |                                              ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2506:3: note: declared here
+ 2506 |   CURLFORM_CONTENTSLENGTH  CURL_DEPRECATED(7.56.0, "Use curl_mime_data()"),
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:136:46: warning: ‘CURLFORM_CONTENTTYPE’ is deprecated: since 7.56.0. Use curl_mime_type() [-Wdeprecated-declarations]
+  136 |                                              CURLFORM_CONTENTTYPE, StringValuePtr(rbcpf->content_type),
+      |                                              ^~~~~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2516:3: note: declared here
+ 2516 |   CURLFORM_CONTENTTYPE     CURL_DEPRECATED(7.56.0, "Use curl_mime_type()"),
+      |   ^~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:149:7: warning: ‘CURL_FORMADD_MEMORY’ is deprecated: since 7.56.0.  [-Wdeprecated-declarations]
+  149 |       case CURL_FORMADD_MEMORY:
+      |       ^~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2554:3: note: declared here
+ 2554 |   CURL_FORMADD_MEMORY         CURL_DEPRECATED(7.56.0, ""),
+      |   ^~~~~~~~~~~~~~~~~~~
+curb_postfield.c:152:7: warning: ‘CURL_FORMADD_OPTION_TWICE’ is deprecated: since 7.56.0.  [-Wdeprecated-declarations]
+  152 |       case CURL_FORMADD_OPTION_TWICE:
+      |       ^~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2555:3: note: declared here
+ 2555 |   CURL_FORMADD_OPTION_TWICE   CURL_DEPRECATED(7.56.0, ""),
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:155:7: warning: ‘CURL_FORMADD_NULL’ is deprecated: since 7.56.0.  [-Wdeprecated-declarations]
+  155 |       case CURL_FORMADD_NULL:
+      |       ^~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2556:3: note: declared here
+ 2556 |   CURL_FORMADD_NULL           CURL_DEPRECATED(7.56.0, ""),
+      |   ^~~~~~~~~~~~~~~~~
+curb_postfield.c:158:7: warning: ‘CURL_FORMADD_UNKNOWN_OPTION’ is deprecated: since 7.56.0.  [-Wdeprecated-declarations]
+  158 |       case CURL_FORMADD_UNKNOWN_OPTION:
+      |       ^~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2557:3: note: declared here
+ 2557 |   CURL_FORMADD_UNKNOWN_OPTION CURL_DEPRECATED(7.56.0, ""),
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:161:7: warning: ‘CURL_FORMADD_INCOMPLETE’ is deprecated: since 7.56.0.  [-Wdeprecated-declarations]
+  161 |       case CURL_FORMADD_INCOMPLETE:
+      |       ^~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2558:3: note: declared here
+ 2558 |   CURL_FORMADD_INCOMPLETE     CURL_DEPRECATED(7.56.0, ""),
+      |   ^~~~~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:164:7: warning: ‘CURL_FORMADD_ILLEGAL_ARRAY’ is deprecated: since 7.56.0.  [-Wdeprecated-declarations]
+  164 |       case CURL_FORMADD_ILLEGAL_ARRAY:
+      |       ^~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2559:3: note: declared here
+ 2559 |   CURL_FORMADD_ILLEGAL_ARRAY  CURL_DEPRECATED(7.56.0, ""),
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+curb_postfield.c:167:7: warning: ‘CURL_FORMADD_DISABLED’ is deprecated: since 7.56.0.  [-Wdeprecated-declarations]
+  167 |       case CURL_FORMADD_DISABLED:
+      |       ^~~~
+/usr/include/x86_64-linux-gnu/curl/curl.h:2561:3: note: declared here
+ 2561 |   CURL_FORMADD_DISABLED       CURL_DEPRECATED(7.56.0, ""),
+      |   ^~~~~~~~~~~~~~~~~~~~~
+compiling curb_upload.c
+linking shared-object curb_core.so
+
+current directory: /home/vexo/project/OPERATING-SYSTEM-ANALYSIS/Applications/main-server/vendor/bundle/ruby/3.2.0/gems/curb-1.2.2/ext
+make DESTDIR\= sitearchdir\=./.gem.20260330-21552-82bb4d sitelibdir\=./.gem.20260330-21552-82bb4d install
+/usr/bin/install -c -m 0755 curb_core.so ./.gem.20260330-21552-82bb4d
+
+current directory: /home/vexo/project/OPERATING-SYSTEM-ANALYSIS/Applications/main-server/vendor/bundle/ruby/3.2.0/gems/curb-1.2.2/ext
+make DESTDIR\= sitearchdir\=./.gem.20260330-21552-82bb4d sitelibdir\=./.gem.20260330-21552-82bb4d clean

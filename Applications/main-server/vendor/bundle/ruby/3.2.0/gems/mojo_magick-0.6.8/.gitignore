@@ -1,0 +1,10 @@
+*~
+test/fixtures/tmp
+fixtures/tmp
+coverage/
+.bundle/
+.\#*
+\#*
+out.png
+out.html
+*.gem

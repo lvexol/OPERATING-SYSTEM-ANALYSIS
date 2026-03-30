@@ -1,55 +1,175 @@
-import json
+"""
+Telemetry risk analysis module.
+
+Produces a 0-100 risk score and a human-readable findings list
+from a parsed telemetry payload.
+"""
 
 HIGH_RISK_PROCESSES = {
-    'nmap', 'nc', 'netcat', 'metasploit', 'meterpreter', 'tor', 'xmrig', 'minerd', 
-    'burpsuite', 'sqlmap', 'nikto', 'dirb', 'hydra', 'john', 'hashcat'
+    'nmap', 'nc', 'netcat', 'ncat', 'metasploit', 'meterpreter', 'msf',
+    'tor', 'xmrig', 'minerd', 'cpuminer',
+    'burpsuite', 'burp',
+    'sqlmap', 'nikto', 'dirb', 'dirbuster', 'gobuster', 'feroxbuster',
+    'hydra', 'medusa', 'john', 'hashcat',
+    'aircrack', 'kismet', 'reaver',
+    'wireshark', 'tcpdump',
+    'msfvenom', 'setoolkit',
 }
 
-SUSPICIOUS_USERNAMES = {'toor', 'hacker', 'anon', 'temp', 'guest'}
+SUSPICIOUS_USERNAMES = {'toor', 'hacker', 'anon', 'temp', 'guest', 'exploit', 'pwn', 'r00t'}
+
+OFFENSIVE_OS_KEYWORDS = {
+    'kali', 'parrot', 'blackarch', 'backbox', 'pentoo', 'whonix', 'tails',
+}
+
+# Ports commonly used by RATs, C2 frameworks, reverse shells, miners
+SUSPICIOUS_PORTS = {
+    4444,   # Metasploit default
+    4445,
+    5555,   # Android ADB / common RAT
+    6666,
+    1337,   # "leet" – generic backdoor
+    31337,  # Back Orifice
+    9001,   # Tor relay
+    9050,   # Tor SOCKS proxy
+    9150,   # Tor browser
+    8888,   # Common miner/C2
+    3333,   # Monero mining pool
+    14444,  # Monero mining pool
+    45700,
+}
+
+
+def _score_processes(processes):
+    score = 0
+    findings = []
+    detected = set()
+    suspicious_users = set()
+
+    for proc in processes:
+        name = proc.get('name', '').lower()
+        for tool in HIGH_RISK_PROCESSES:
+            if tool in name:
+                detected.add(name)
+                score += 20
+                break
+
+        user = proc.get('username', '').lower()
+        if user in SUSPICIOUS_USERNAMES:
+            suspicious_users.add(f"{user} (PID {proc.get('pid', '?')})")
+            score += 15
+
+    if detected:
+        findings.append(f"High-risk tools running: {', '.join(sorted(detected))}")
+    if suspicious_users:
+        findings.append(f"Suspicious process owners: {', '.join(sorted(suspicious_users))}")
+
+    return score, findings
+
+
+def _score_resources(cpu_info, disk_info, memory_info):
+    score = 0
+    findings = []
+
+    cpu_usage = cpu_info.get('usage_percent', 0)
+    if cpu_usage > 90:
+        score += 15
+        findings.append(f"Critical CPU usage: {cpu_usage}%")
+    elif cpu_usage > 80:
+        score += 10
+        findings.append(f"High CPU usage: {cpu_usage}%")
+
+    mem_used = memory_info.get('used_percent', 0)
+    if mem_used > 95:
+        score += 10
+        findings.append(f"Critical memory usage: {mem_used}%")
+
+    for disk in disk_info:
+        pct = disk.get('percent', 0)
+        if pct > 95:
+            score += 10
+            findings.append(f"Disk critical: {disk.get('mountpoint', '?')} ({pct}%)")
+
+    return score, findings
+
+
+def _score_os(system_info):
+    score = 0
+    findings = []
+
+    os_fields = ' '.join([
+        system_info.get('os_name', ''),
+        system_info.get('os_version', ''),
+        system_info.get('kernel_version', ''),
+        system_info.get('hostname', ''),
+    ]).lower()
+
+    for keyword in OFFENSIVE_OS_KEYWORDS:
+        if keyword in os_fields:
+            score += 30
+            findings.append(
+                f"Offensive/privacy OS detected: "
+                f"{system_info.get('os_name', '')} {system_info.get('os_version', '')}".strip()
+            )
+            break
+
+    return score, findings
+
+
+def _score_network(security_info, network_info):
+    score = 0
+    findings = []
+
+    open_ports = set(security_info.get('open_ports', []))
+    hit_ports = open_ports & SUSPICIOUS_PORTS
+    if hit_ports:
+        score += min(len(hit_ports) * 15, 40)
+        findings.append(f"Suspicious open ports: {sorted(hit_ports)}")
+
+    # Many network interfaces can indicate bridging, VPN stacking, or tunneling
+    if len(network_info) > 8:
+        score += 10
+        findings.append(f"Unusually high number of network interfaces: {len(network_info)}")
+
+    return score, findings
+
+
+def _score_users(users_info):
+    score = 0
+    findings = []
+
+    for user in users_info:
+        name = user.get('name', '').lower()
+        if name in SUSPICIOUS_USERNAMES:
+            score += 10
+            findings.append(f"Suspicious user account: {name}")
+        # UID 0 with non-root name is unusual
+        if user.get('uid') == 0 and name != 'root':
+            score += 20
+            findings.append(f"Non-root account has UID 0: {name}")
+
+    return score, findings
+
 
 def analyze_telemetry(data):
     """
-    Analyzes parsed telemetry data and returns a risk score (0-100) and analysis report.
+    Analyzes parsed telemetry data.
+
+    Returns:
+        (risk_score: int 0-100, findings: list[str])
     """
-    score = 0
-    report = []
-    
-    # 1. Check processes
-    processes = data.get('process_info', [])
-    detected_tools = []
-    for proc in processes:
-        name = proc.get('name', '').lower()
-        if any(tool in name for tool in HIGH_RISK_PROCESSES):
-            detected_tools.append(name)
-            score += 20
-    
-    if detected_tools:
-        report.append(f"High risk tools detected: {', '.join(set(detected_tools))}")
+    total_score = 0
+    all_findings = []
 
-    # 2. Check Resource Usage
-    cpu_usage = data.get('cpu_info', {}).get('usage_percent', 0)
-    if cpu_usage > 80:
-        score += 10
-        report.append(f"High CPU usage: {cpu_usage}%")
-        
-    for disk in data.get('disk_info', []):
-        if disk.get('percent', 0) > 95:
-            score += 10
-            report.append(f"Disk critical: {disk.get('mountpoint')} ({disk.get('percent')}%)")
+    for scorer, args in [
+        (_score_processes, (data.get('process_info', []),)),
+        (_score_resources, (data.get('cpu_info', {}), data.get('disk_info', []), data.get('memory_info', {}))),
+        (_score_os, (data.get('system_info', {}),)),
+        (_score_network, (data.get('security_info', {}), data.get('network_info', []))),
+        (_score_users, (data.get('users_info', []),)),
+    ]:
+        s, f = scorer(*args)
+        total_score += s
+        all_findings.extend(f)
 
-    # 3. Check Users
-    # Assuming user info might be in system info or separate, tailored to input format
-    # The prompt described: 5. Process list: array of {"pid", "name", "username", "status"}
-    for proc in processes:
-        user = proc.get('username', '').lower()
-        if user in SUSPICIOUS_USERNAMES:
-            score += 15
-            report.append(f"Suspicious process user: {user} (PID: {proc.get('pid')})")
-
-    # 4. OS/Kernel checks (fingerprinting)
-    os_name = data.get('system_info', {}).get('os_name', '').lower()
-    if 'kali' in os_name or 'parrot' in os_name or 'blackarch' in os_name:
-        score += 30
-        report.append(f"Offensive OS detected: {data.get('system_info', {}).get('os_name')}")
-
-    return min(score, 100), report
+    return min(total_score, 100), all_findings

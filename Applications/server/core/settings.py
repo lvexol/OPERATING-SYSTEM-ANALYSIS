@@ -10,22 +10,39 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load .env file if present (development convenience)
+try:
+    from dotenv import load_dotenv
+    load_dotenv(BASE_DIR / '.env')
+except ImportError:
+    pass
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-1jil4z1da30q%1@67p-c9+g!$+8ziv)3a#m+h^cb@o#lo*&nt3'
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY',
+    'django-insecure-1jil4z1da30q%1@67p-c9+g!$+8ziv)3a#m+h^cb@o#lo*&nt3'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'True').lower() in ('true', '1', 'yes')
 
-ALLOWED_HOSTS = ['*']
+_allowed_hosts = os.environ.get('ALLOWED_HOSTS', '*')
+ALLOWED_HOSTS = [h.strip() for h in _allowed_hosts.split(',') if h.strip()]
+
+# Optional API key required on the telemetry ingest endpoint.
+# Leave blank (default) to disable authentication in development.
+# Set to a strong random string in production.
+TELEMETRY_API_KEY = os.environ.get('TELEMETRY_API_KEY', '')
 
 
 # Application definition
@@ -80,7 +97,6 @@ DATABASES = {
     }
 }
 
-import os
 import dj_database_url
 
 if 'DATABASE_URL' in os.environ:
@@ -122,8 +138,38 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{asctime} {levelname} {name} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': os.environ.get('LOG_LEVEL', 'INFO'),
+    },
+    'loggers': {
+        'telemetry': {
+            'handlers': ['console'],
+            'level': os.environ.get('LOG_LEVEL', 'INFO'),
+            'propagate': False,
+        },
+    },
+}

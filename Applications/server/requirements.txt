@@ -3,3 +3,4 @@ psycopg2-binary>=2.9
 udatetime
 tzdata
 dj-database-url
+python-dotenv>=1.0
