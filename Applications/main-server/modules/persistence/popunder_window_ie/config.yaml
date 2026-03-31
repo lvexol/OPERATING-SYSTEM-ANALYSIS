@@ -6,7 +6,7 @@
 server:
     module:
         popunder_window_ie:
-            enable: true
+            enable: false
             category: "Persistence"
             name: "Create Pop Under (IE)"
             description: "This module uses a <i>HTMLFile</i> ActiveX object to bypass the popup blocker and create a popunder window containing a Server hook. Internet Explorer only.<br/><br/> Based on <a href='https://www.cracking.com.ar/demos/iepopups/'>PoC</a> by <a href='https://twitter.com/magicmac2000'>@MagicMac2000</a>."

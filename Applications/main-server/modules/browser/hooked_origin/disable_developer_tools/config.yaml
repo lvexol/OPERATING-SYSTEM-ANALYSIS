@@ -6,7 +6,7 @@
 server:
     module:
         disable_developer_tools:
-            enable: true
+            enable: false
             category: ["Browser", "Hooked Domain"]
             name: "Disable Developer Tools"
             description: "This module prevents users from executing JavaScript within the Internet Explorer Developer Tools console."

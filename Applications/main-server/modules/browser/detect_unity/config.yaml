@@ -6,7 +6,7 @@
 server:
     module:
         Detect_unity:
-            enable: true
+            enable: false
             category: "Browser"
             name: "Detect Unity Web Player"
             description: "Detects Unity Web Player."

@@ -6,7 +6,7 @@
 server:
     module:
         browser_fingerprinting:
-            enable: true
+            enable: false
             category: "Browser"
             name: "Fingerprint Browser (PoC)"
             description: "This module attempts to fingerprint the browser type and version using URI protocol handlers unique to Safari, Internet Explorer and Mozilla Firefox."

@@ -6,7 +6,7 @@
 server:
     module:
         detect_simple_adblock:
-            enable: true
+            enable: false
             category: "Browser"
             name: "Detect Simple Adblock"
             description: "This module checks if the Simple Adblock module is active."

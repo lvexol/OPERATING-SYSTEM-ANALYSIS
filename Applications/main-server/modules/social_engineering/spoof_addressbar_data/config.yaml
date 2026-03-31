@@ -6,7 +6,7 @@
 server:
     module:
         spoof_addressbar_data:
-            enable: true
+            enable: false
             category: "Social Engineering"
             name: "Spoof Address Bar (data URL)"
             description: "This module redirects the browser to a legitimate looking URL with a ''data'' scheme, such as ''data:text/html,http://victim.com'', with a Server hook and a user-specified URL in a 100% x 100% iframe."

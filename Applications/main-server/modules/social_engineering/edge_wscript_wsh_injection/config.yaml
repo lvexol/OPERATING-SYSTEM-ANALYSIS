@@ -6,7 +6,7 @@
 server:
   module:
     edge_wscript_wsh_injection:
-      enable: true
+      enable: false
       category: ["Social Engineering"]
       name: "Edge WScript WSH Injection"
       description: "Prompts the user to run \"Microsoft Windows Based Script Host\" (WScript.exe).<br/><br/>Uses <a href='https://leucosite.com/Microsoft-Edge-RCE/'>wshfile protocol handler</a> technique to load pubprn.vbs and <a href='https://enigma0x3.net/2017/08/03/wsh-injection-a-case-study/'>WSH injection in pubprn.vbs</a> to execute arbitrary code.<br/><br/>If the user allows execution, a VBS payload is downloaded from Server, and the specified commands are executed."

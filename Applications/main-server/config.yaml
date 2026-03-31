@@ -93,7 +93,7 @@ server:
             hook_root: false # inject Server hook in the server home page
         # Experimental HTTPS support for the hook / admin / all other Thin managed web services
         https:
-            enable: false
+            enable: true
             # In production environments, be sure to use a valid certificate signed for the value
             # used in server.http.public (the domain name of the server where you run Server)
             key: "server_key.pem"
@@ -120,7 +120,7 @@ server:
 
     # IP Geolocation
     geoip:
-        enable: true
+        enable: false
         # GeoLite2 City database created by MaxMind, available from https://www.maxmind.com
         database: '/usr/share/GeoIP/GeoLite2-City.mmdb'
 

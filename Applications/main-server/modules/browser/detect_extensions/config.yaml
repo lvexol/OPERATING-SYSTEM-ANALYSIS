@@ -6,7 +6,7 @@
 server:
     module:
         detect_extensions:
-            enable: true
+            enable: false
             category: "Browser"
             name: "Detect Extensions"
             description: "This module detects extensions installed in Google Chrome and Mozilla Firefox."

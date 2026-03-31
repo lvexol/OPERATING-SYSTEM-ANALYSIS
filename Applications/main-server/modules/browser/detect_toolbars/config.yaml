@@ -6,7 +6,7 @@
 server:
     module:
         Detect_toolbars:
-            enable: true
+            enable: false
             category: "Browser"
             name: "Detect Toolbars"
             description: "Detects which browser toolbars are installed."

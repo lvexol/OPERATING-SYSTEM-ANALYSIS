@@ -6,7 +6,7 @@
 server:
     module:
         webcam_permission_check:
-            enable: true
+            enable: false
             category: "Browser"
             name: "Webcam Permission Check"
             description: "This module will check to see if the user has allowed the Server domain (or all domains) to access the Camera and Mic with Flash. This module is transparent and should not be detected by the user (ie. no popup requesting permission will appear)"

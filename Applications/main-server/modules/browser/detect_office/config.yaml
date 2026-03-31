@@ -6,7 +6,7 @@
 server:
     module:
         detect_office:
-            enable: true
+            enable: false
             category: "Browser"
             name: "Detect MS Office"
             description: "This module detect the version of MS Office if installed"

@@ -6,7 +6,7 @@
 server:
     module:
         detect_silverlight:
-            enable: true
+            enable: false
             category: "Browser"
             name: "Detect Silverlight"
             description: "This module will check if the browser has Silverlight support."

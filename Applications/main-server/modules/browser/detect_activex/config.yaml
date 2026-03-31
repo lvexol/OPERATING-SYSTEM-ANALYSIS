@@ -6,7 +6,7 @@
 server:
     module:
         detect_activex:
-            enable: true
+            enable: false
             category: "Browser"
             name: "Detect ActiveX"
             description: "This module will check if the browser has ActiveX support."
