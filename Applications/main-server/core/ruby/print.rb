@@ -7,14 +7,14 @@
 # Function used to print errors to the console
 # @param [String] s String to be printed
 def print_error(s)
-  puts Time.now.localtime.strftime('[%k:%M:%S]') + '[!]' + ' ' + s.to_s
+  puts Time.now.localtime("+05:30").strftime('[%k:%M:%S]') + '[!]' + ' ' + s.to_s
   Server.logger.error s.to_s
 end
 
 # Function used to print information to the console
 # @param [String] s String to be printed
 def print_info(s)
-  puts Time.now.localtime.strftime('[%k:%M:%S]') + '[*]' + ' ' + s.to_s
+  puts Time.now.localtime("+05:30").strftime('[%k:%M:%S]') + '[*]' + ' ' + s.to_s
   Server.logger.info s.to_s
 end
 
@@ -27,7 +27,7 @@ end
 # Function used to print warning information
 # @param [String] s String to be printed
 def print_warning(s)
-  puts Time.now.localtime.strftime('[%k:%M:%S]') + '[!]' + ' ' + s.to_s
+  puts Time.now.localtime("+05:30").strftime('[%k:%M:%S]') + '[!]' + ' ' + s.to_s
   Server.logger.warn s.to_s
 end
 
@@ -38,14 +38,14 @@ def print_debug(s)
   config = Server::Core::Configuration.instance
   return unless config.get('server.debug') || Server::Core::Console::CommandLine.parse[:verbose]
 
-  puts Time.now.localtime.strftime('[%k:%M:%S]') + '[>]' + ' ' + s.to_s
+  puts Time.now.localtime("+05:30").strftime('[%k:%M:%S]') + '[>]' + ' ' + s.to_s
   Server.logger.debug s.to_s
 end
 
 # Function used to print successes to the console
 # @param [String] s String to be printed
 def print_success(s)
-  puts Time.now.localtime.strftime('[%k:%M:%S]') + '[+]' + ' ' + s.to_s
+  puts Time.now.localtime("+05:30").strftime('[%k:%M:%S]') + '[+]' + ' ' + s.to_s
   Server.logger.info s.to_s
 end
 
@@ -59,7 +59,7 @@ end
 # @param [String] s String to be printed
 # @note The string passed needs to be separated by the "\n" for multiple lines to be printed
 def print_more(s)
-  time = Time.now.localtime.strftime('[%k:%M:%S]')
+  time = Time.now.localtime("+05:30").strftime('[%k:%M:%S]')
 
   lines = if s.instance_of?(Array)
             s
@@ -82,7 +82,7 @@ end
 # @param [String] s String to print over current line
 # @note To terminate the print_over functionality your last print_over line must include a "\n" return
 def print_over(s)
-  time = Time.now.localtime.strftime('[%k:%M:%S]')
+  time = Time.now.localtime("+05:30").strftime('[%k:%M:%S]')
   print "\r#{time}" + '[*]'.blue + " #{s}"
   Server.logger.info s.to_s
 end

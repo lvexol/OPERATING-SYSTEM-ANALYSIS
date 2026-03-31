@@ -1,17 +1,28 @@
 #!/bin/bash
 
-if [ ! -f /tmp/server.pid ]; then
-  echo "Not running (no PID file)"
-  exit 1
+KILLED=0
+
+# Try PID file first
+if [ -f /tmp/server.pid ]; then
+  PID=$(cat /tmp/server.pid)
+  if kill -0 "$PID" 2>/dev/null; then
+    kill "$PID"
+    echo "Stopped (PID $PID)"
+    KILLED=1
+  else
+    echo "Stale PID file ($PID) — process already gone"
+  fi
+  rm -f /tmp/server.pid
 fi
 
-PID=$(cat /tmp/server.pid)
+# Fallback: kill any ruby server process still running
+REMAINING=$(pgrep -f "ruby server" 2>/dev/null)
+if [ -n "$REMAINING" ]; then
+  echo "Found leftover ruby server process(es): $REMAINING — killing"
+  pkill -f "ruby server"
+  KILLED=1
+fi
 
-if kill -0 $PID 2>/dev/null; then
-  kill $PID
-  rm /tmp/server.pid
-  echo "Stopped (PID $PID)"
-else
-  echo "Not running (stale PID file)"
-  rm /tmp/server.pid
+if [ "$KILLED" -eq 0 ]; then
+  echo "Server was not running"
 fi

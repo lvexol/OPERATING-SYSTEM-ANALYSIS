@@ -93,7 +93,7 @@ server:
             hook_root: false # inject Server hook in the server home page
         # Experimental HTTPS support for the hook / admin / all other Thin managed web services
         https:
-            enable: true
+            enable: false
             # In production environments, be sure to use a valid certificate signed for the value
             # used in server.http.public (the domain name of the server where you run Server)
             key: "server_key.pem"
