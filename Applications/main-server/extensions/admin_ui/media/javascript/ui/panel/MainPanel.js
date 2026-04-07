@@ -33,12 +33,7 @@ MainPanel = function(){
     this.logs_grid = new LogsDataGrid('/api/logs',30);
     this.logs_grid.border = false;
 
-    this.zombies_grid = new ZombieDataGrid('/api/hooks/all', 30);
-    this.zombies_grid.border = false;
-
     this.welcome_tab = new WelcomeTab;
-
-    this.auto_run_tab = new AutoRunTab;
 
     MainPanel.superclass.constructor.call(this, {
         id:'main-tabs',
@@ -68,24 +63,6 @@ MainPanel = function(){
             hideMode:'offsets',
             items:[
                 this.logs_grid
-            ]
-        },
-        {
-            id:'zombies-view',
-            layout:'border',
-            title:'Zombies',
-            hideMode:'offsets',
-            items:[
-                this.zombies_grid
-            ]
-        },
-        {
-            id:'autorun-view',
-            title:'Auto Run',
-            layout:'border',
-            hideMode:'offsets',
-            items:[
-                this.auto_run_tab
             ]
         }]
     });

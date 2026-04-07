@@ -177,14 +177,6 @@ ZombieDataGrid = function(url, page, base) {
   context_menu = []
   sep = { xtype: 'menuseparator' }
 
-  if (Server::Core::Configuration.instance.get("server.extension.proxy.enable"))
-    context_menu << {
-      id: 'zombie_grid_use_as_proxy',
-      text: 'Use as Proxy',
-      iconCls: 'zombie-tree-ctxMenu-proxy'
-    }
-    context_menu << sep
-  end
   if (Server::Core::Configuration.instance.get("server.extension.xssrays.enable"))
     context_menu << {
       id: 'zombie_grid_xssrays_hooked_origin',
@@ -222,14 +214,6 @@ ZombieDataGrid = function(url, page, base) {
               var record = grid.selModel.getSelected();
               var hb_id = record.get('session');
               switch (item.id) {
-              case 'zombie_grid_use_as_proxy':
-                Ext.Ajax.request({
-                  url: '/api/proxy/setTargetZombie?token=' + serverwui.get_rest_token(),
-                  method: 'POST',
-                  headers: {'Content-Type': 'application/json; charset=UTF-8'},
-                  jsonData: {'hb_id': escape(hb_id)}
-                });
-                break;
               case 'zombie_grid_xssrays_hooked_origin':
                 Ext.Ajax.request({
                   url: '/api/xssrays/scan/' + escape(hb_id) + '?token=' + serverwui.get_rest_token(),

@@ -69,14 +69,6 @@ Ext.extend(zombiesTreeList, Ext.tree.TreePanel, {
   context_menu = []
   sep = { xtype: 'menuseparator' }
 
-  if (Server::Core::Configuration.instance.get("server.extension.proxy.enable"))
-    context_menu << {
-      id: 'use_as_proxy',
-      text: 'Use as Proxy',
-      iconCls: 'zombie-tree-ctxMenu-proxy'
-    }
-    context_menu << sep
-  end
   if (Server::Core::Configuration.instance.get("server.extension.xssrays.enable"))
     context_menu << {
       id: 'xssrays_hooked_origin',
@@ -113,14 +105,6 @@ Ext.extend(zombiesTreeList, Ext.tree.TreePanel, {
               itemclick: function(item, object) {
                   var hb_id = this.contextNode.id.split('-')[2];
                   switch (item.id) {
-                      case 'use_as_proxy':
-                           Ext.Ajax.request({
-                                url: '/api/proxy/setTargetZombie?token=' + serverwui.get_rest_token(),
-                                method: 'POST',
-                                headers: {'Content-Type': 'application/json; charset=UTF-8'},
-                                jsonData: {'hb_id': escape(hb_id)}
-                            });
-                          break;
                        case 'xssrays_hooked_origin':
                            Ext.Ajax.request({
                                 url: '/api/xssrays/scan/' + escape(hb_id) + '?token=' + serverwui.get_rest_token(),

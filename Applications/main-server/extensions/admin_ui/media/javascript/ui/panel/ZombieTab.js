@@ -8,9 +8,7 @@ ZombieTab = function(zombie) {
 	main_tab = new ZombieTab_DetailsTab(zombie);
 	log_tab = new ZombieTab_LogTab(zombie);
 	commands_tab = new ZombieTab_Commands(zombie);
-	proxy_tab = new ZombieTab_Requester(zombie);
 	xssrays_tab =  new ZombieTab_XssRaysTab(zombie);
-	network_tab = new ZombieTab_Network(zombie);
 	webrtc_tab = new ZombieTab_Rtc(zombie);
 
 	ZombieTab.superclass.constructor.call(this, {
@@ -28,9 +26,7 @@ ZombieTab = function(zombie) {
       main_tab,
       log_tab,
       commands_tab,
-      proxy_tab,
       xssrays_tab,
-      network_tab,
       webrtc_tab
     ],
 		listeners:{
@@ -38,7 +34,6 @@ ZombieTab = function(zombie) {
         // Hide tabs for disabled functionality
         <%= Server::Core::Configuration.instance.get("server.extension.webrtc.enable") ? '' : 'component.hideTabStripItem(webrtc_tab);' %>
         <%= Server::Core::Configuration.instance.get("server.extension.xssrays.enable") ? '' : 'component.hideTabStripItem(xssrays_tab);' %>
-        <%= Server::Core::Configuration.instance.get("server.extension.network.enable") ? '' : 'component.hideTabStripItem(network_tab);' %>
 			}
 		}
 	});
